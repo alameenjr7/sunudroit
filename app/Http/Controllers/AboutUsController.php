@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\BrandCompany;
+use App\Models\Categorie;
 use App\Models\EquipePro;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class AboutUsController extends Controller
     {
         $abouts=AboutUs::first();
         
-        $brandCompany=BrandCompany::where('status','active')
+        $brandCompany = Categorie::where('status','active')
         ->orderBy('id','desc')
         ->get();
 

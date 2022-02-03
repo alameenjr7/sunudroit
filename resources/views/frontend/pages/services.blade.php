@@ -169,7 +169,7 @@
         <div class="auto-container">
             <div class="fact-counter-style-three">
                 <div class="row">
-                    <!--Column-->
+                    {{-- <!--Column-->
                     <div class="column counter-column col-lg-4 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="content">
@@ -213,14 +213,16 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </section>
 
+<div class="spacer"></div>
+
 	<!-- Clients Section -->
-	@if (count($brandCompany)>0)		
+	{{-- @if (count($brandCompany)>0)		
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -240,26 +242,7 @@
 				</div>
 			</div>
 		</section>
-	@endif
+	@endif --}}
 	<!-- End Clients Section -->
-
-	<!-- CTA Section -->
-	<section class="cta-section">
-		<div class="auto-container">
-			<div class="inner-container">
-				<div class="image">
-					<img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
-				</div>
-				<div class="content">
-					<h2>Speak With Our <br> Experts Today!</h2>
-					<a href="{{route('home')}}" class="theme-btn btn-style-two"><span class="txt">Get a quote <i class="arrow flaticon-right"></i></span></a>
-				</div>
-				<div class="hammer-image">
-					<img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End CTA Section -->
 
 @endsection

@@ -1,3 +1,21 @@
+	<!-- CTA Section -->
+	<section class="cta-section">
+		<div class="auto-container">
+			<div class="inner-container">
+				<div class="image">
+					<img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
+				</div>
+				<div class="content">
+					<h2>Parlez avec nos <br> experts aujourd'hui!</h2>
+					<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Obtenez un devis <i class="arrow flaticon-right"></i></span></a>
+				</div>
+				<div class="hammer-image">
+					<img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End CTA Section -->
 <!-- Main Footer -->
 <footer class="main-footer">
     <div class="auto-container">
@@ -37,7 +55,7 @@
                                     <li><a href="{{route('home')}}">Home</a></li>
                                     <li><a href="{{route('about')}}">About Us</a></li>
                                     <li><a href="{{route('service')}}">Services</a></li>
-                                    <li><a href="{{route('blog')}}">Blog</a></li>
+                                    <li><a href="{{route('publication')}}">Blog</a></li>
                                     <li><a href="{{route('contact')}}">Contact Us</a></li>
                                 </ul>
                             </div>
@@ -78,13 +96,14 @@
                         <!-- Footer Column -->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget newsletter-widget">
-                                <h5>Subscribe Now</h5>
+                                <h5>ABONNEZ-VOUS MAINTENANT!</h5>
                                 <div class="text">Quis autem vel eum iure reprehenderit aui ea voluptate.</div>
                                 <div class="newsletter-form">
-                                    <form method="post" action="contact.html">
+                                    <form method="post" action="{{route('mailing.list.submit')}}">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" value="" placeholder="Enter Email Address" required>
-                                            <button type="submit" class="theme-btn btn-style-one"><span class="txt">Subscribe now <i class="arrow flaticon-right"></i></span></button>
+                                            <input type="email" name="email" value="{{old('email')}}" placeholder="Entrer votre Adresse Email" required>
+                                            <button type="submit" class="theme-btn btn-style-one"><span class="txt">S'abonner <i class="arrow flaticon-right"></i></span></button>
                                         </div>
                                     </form>
                                 </div>
@@ -99,7 +118,7 @@
     </div>
     <div class="footer-bottom">
         <div class="auto-container">
-            <div class="copyright">Copyright 2022, Sunu Droit. All Rights Reserved.</div>
+            <div class="copyright">Copyright 2022, Sunudroit. Tous droits réservés.</div>
         </div>
     </div>
 </footer>

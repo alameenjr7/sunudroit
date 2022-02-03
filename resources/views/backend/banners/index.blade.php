@@ -43,15 +43,15 @@
                                         <td>{{$item->title}}</td>
                                         <td>{{$item->subtitle}}</td>
                                         <td>{{$item->slug}}</td>
-                                        <td>{!! html_entity_decode($item->description) !!}</td>
+                                        <td>{!! html_entity_decode(Str::limit($item->description, 20, $end=' ...')) !!}</td>
                                         <td style="text-align: center">
-                                            <img src="{{$item->photo}}" style="height: 60px; width: 60px;">
+                                            <img src="{{asset($item->photo)}}" style="height: 60px; width: 60px;">
                                         </td>
                                         <td>
                                             @if ($item->status=='active')
                                             <span class="badge badge-success">Active</span>
                                             @else
-                                            <span class="badge badge-danger">Inactive</span>
+                                            <span class="badge badge-danger">Desactiver</span>
                                             @endif
                                         </td>
                                         <td>
@@ -63,7 +63,7 @@
                                                 @csrf
                                                 @method('delete')
                                                 <a href="" title="Supprimer" data-toggle="tooltip" data-id="{{$item->id}}" data-placement="bottom"
-                                                     class="delete btn btn-danger float-left ml-1" >
+                                                     class="delete btn btn-danger float-left" >
                                                     <i class="nav-icon i-Close-Window"></i>
                                                 </a>
                                             </form>
@@ -109,42 +109,5 @@
     });
 </script>
 
-
-<script>
-   $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-        }
-   });
-    $('.delete').click(function(e) {
-        e.preventDefault();
-        var form = $(this).closest('form');
-        var dataID = $(this).data('id');
-        // alert(dataID);
-        swal({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#0CC27E',
-        cancelButtonColor: '#FF586B',
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
-        confirmButtonClass: 'btn btn-success mr-5',
-        cancelButtonClass: 'btn btn-danger',
-        buttonsStyling: false
-        }).then((willDelete)=> {
-            if(willDelete){
-                form.submit();
-                swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
-            }
-        }, function (dismiss) {
-        // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
-        if (dismiss === 'cancel') {
-            swal('Cancelled', 'Your imaginary file is safe :)', 'error');
-        }
-        });
-    });
-</script>
 
 @endsection

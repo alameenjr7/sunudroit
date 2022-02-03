@@ -11,8 +11,8 @@
             <div class="top-right pull-right clearfix">
                 <div class="request-btn"><i class="flaticon-right-arrow-3"></i><a href="#">Posez Vos Questions!</a></div>
                 <div class="search-box-outer">
-                    <form action="#" method="post" class="search-btn">
-                        <button type="button" class="search-toggler"><i class="flaticon-search"></i>Search</button>
+                    <form action="{{route('search')}}" method="GET" class="search-btn">
+                        <button type="submit" class="search-toggler"><i class="flaticon-search"></i>Search</button>
                     </form>
                 </div>
             </div>
@@ -55,18 +55,20 @@
                                     <li><a href="about.html">About us</a></li>
                                 </ul> --}}
                             </li>
-                            {{-- <li class=""><a href="#">Cases</a>
+                            <li class="dropdown"><a href="#">Mes droits</a>
                                 <ul>
-                                    <li><a href="case-3.html">Case Style 03</a></li>
+                                    <li><a href="{{route('calcul.droit')}}">Calculer mes droits</a></li>
+                                    <li><a href="{{route('document.pdf')}}">Télécharger mes documents juridiques</a></li>
+                                    
                                 </ul>
-                            </li> --}}
+                            </li>
                             <li class=""><a href="{{route('service')}}">Nos Services</a>
                                 {{-- <ul>
                                     <li><a href="services_style_01.html">Services Style 01</a></li>
                                     <li><a href="corporate_law.html">Corporate Law</a></li>
                                 </ul> --}}
                             </li>
-                            <li class=""><a href="{{route('blog')}}">Publication</a>
+                            <li class=""><a href="{{route('publication')}}">Publication</a>
                                 {{-- <ul>
                                     <li><a href="blog.html">Our Blog</a></li>
                                 </ul> --}}
@@ -77,14 +79,14 @@
                 </nav>
                 
                 <!-- Main Menu End-->
-                <div class="outer-box clearfix">
+                {{-- <div class="outer-box clearfix">
                     
                     <!-- Btn Box -->
                     <div class="btn-box">
                         <a href="{{route('contact')}}" class="theme-btn btn-style-one"><span class="txt">Nous Contacter</span></a>
                     </div>
                     
-                </div>
+                </div> --}}
             </div>
             
         </div>
@@ -106,17 +108,7 @@
                 </nav><!-- Main Menu End-->
                 
                 <!-- Main Menu End-->
-                <div class="outer-box clearfix">
-                    
-                    <!-- Btn Box -->
-                    <div class="btn-box">
-                        <a href="{{route('contact')}}" class="theme-btn btn-style-two"><span class="txt">Contact</span></a>
-                    </div>
-                    
-                    <!-- Mobile Navigation Toggler -->
-                    <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
-                    
-                </div>
+                {{--   --}}
                 
             </div>
         </div>

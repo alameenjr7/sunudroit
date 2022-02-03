@@ -15,3 +15,27 @@
 <script src="{{asset('frontend/assets/js/nav-tool.js')}}"></script>
 <script src="{{asset('frontend/assets/js/jquery-ui.js')}}"></script>
 <script src="{{asset('frontend/assets/js/script.js')}}"></script>
+
+
+<script>
+    $(document).ready(function(){
+        var path = "{{route('auto.search')}}";
+        $('#search_text').autocomplete({
+            source:function(request,response){
+                $.ajax({
+                    url:path,
+                    dataType:"JSON",
+                    data:{
+                        term:request.term
+                    },
+                    success:function(data){
+                        response(data);
+                    }
+                });
+            },
+            minLength:1,
+        })
+    });
+</script>
+
+@yield('scripts')

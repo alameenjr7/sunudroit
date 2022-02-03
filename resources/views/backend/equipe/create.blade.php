@@ -17,16 +17,7 @@
                 <div class="card-body">
                     <div class="card-title mb-3">Remplissez les cases suivantes </div>
                     <div class="col-md-12">
-                        @if ($errors->any())
-                            <div class="alert alert-card alert-danger" role="alert">
-                                @foreach ($errors->all() as $error)
-                                    <strong class="text-capitalize">Danger!</strong> <br> <li>{{$error}}</li>
-                                    <button class="close" type="button" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                @endforeach
-                            </div>
-                        @endif
+                        @include('components.errors')
                     </div>
                     <form action="{{route('equipe.store')}}" method="post">
                         @csrf
@@ -53,20 +44,16 @@
                             </div>
                             <div class="col-md-6 form-group mb-3">
                                 <label for="lastName2">Poste</label>
-                                <input class="form-control form-control-rounded" id="lastName2" type="text" name="poste" value="{{old('poste')}}" required placeholder="Entrer le poste" />
+                                <input class="form-control form-control-rounded" id="poste" type="text" name="poste" value="{{old('poste')}}" required placeholder="Entrer le poste" />
                             </div>
-                            <div class="col-md-6 form-group mb-3">
+                            <div class="col-md-12 form-group mb-3">
                                 <label for="picker1">Status</label>
                                 <select name="status" class="form-control form-control-rounded">
                                     <option value="active" {{old('status')=='active' ? 'selected' : ''}}>Active</option>
                                     <option value="inactive" {{old('status')=='inactive' ? 'selected' : ''}}>Desactiver</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="website2">Description</label>
-                                <input class="form-control form-control-rounded" id="website2" placeholder="Une description" name="description" value="{{old('description')}}" />
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
+                            <div class="col-md-12 form-group mb-3">
                                 <label for="website2">Photo</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
@@ -77,6 +64,11 @@
                                     <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
                                 </div>
                                 <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                            </div>
+                            
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="website2">Description</label>
+                                <textarea  class="form-control form-control-rounded" id="contenu" placeholder="Une description" name="description">{{old('description')}}</textarea>
                             </div>
                             <div class="col-md-12">
                                 <button type="submit" class="create btn btn-primary">Submit</button>

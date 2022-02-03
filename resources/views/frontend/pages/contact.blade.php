@@ -5,10 +5,10 @@
 <!-- Page Title -->
 <section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     <div class="auto-container">
-        <h1>Contact Us</h1>
+        <h1>Nous contacter</h1>
         <ul class="page-breadcrumb">
-            <li><a href="{{route('home')}}">home</a></li>
-            <li>Contact Us</li>
+            <li><a href="{{route('home')}}">Accueil</a></li>
+            <li>Nous contacter</li>
         </ul>
     </div>
 </section>
@@ -22,7 +22,8 @@
             <div class="map-boxed">
                 <!-- Map Outer -->
                 <div class="map-outer">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6331292129!2d144.49266890254142!3d-37.97123689954809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1574408946759!5m2!1sen!2s" allowfullscreen=""></iframe>
+                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6331292129!2d144.49266890254142!3d-37.97123689954809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1574408946759!5m2!1sen!2s" allowfullscreen=""></iframe> --}}
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.028235227538!2d-17.469440185846533!3d14.710995378307327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40W%2C%20SCP%20d&#39;Avocats!5e0!3m2!1sen!2sus!4v1643800014744!5m2!1sen!2sus"  allowfullscreen="" ></iframe>
                 </div>
             </div>
         </div>
@@ -35,37 +36,42 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>Send us a message</h2>
+            <h2>ENVOIE-NOUS UN MESSAGE</h2>
         </div>
         <!-- Contact Form -->
         <div class="contact-form">
 
             <!--Contact Form-->
-            {{-- <form method="post" action="sendemail.php" id="contact-form"> --}}
+            <form method="post" action="{{route('contact.submit')}}">
+                @csrf
                 <div class="row clearfix">
 
                     <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                        <input type="text" name="username" placeholder="Name" required>
+                        <input type="text" id="full_name" name="full_name" value="{{old('full_name')}}" placeholder="Nom Complet" required>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12 form-group">
-                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="email" name="email" id="email" value="{{old('email')}}" placeholder="Email" required>
                     </div>
 
                     <div class="col-lg-4 col-md-12 col-sm-12 form-group">
-                        <input type="text" name="phone" placeholder="Phone" required>
+                        <input type="text" id="telephone" name="telephone" value="{{old('telephone')}}" placeholder="Telephone" required>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <textarea name="message" placeholder="Message"></textarea>
+                        <textarea name="message" id="message" placeholder="Message">{{old('message')}}</textarea>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
-                        <button class="theme-btn btn-style-two" type="submit" name="submit-form"><span class="txt">Submit now <i class="arrow flaticon-right"></i></span></button>
+                        <button class="theme-btn btn-style-two" type="submit" name="submit-form">
+                            <span class="txt">Envoyer 
+                                <i class="arrow flaticon-right"></i>
+                            </span>
+                        </button>
                     </div>
 
                 </div>
-            {{-- </form> --}}
+            </form>
 
             <!--End Contact Form -->
         </div>
@@ -78,7 +84,7 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>Our Infromation</h2>
+            <h2>Nos Infromations</h2>
         </div>
         <div class="row clearfix">
 
@@ -86,8 +92,8 @@
             <div class="info-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon flaticon-location-pin"></div>
-                    <h5>Location</h5>
-                    <div class="text">121 King Street Melbourne, <br> 3000, Australia</div>
+                    <h5>Adresse</h5>
+                    <div class="text"> Cité Keur Gougui, Lot N°R85, <br> Imm. Neptune Optique</div>
                 </div>
             </div>
 
@@ -95,10 +101,10 @@
             <div class="info-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon flaticon-smartphone"></div>
-                    <h5>Phone</h5>
+                    <h5>Telephone</h5>
                     <ul class="info-list">
-                        <li><a href="tel:+0-589-96369-95823">0-589-96369-95823</a></li>
-                        <li><a href="tel:+0-825-63596-471254">0-825-63596-471254</a></li>
+                        <li><a href="tel:+221-77-655-14-84">+221 77 655 14 84</a></li>
+                        <li><a href="tel:+221-33-848-7988">+221 33 848 79 88</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,8 +115,8 @@
                     <div class="icon flaticon-email-3"></div>
                     <h5>Email</h5>
                     <ul class="info-list">
-                        <li><a href="mailto:Counsellaw@gmail.com">Counsellaw@gmail.com</a></li>
-                        <li><a href="mailto:info@counsellaw.com">info@counsellaw.com</a></li>
+                        <li><a href="mailto:management@sunudroit.tech">management@sunudroit.tech</a></li>
+                        <li><a href="mailto:management@sunudroit.tech">info@sunudroit.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -121,7 +127,7 @@
 <!-- End Contact Info Section -->
 
 <!-- Clients Section -->
-<section class="clients-section style-two">
+{{-- <section class="clients-section style-two">
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
@@ -144,26 +150,8 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Clients Section -->
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="auto-container">
-        <div class="inner-container">
-            <div class="image">
-                <img src="{{asset('frontend/assets/images/resource/cta.jpg')}}')}}" alt="" />
-            </div>
-            <div class="content">
-                <h2>Speak With Our <br> Experts Today!</h2>
-                <a href="{{route('home')}}" class="theme-btn btn-style-two"><span class="txt">Get a quote <i class="arrow flaticon-right"></i></span></a>
-            </div>
-            <div class="hammer-image">
-                <img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End CTA Section -->
 
 @endsection

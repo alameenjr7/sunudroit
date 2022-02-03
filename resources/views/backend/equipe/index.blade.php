@@ -27,9 +27,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Nom</th>
-                                    <th>Prenom</th>
                                     <th>Photo</th>
+                                    <th>Prenom</th>
+                                    <th>Nom</th>
                                     <th>Email</th>
                                     <th>Adresse</th>
                                     <th>Telephone</th>
@@ -42,15 +42,15 @@
                                 @foreach ($equipePros as $item)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$item->nom}}</td>
-                                        <td>{{$item->prenom}}</td>
                                         <td style="text-align: center">
                                             <img src="{{$item->photo}}" style="height: 60px; width: 60px;">
                                         </td>
+                                        <td>{{$item->prenom}}</td>
+                                        <td>{{$item->nom}}</td>
                                         <td>{{$item->email}}</td>
                                         <td>{{$item->adresse}}</td>
                                         <td>{{$item->telephone}}</td>
-                                        <td>{{$item->Poste}}</td>
+                                        <td>{{$item->poste}}</td>
                                         {{-- <td>{!! html_entity_decode($item->description) !!}</td> --}}
                                         
                                         <td>

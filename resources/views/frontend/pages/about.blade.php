@@ -3,12 +3,12 @@
 @section('content')
 
 <!-- Page Title -->
-<section class="page-title" style="background-image:url({{('frontend/assets/images/background/1.jpg')}})">
+<section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     <div class="auto-container">
-        <h1>About Us</h1>
+        <h1>Qui sommes-nous?</h1>
         <ul class="page-breadcrumb">
-            <li><a href="index.html">home</a></li>
-            <li>About</li>
+            <li><a href="index.html">Accueil</a></li>
+            <li>A propos de nous</li>
         </ul>
     </div>
 </section>
@@ -113,7 +113,7 @@
                         <div class="row clearfix">
 
                             <!-- Column -->
-                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-briefcase"></div>
@@ -123,10 +123,10 @@
                                         <h6 class="counter-title">Business Partners</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Column -->
-                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-balance"></div>
@@ -136,10 +136,10 @@
                                         <h6 class="counter-title">Cases Done</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Column -->
-                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-marketing"></div>
@@ -149,10 +149,10 @@
                                         <h6 class="counter-title">Happy Clients</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!-- Column -->
-                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-trophy-2"></div>
@@ -162,7 +162,7 @@
                                         <h6 class="counter-title">Awards Win</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
@@ -180,9 +180,9 @@
     </div>
 </section>
 <!-- End Fluid Section Two -->
-
+<div class="spacer"></div>
 	<!-- Team Section -->
-	@if (count($equipePro)>0)
+	{{-- @if (count($equipePro)>0)
 		<section class="team-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -210,11 +210,11 @@
 				</div>
 			</div>
 		</section>		
-	@endif
+	@endif --}}
 	<!-- End Team Section -->
 
 	<!-- Clients Section -->
-	@if (count($brandCompany)>0)		
+	{{-- @if (count($brandCompany)>0)		
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -234,26 +234,8 @@
 				</div>
 			</div>
 		</section>
-	@endif
+	@endif --}}
 	<!-- End Clients Section -->
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="auto-container">
-        <div class="inner-container">
-            <div class="image">
-                <img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
-            </div>
-            <div class="content">
-                <h2>Speak With Our <br> Experts Today!</h2>
-                <a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Get a quote <i class="arrow flaticon-right"></i></span></a>
-            </div>
-            <div class="hammer-image">
-                <img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End CTA Section -->
 
 @endsection

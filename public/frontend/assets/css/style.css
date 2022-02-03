@@ -40,6 +40,7 @@
 @import url('custom-animate.css');
 @import url('jquery.fancybox.min.css');
 @import url('jquery.mCustomScrollbar.min.css');
+@import url('rate.css');
 
 /***
 
@@ -82,6 +83,13 @@ a{
 	text-decoration:none;
 	cursor:pointer;
 	color:#e1a122;
+}
+
+div.spacer
+{
+    font-size: 0; 
+    height: 30px;
+    line-height: 0;
 }
 
 button,

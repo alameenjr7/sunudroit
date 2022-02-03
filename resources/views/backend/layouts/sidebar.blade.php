@@ -2,13 +2,13 @@
     <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
         <ul class="navigation-left">
             <li class="nav-item ">
-                <a class="nav-item-hold" href="{{route('admin')}}">
+                <a class="nav-item-hold active" href="{{route('admin')}}">
                     <i class="nav-icon i-Bar-Chart"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item active" data-item="uikits">
+            <li class="nav-item " data-item="uikits">
                 <a class="nav-item-hold" href="#">
                     <i class="nav-icon i-Library"></i>
                     <span class="nav-text">Banner</span>
@@ -70,7 +70,7 @@
         <i class="sidebar-close i-Close" (click)="toggelSidebar()"></i>
         <header>
             <div class="logo">
-                <img src="{{asset('backend/assets/dist-assets/images/logo-text.png')}}" alt="">
+                <img src="{{asset('frontend/assets/images/sunudroit-logo/logo-2.png')}}" alt="">
             </div>
         </header>
         <!-- Submenu Dashboards -->
@@ -108,23 +108,23 @@
         </div> --}}
         <div class="submenu-area" data-parent="forms">
             <header>
-                <h6>Forms</h6>
+                <h6>Publication</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav">
                 <li class="nav-item">
-                    <a href="form.basic.html">
+                    <a href="{{route('publication.index')}}">
                         <i class="nav-icon i-File-Clipboard-Text--Image"></i>
-                        <span class="item-name">Basic Elements</span>
+                        <span class="item-name">Liste des publications</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="form.layouts.html">
+                    <a href="{{route('publication.create')}}">
                         <i class="nav-icon i-Split-Vertical"></i>
-                        <span class="item-name">Form Layouts</span>
+                        <span class="item-name">Ajouter une publication</span>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="form.input.group.html">
                         <i class="nav-icon i-Receipt-4"></i>
                         <span class="item-name">Input Groups</span>
@@ -153,7 +153,7 @@
                         <i class="nav-icon i-Pen-2"></i>
                         <span class="item-name">Rich Editor</span>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <div class="submenu-area" data-parent="apps">
@@ -189,15 +189,15 @@
             </header>
             <ul class="childNav">
                 <li class="nav-item">
-                    <a href="{{route('brand.index')}}">
+                    <a href="{{route('categorie.index')}}">
                         <i class="nav-icon i-Crop-2"></i>
-                        <span class="item-name">Liste des marques</span>
+                        <span class="item-name">Liste des Categories</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('brand.create')}}">
+                    <a href="{{route('categorie.create')}}">
                         <i class="nav-icon i-Loading-3"></i>
-                        <span class="item-name">Ajouter une marque</span>
+                        <span class="item-name">Ajouter une Categories</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item">

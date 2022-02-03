@@ -17,19 +17,23 @@ Route::group(['prefix'=>'admin'],function(){
 Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::get('/',[App\Http\Controllers\AdminController::class, 'admin'])->name('admin');
 
-
     //Banner section
     Route::resource('/banner',App\Http\Controllers\BannerController::class);
     Route::post('banner_status',[App\Http\Controllers\BannerController::class, 'bannerStatus'])->name('banner.status');
 
     //Brand Company section
-    Route::resource('/brand',App\Http\Controllers\BrandCompanyController::class);
-    Route::post('brand_status',[App\Http\Controllers\BrandCompanyController::class, 'brandStatus'])->name('brand.status');
+    Route::resource('/categorie',App\Http\Controllers\CategorieController::class);
+    Route::post('categorie_status',[App\Http\Controllers\CategorieController::class, 'categorieStatus'])->name('categorie.status');
+    Route::post('categorie/{id}/child',[App\Http\Controllers\CategorieController::class, 'getChildByParentID']);
+
 
     //Brand Company section
     Route::resource('/equipe',App\Http\Controllers\EquipeProController::class);
     Route::post('equipe_status',[App\Http\Controllers\EquipeProController::class, 'equipeStatus'])->name('equipe.status');
 
+    //Publication section
+    Route::resource('publication',App\Http\Controllers\PublicationController::class);
+    Route::post('publication_status',[App\Http\Controllers\PublicationController::class, 'publicationStatus'])->name('publication.status');
 
     //Setting section
     Route::get('settings',[App\Http\Controllers\SettingsController::class, 'settings'])->name('settings');
@@ -37,5 +41,6 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
 
     //About section
     Route::get('about',[App\Http\Controllers\AboutUsController::class, 'about'])->name('about');
-    Route::put('about_update',[App\Http\Controllers\SettingsController::class, 'aboutUpdate'])->name('about.update');
+    Route::put('about_update',[App\Http\Controllers\AboutUsController::class, 'aboutUpdate'])->name('about.update');
+
 });
