@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BotManController;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Route;
 
@@ -18,10 +19,12 @@ Route::post('contact-submit', [App\Http\Controllers\Frontend\IndexController::cl
 
 Route::post('consultation-submit', [App\Http\Controllers\Frontend\IndexController::class, 'consultationSubmit'])->name('consultation.submit');
 
+Route::get('categorie-detail/{slug}/',[App\Http\Controllers\Frontend\IndexController::class, 'categorieDetail'])->name('categorie.detail');
+
 
 //Calcul droit
 Route::get('mes-drois', [App\Http\Controllers\Frontend\MesDroitsController::class, 'calcul'])->name('calcul.droit');
-
+Route::post('calcul-submit', [App\Http\Controllers\Frontend\MesDroitsController::class, 'index'])->name('calcul.submit');
 
 //Telecharger pdf
 Route::get('telecharger-pdf', [App\Http\Controllers\Frontend\MesDroitsController::class, 'document'])->name('document.pdf');
@@ -39,7 +42,7 @@ Route::post('publication-filter',[App\Http\Controllers\Frontend\IndexController:
 Route::post('publication-review/{slug}/',[App\Http\Controllers\Frontend\IndexController::class, 'publicationReview'])->name('publication.review');
 
 
-Route::get('corporate/law', [App\Http\Controllers\Frontend\IndexController::class, 'corporate'])->name('corporate');
+Route::get('mesdroits/detail', [App\Http\Controllers\Frontend\IndexController::class, 'corporate'])->name('corporate');
 
 //Mailing list
 Route::post('/mailing_list',[App\Http\Controllers\Frontend\IndexController::class, 'mailingListSubmit'])->name('mailing.list.submit');
@@ -50,5 +53,8 @@ Route::get('auto-search',[App\Http\Controllers\Frontend\IndexController::class, 
 Route::get('search',[App\Http\Controllers\Frontend\IndexController::class, 'search'])->name('search');
 
 
+Route::get('/botman', [App\Http\Controllers\BotManController::class, 'handle']);
+Route::post('/botman', [App\Http\Controllers\BotManController::class, 'handle']);
+// Route::match(['get', 'post'], 'botman', [App\Http\Controllers\BotManController::class, 'handle']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);

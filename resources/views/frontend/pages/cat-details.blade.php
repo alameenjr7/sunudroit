@@ -5,10 +5,10 @@
 	<!-- Page Title -->
     <section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     	<div class="auto-container">
-			<h1>Corporate Law</h1>
+			{{-- <h1>Corporate Law</h1> --}}
 			<ul class="page-breadcrumb">
-				<li><a href="{{route('home')}}">home</a></li>
-				<li>Corporate Law</li>
+				<li><a href="{{route('home')}}">Accueil</a></li>
+				<li>Mes droits</li>
 			</ul>
         </div>
     </section>
@@ -19,43 +19,20 @@
 		<div class="auto-container">
 			<div class="inner-container">
 				<div class="image">
-					<img src="{{asset('frontend/assets/images/resource/service-4.jpg')}}" alt="" />
+					<img src="{{asset($cat_details->photo)}}" alt="" style="max-width: 1170px; max-height: 450px;"/>
 				</div>
 				<div class="lower-content">
-					<h2>Expertise In All Aspects Of Corporate</h2>
-					<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae itaque earum ruis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+					<h2>{{$cat_details->title}}</h2>
+					<p>{!! html_entity_decode($cat_details->description) !!}</p>
 					<div class="row clearfix">
-						<div class="column col-lg-3 col-md-6 col-sm-6">
-							<ul class="list-style-one">
-								<li>Velit esse quam nihilumi</li>
-								<li>Qui dolorem eum fugiat</li>
-							</ul>
-						</div>
-						<div class="column col-lg-3 col-md-6 col-sm-6">
-							<ul class="list-style-one">
-								<li>Nostrum exercitationem</li>
-								<li>Reprehenderit qui nulla</li>
-							</ul>
-						</div>
-						<div class="column col-lg-3 col-md-6 col-sm-6">
-							<ul class="list-style-one">
-								<li>Tempora incidunt utao</li>
-								<li>Nihil molestiae conseua</li>
-							</ul>
-						</div>
-						<div class="column col-lg-3 col-md-6 col-sm-6">
-							<ul class="list-style-one">
-								<li>Aspernatur aut odit aut</li>
-								<li>Ratione voluptatem sea</li>
-							</ul>
-						</div>
+						
 					</div>
 					<div class="btn-box">
-						<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Free Consultation <i class="arrow flaticon-right"></i></span></a>
+						<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-two"><span class="txt">Calculer vos droits <i class="arrow flaticon-right"></i></span></a>
 					</div>
 
 					<!-- Consult Form -->
-					<div class="consult-form">
+					{{-- <div class="consult-form">
 						<div class="sec-title">
 							<h2>Consult Now</h2>
 						</div>
@@ -85,7 +62,7 @@
 							</div>
 						</form>
 						<!-- End Consult Form -->
-					</div>
+					</div> --}}
 
 				</div>
 			</div>
@@ -94,7 +71,7 @@
 	<!-- End Services Detail Section -->
 
 	<!-- Practice Section -->
-	<section class="practice-section">
+	{{-- <section class="practice-section">
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
@@ -186,11 +163,11 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Practice Section -->
 
 	<!-- Clients Section -->
-	<section class="clients-section style-two">
+	{{-- <section class="clients-section style-two">
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
@@ -213,7 +190,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Clients Section -->
 
 @endsection

@@ -1,18 +1,19 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <!-- Banner Section -->
+	<!-- Banner Section -->
 	@if (count($banners)>0)	
-		<section class="banner-section">
+    <!-- Banner Section 11111111111111111-->
+		{{-- <section class="banner-section">
 			<!-- Social Nav -->
 			<ul class="social-nav">
 				<li class="facebook"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
 				<li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
 				<li class="linkedin"><a href="#"><span class="fa fa-linkedin"></span></a></li>
-				<li class="linkedin"><a href="#"><span class="fa fa-instagram"></span></a></li>
-				<li class="linkedin"><a href="#"><span class="fa fa-youtube"></span></a></li>
+				<li class="instagram"><a href="#"><span class="fa fa-instagram"></span></a></li>
+				<li class="youtube"><a href="#"><span class="fa fa-youtube"></span></a></li>
 			</ul>
-			<div class="main-slider-carousel owl-carousel owl-theme">
+			<div class="main-slider-carousel owl-carousel ">
 				@foreach ($banners as $banner)
 					<div class="slide" style="background-image: url({{asset($banner->photo)}})">
 						<div class="auto-container">
@@ -22,7 +23,7 @@
 								<div class="inner-column">
 									<div class="title">{{$banner->title}}</div>
 									<h1 style="font-size: 250%;">{{$banner->subtitle}} <br><br> </h1>
-									<div class="text">{!! html_entity_decode(Str::limit($banner->description, 250, $end=' ...')) !!}</div>
+									<div class="text">{!! html_entity_decode($banner->description) !!}</div>
 									<div class="btns-box">
 										<a href="contact.html" class="theme-btn btn-style-one"><span class="txt">Consultation Gratuite <i class="arrow flaticon-right"></i></span></a>
 									</div>
@@ -34,7 +35,46 @@
 				@endforeach
 			</div>
 
+		</section> --}}
+    <!-- End Banner Section 11111111111111111-->
+
+		<!-- banner-section 222222222222222 -->
+		<section class="banner-section style-three">
+			<!-- Social Nav -->
+			<ul class="social-nav">
+				<li class="facebook"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+				<li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
+				<li class="linkedin"><a href="#"><span class="fa fa-linkedin"></span></a></li>
+				<li class="instagram"><a href="#"><span class="fa fa-instagram"></span></a></li>
+				<li class="youtube"><a href="#"><span class="fa fa-youtube"></span></a></li>
+			</ul>
+			<div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+				@foreach ($banners as $banner)
+					<div class="slide-item">
+						<div class="image-layer" style="background-image:url({{$banner->photo}})"></div>
+						<div class="pattern-layer">
+							<div class="pattern-3" style="background-image: url({{asset('frontend/assets/images/shape/pattern-28.png')}});"></div>
+							<div class="pattern-4" style="background-image: url({{asset('frontend/assets/images/shape/pattern-29.png')}});"></div>
+						</div>
+						<div class="auto-container">
+							<div class="row clearfix">
+								<div class="col-lg-10 col-md-12 col-sm-12 offset-lg-2 content-column">
+									<div class="inner-column">
+										<div class="title">{{$banner->title}}</div>
+										<h1>{{$banner->subtitle}} <br> ------</h1>
+										<div class="text">{!! html_entity_decode($banner->description) !!}</div>
+										<div class="btns-box">
+											<a href="#" class="theme-btn btn-style-one"><span class="txt">Consultation Gratuite <i class="arrow flaticon-right"></i></span></a>
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				@endforeach
+			</div>
 		</section>
+		<!-- End banner-section 22222222222222-->
 	@endif
 	<!-- End Banner Section -->
 
@@ -53,7 +93,7 @@
 								<h4><a href="{{route('publucation.categorie',$cat->slug)}}">{{$cat->title}}</a></h4>
 								<div class="text">{!! html_entity_decode(Str::limit($cat->description, 150, $end=' ...')) !!}</div>
 							</div>
-							<a href="{{route('corporate')}}" class="arrow flaticon-right"></a>
+							<a href="{{route('categorie.detail',$cat->slug)}}" class="arrow flaticon-right"></a>
 						</div>
 					</div>
 					<!-- End Services Block -->
@@ -100,8 +140,8 @@
 								<li>Ratione voluptatem sequi nesciunt nerue porro.</li>
 							</ul>
 							<div class="btns-box">
-								<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Calculez vos droits <i class="arrow flaticon-right"></i></span></a>
-								<a href="contact.html" class="theme-btn btn-style-three"><span class="txt">Voir PDF <i class="arrow flaticon-right"></i></span></a>
+								<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-two"><span class="txt">Calculez vos droits <i class="arrow flaticon-right"></i></span></a>
+								<a href="{{route('document.pdf')}}" class="theme-btn btn-style-three"><span class="txt">Voir PDF <i class="arrow flaticon-right"></i></span></a>
 							</div>
 						</div>
 					</div>
@@ -118,8 +158,8 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title light centered">
-				<h2>20 ans d'expérience dans le domaine des affaires juridiques</h2>
-				<div class="text">Renrehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum <br> aui dolorem eum fugiat quo voluptas nulla pariatur</div>
+				<h2>Vidéo de présentation</h2>
+				<div class="text">Découvrer en vidéo le portail sunudroit.tech <br> </div>
 			</div>
 
 			<div class="fact-counter">
@@ -197,7 +237,7 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<h2>Nos Domaines de PRATIQUE JURIDIQUE</h2>
+				<h2>INFORMATIONS PRATIQUES</h2>
 			</div>
 			<div class="inner-container">
 				<div class="clearfix">
@@ -330,6 +370,7 @@
 
 					<!-- Default Form -->
 					<div class="default-form">
+						@include('components.errors')
 						<form method="post" action="{{route('consultation.submit')}}">
 							@csrf
 							<div class="row clearfix">
@@ -482,3 +523,4 @@
 	@endif --}}
 	<!-- End Clients Section -->
 @endsection
+

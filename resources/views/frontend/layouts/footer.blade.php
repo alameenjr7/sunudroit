@@ -1,28 +1,33 @@
-	<!-- CTA Section -->
-	<section class="cta-section">
-		<div class="auto-container">
-			<div class="inner-container">
-				<div class="image">
-					<img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
-				</div>
-				<div class="content">
-					<h2>Parlez avec nos <br> experts aujourd'hui!</h2>
-					<a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Obtenez un devis <i class="arrow flaticon-right"></i></span></a>
-				</div>
-				<div class="hammer-image">
-					<img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End CTA Section -->
+<div class="spacer"></div>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="auto-container">
+        <div class="inner-container">
+            <div class="image">
+                <img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
+            </div>
+            <div class="content">
+                <h2>Parlez avec nos <br> experts aujourd'hui!</h2>
+                <a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Obtenez un devis <i class="arrow flaticon-right"></i></span></a>
+            </div>
+            <div class="hammer-image">
+                <img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End CTA Section -->
+
 <!-- Main Footer -->
 <footer class="main-footer">
     <div class="auto-container">
         <!-- Widgets Section -->
         <div class="widgets-section">
             <!-- Scroll To Top -->
-            <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+            <div class="scroll-to-top scroll-to-target" data-target="html">
+                <span class="fa fa-angle-up"></span>
+            </div>
             <div class="row clearfix">
 
                 <!-- Big Column -->
@@ -50,13 +55,13 @@
                         <!--Footer Column-->
                         <div class="footer-column col-lg-5 col-md-6 col-sm-12">
                             <div class="footer-widget links-widget">
-                                <h5>Useful links</h5>
+                                <h5>Liens utiles</h5>
                                 <ul class="footer-list">
-                                    <li><a href="{{route('home')}}">Home</a></li>
-                                    <li><a href="{{route('about')}}">About Us</a></li>
+                                    <li><a href="{{route('home')}}">Accueil</a></li>
+                                    <li><a href="{{route('about')}}">A Propos</a></li>
                                     <li><a href="{{route('service')}}">Services</a></li>
-                                    <li><a href="{{route('publication')}}">Blog</a></li>
-                                    <li><a href="{{route('contact')}}">Contact Us</a></li>
+                                    <li><a href="{{route('publication')}}">Publications</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -71,7 +76,7 @@
                         <!-- Footer Column -->
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget contact-widget">
-                                <h5>Office Info</h5>
+                                <h5>Info Bureau</h5>
                                 <ul>
                                     <li>
                                         <span class="icon flaticon-call-1"></span>
@@ -99,6 +104,7 @@
                                 <h5>ABONNEZ-VOUS MAINTENANT!</h5>
                                 <div class="text">Quis autem vel eum iure reprehenderit aui ea voluptate.</div>
                                 <div class="newsletter-form">
+                                    @include('components.errors')
                                     <form method="post" action="{{route('mailing.list.submit')}}">
                                         @csrf
                                         <div class="form-group">

@@ -63,15 +63,16 @@ class IndexController extends Controller
 
     public function contactSubmit(Request $request)
     {
+        // dd($request->all());
         $this->validate($request,[
             'full_name' => 'string|required',
             'email' => 'string|required',
-            'telephone' => 'integer',
-            'message' => 'string|required|min:180',
+            'telephone' => 'string|required',
+            'message' => 'string|required',
         ]);
 
         $data = $request->all();
-
+        
         $status = Message::create($data);
 
         if($status){
@@ -153,6 +154,19 @@ class IndexController extends Controller
 
         if($publication) {
             return view('frontend.pages.publication-detail',compact(['publication','lastPublication']));
+        }
+        else {
+            return view('errors.404');
+        }
+    }
+
+    public function categorieDetail($slug)
+    {
+        $cat_details = Categorie::where('slug',$slug)->first();
+        
+
+        if($cat_details) {
+            return view('frontend.pages.cat-details',compact(['cat_details']));
         }
         else {
             return view('errors.404');

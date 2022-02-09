@@ -40,9 +40,9 @@
         </div>
         <!-- Contact Form -->
         <div class="contact-form">
-
+            @include('components.errors')
             <!--Contact Form-->
-            <form method="post" action="{{route('contact.submit')}}">
+            <form action="{{route('contact.submit')}}" method="POST">
                 @csrf
                 <div class="row clearfix">
 
@@ -59,11 +59,11 @@
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
-                        <textarea name="message" id="message" placeholder="Message">{{old('message')}}</textarea>
+                        <textarea name="message" id="message" minlength="20" placeholder="Message" required>{{old('message')}}</textarea>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
-                        <button class="theme-btn btn-style-two" type="submit" name="submit-form">
+                        <button class="theme-btn btn-style-two" type="submit">
                             <span class="txt">Envoyer 
                                 <i class="arrow flaticon-right"></i>
                             </span>

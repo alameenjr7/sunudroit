@@ -11,21 +11,21 @@
             <li class="nav-item " data-item="uikits">
                 <a class="nav-item-hold" href="#">
                     <i class="nav-icon i-Library"></i>
-                    <span class="nav-text">Banner</span>
+                    <span class="nav-text">Banniere</span>
                 </a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item" data-item="extrakits">
                 <a class="nav-item-hold" href="#">
                     <i class="nav-icon i-Suitcase"></i>
-                    <span class="nav-text">Brand</span>
+                    <span class="nav-text">Categories</span>
                 </a>
                 <div class="triangle"></div>
             </li>
             <li class="nav-item" data-item="apps">
                 <a class="nav-item-hold" href="#">
                     <i class="nav-icon i-Computer-Secure"></i>
-                    <span class="nav-text">Equipe Pro</span>
+                    <span class="nav-text">Consultations</span>
                 </a>
                 <div class="triangle"></div>
             </li>
@@ -36,10 +36,10 @@
                 </a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" data-item="comments">
                 <a class="nav-item-hold" href="datatables.html">
                     <i class="nav-icon i-File-Horizontal-Text"></i>
-                    <span class="nav-text">Datatables</span>
+                    <span class="nav-text">Commentaires</span>
                 </a>
                 <div class="triangle"></div>
             </li>
@@ -108,7 +108,7 @@
         </div> --}}
         <div class="submenu-area" data-parent="forms">
             <header>
-                <h6>Publication</h6>
+                <h6>Publications</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav">
@@ -156,24 +156,74 @@
                 </li> --}}
             </ul>
         </div>
-        <div class="submenu-area" data-parent="apps">
+        <div class="submenu-area" data-parent="comments">
             <header>
-                <h6>Equipe Pro</h6>
+                <h6>Commentaires</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav">
                 <li class="nav-item">
-                    <a href="{{route('equipe.index')}}">
-                        <i class="nav-icon i-Add-File"></i>
-                        <span class="item-name">Liste des employer</span>
+                    <a href="{{route('commentaires.index')}}">
+                        <i class="nav-icon i-File-Clipboard-Text--Image"></i>
+                        <span class="item-name">Liste des commentaires</span>
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
+                    <a href="{{route('publication.create')}}">
+                        <i class="nav-icon i-Split-Vertical"></i>
+                        <span class="item-name">Ajouter une publication</span>
+                    </a>
+                </li> --}}
+                {{-- <li class="nav-item">
+                    <a href="form.input.group.html">
+                        <i class="nav-icon i-Receipt-4"></i>
+                        <span class="item-name">Input Groups</span>
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="form.validation.html">
+                        <i class="nav-icon i-Close-Window"></i>
+                        <span class="item-name">Form Validation</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="smart.wizard.html">
+                        <i class="nav-icon i-Width-Window"></i>
+                        <span class="item-name">Smart Wizard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="tag.input.html">
+                        <i class="nav-icon i-Tag-2"></i>
+                        <span class="item-name">Tag Input</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="editor.html">
+                        <i class="nav-icon i-Pen-2"></i>
+                        <span class="item-name">Rich Editor</span>
+                    </a>
+                </li> --}}
+            </ul>
+        </div>
+        <div class="submenu-area" data-parent="apps">
+            <header>
+                <h6>Consultations</h6>
+                <p>Lorem ipsum dolor sit.</p>
+            </header>
+            <ul class="childNav">
+                <li class="nav-item">
+                    <a href="{{route('consultation.index')}}">
+                        <i class="nav-icon i-Add-File"></i>
+                        <span class="item-name">Liste des Consultation</span>
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
                     <a href="{{route('equipe.create')}}">
                         <i class="nav-icon i-Email"></i>
                         <span class="item-name">Ajouter un employer</span>
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item">
                     <a href="chat.html">
                         <i class="nav-icon i-Speach-Bubble-3"></i>
@@ -184,7 +234,7 @@
         </div>
         <div class="submenu-area" data-parent="extrakits">
             <header>
-                <h6>Brand</h6>
+                <h6>Categories</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav">
@@ -234,20 +284,20 @@
         </div>
         <div class="submenu-area" data-parent="uikits">
             <header>
-                <h6>Banner</h6>
+                <h6>Bannieres</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav">
                 <li class="nav-item">
                     <a href="{{route('banner.index')}}">
                         <i class="nav-icon i-Bell1"></i>
-                        <span class="item-name">Liste Banner</span>
+                        <span class="item-name">Liste des Bannieres</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('banner.create')}}">
                         <i class="nav-icon i-Split-Horizontal-2-Window"></i>
-                        <span class="item-name">Ajouter Banner</span>
+                        <span class="item-name">Ajouter une Banniere</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item">

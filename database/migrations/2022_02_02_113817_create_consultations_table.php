@@ -15,10 +15,10 @@ class CreateConsultationsTable extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('email');
-            $table->string('sujet');
-            $table->text('message');
+            $table->string('full_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('sujet')->nullable();
+            $table->text('message')->nullable();
             $table->text('response')->nullable();
             $table->timestamps();
         });

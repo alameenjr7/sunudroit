@@ -5,7 +5,7 @@
 	<!-- Page Title -->
     <section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     	<div class="auto-container">
-			<h1>Services</h1>
+			<h1>Nos Services</h1>
 			<ul class="page-breadcrumb">
 				<li><a href="{{route('home')}}">home</a></li>
 				<li>Services</li>
@@ -34,7 +34,7 @@
 						<div class="inner-column">
 							<!-- Sec Title -->
 							<div class="sec-title">
-								<h2>What We Offer <br> for You</h2>
+								<h2>CE QUE NOUS <br> VOUS OFFRONS</h2>
 								<div class="text">Duis aute irure dolor in reprehenderit in volutate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 							</div>
 							<div class="row clearfix">
@@ -72,7 +72,7 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<h2>Our LEGAL PRACTICE Areas</h2>
+				<h2>NOS DOMAINES DE PRATIQUE JURIDIQUE</h2>
 			</div>
 			<div class="inner-container">
 				<div class="clearfix">
@@ -219,7 +219,7 @@
         </div>
     </section>
 
-<div class="spacer"></div>
+
 
 	<!-- Clients Section -->
 	{{-- @if (count($brandCompany)>0)		

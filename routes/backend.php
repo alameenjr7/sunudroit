@@ -27,7 +27,7 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::post('categorie/{id}/child',[App\Http\Controllers\CategorieController::class, 'getChildByParentID']);
 
 
-    //Brand Company section
+    //equipe pro section
     Route::resource('/equipe',App\Http\Controllers\EquipeProController::class);
     Route::post('equipe_status',[App\Http\Controllers\EquipeProController::class, 'equipeStatus'])->name('equipe.status');
 
@@ -40,7 +40,16 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::put('settings',[App\Http\Controllers\SettingsController::class, 'settingsUpdate'])->name('settings.update');
 
     //About section
-    Route::get('about',[App\Http\Controllers\AboutUsController::class, 'about'])->name('about');
+    Route::get('abouts',[App\Http\Controllers\AboutUsController::class, 'abouts'])->name('abouts');
     Route::put('about_update',[App\Http\Controllers\AboutUsController::class, 'aboutUpdate'])->name('about.update');
+
+
+    //Consultation section
+    Route::resource('consultation',App\Http\Controllers\ConsultationController::class);
+    Route::put('consultation_update/{id}',[App\Http\Controllers\ConsultationController::class, 'update'])->name('consultation.update');
+
+
+    //Pub Review
+    Route::get('commentaires',[App\Http\Controllers\PublicationReviewController::class, 'index'])->name('commentaires.index');
 
 });

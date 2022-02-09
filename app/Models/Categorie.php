@@ -27,4 +27,10 @@ class Categorie extends Model
         return $this->hasMany('App\Models\Publication','cat_id','id')->where('status','active');
     }
 
+    public function getCreatedAt()
+    {
+        setlocale(LC_TIME, "fr_FR");
+        return strftime("%e %B %Y", strtotime($this->created_at));
+    }
+
 }

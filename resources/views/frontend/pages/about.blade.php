@@ -24,7 +24,7 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{('frontend/assets/images/resource/case-2.jpg')}}" alt="" />
+                            <img src="{{asset('frontend/assets/images/resource/case-2.jpg')}}" alt="" />
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     <div class="inner-column">
                         <!-- Sec Title -->
                         <div class="sec-title">
-                            <h2>We specialise in <br> All Type of cases</h2>
+                            <h2>Qu'est-ce que le portail <br> sunudroit.tech</h2>
                             <div class="text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et volutate repudiandae sint et molestiae non recusandae earum  rerum hic tenetur a sapiente delectus ut aut reiciendis  voluptatibus maiores alias consequatur aut nerfereni doloribus asperiores repellat.</div>
                         </div>
                         <div class="text-box">
@@ -55,7 +55,7 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>What Make Us Unique</h2>
+            <h2>CE QUI NOUS REND UNIQUE</h2>
         </div>
         <div class="row clearfix">
 
@@ -104,7 +104,7 @@
             <div class="inner-column">
                 <!-- Sec Title -->
                 <div class="sec-title light">
-                    <h2>Why Choose Us</h2>
+                    <h2>POURQUOI NOUS CHOISIR</h2>
                     <div class="text">Tonam rem aperiam, eaque ipsa quae ab illo inventoe veritatis et quasi architecto beatae vitae dicta sunt explicabo exercitationem ullam corporis.</div>
                 </div>
                 <!-- Counter Boxed -->
@@ -180,7 +180,7 @@
     </div>
 </section>
 <!-- End Fluid Section Two -->
-<div class="spacer"></div>
+
 	<!-- Team Section -->
 	{{-- @if (count($equipePro)>0)
 		<section class="team-section">

@@ -3,9 +3,9 @@
 @section('content')
 
 	<!-- Page Title -->
-    <section class="page-title style-two" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}}')}})">
+    <section class="page-title style-two" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     	<div class="auto-container">
-			<h1>Nos publications</h1>
+			{{-- <h1>Nos publications</h1> --}}
 			<ul class="page-breadcrumb">
 				<li><a href="{{route('home')}}">Accueil</a></li>
 				<li>Publications</li>
@@ -24,7 +24,7 @@
                 	<div class="blog-classic">
 							@foreach ($publications as $pub)
 								<!-- News Block -->
-								@include('frontend.layouts._signle-publication',['publication'=>$pub])
+								@include('frontend.layouts._signle-publication',['publications'=>$pub])
 								<!-- News Block -->
 							@endforeach
 

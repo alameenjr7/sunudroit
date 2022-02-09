@@ -88,8 +88,10 @@ a{
 div.spacer
 {
     font-size: 0; 
-    height: 30px;
+    height: 35px;
     line-height: 0;
+	background-color: transparent;
+	color: transparent;
 }
 
 button,
