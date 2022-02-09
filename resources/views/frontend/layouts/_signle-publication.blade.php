@@ -16,7 +16,7 @@
         <div class="lower-content">
             <h3><a href="{{route('publication.detail',$pub->slug)}}">{{ucfirst($pub->title)}}</a></h3>
             <h6>{{ucfirst($pub->subtitle)}}</h6>
-            <div class="text">{!! html_entity_decode(Str::limit($pub->contenu, 200, $end=' ...')) !!} </div>
+            <div class="text">{!! html_entity_decode(Str::words($pub->contenu, 200, '....')) !!} </div>
             <div class="btn-box">
                 <a href="{{route('publication.detail',$pub->slug)}}" class="theme-btn btn-style-two"><span class="txt">Voir plus</span></a>
             </div>
