@@ -91,7 +91,7 @@
 							<div class="content">
 								<div class="icon flaticon-file"></div>
 								<h4><a href="{{route('publucation.categorie',$cat->slug)}}">{{$cat->title}}</a></h4>
-								<div class="text">{!! html_entity_decode(Str::limit($cat->description, 150, $end=' ...')) !!}</div>
+								<div class="text">{!! html_entity_decode($cat->description)) !!}</div>
 							</div>
 							<a href="{{route('categorie.detail',$cat->slug)}}" class="arrow flaticon-right"></a>
 						</div>
