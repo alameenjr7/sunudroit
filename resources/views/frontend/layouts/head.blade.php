@@ -15,6 +15,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
+<link rel="stylesheet" href="{{asset('backend/assets/dist-assets/css/plugins/toastr.css')}}" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 {{-- <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/chat.min.css')}}"> --}}
 {{-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/assets/css/chat.min.css"> --}}
 

@@ -17,6 +17,10 @@
 <script src="{{asset('frontend/assets/js/nav-tool.js')}}"></script>
 <script src="{{asset('frontend/assets/js/jquery-ui.js')}}"></script>
 <script src="{{asset('frontend/assets/js/script.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script src="{{asset('backend/assets/dist-assets/js/plugins/toastr.min.js')}}"></script>
+<script src="{{asset('backend/assets/dist-assets/js/scripts/toastr.script.min.js')}}"></script>
+
 
 <script>
     var botmanWidget = {
