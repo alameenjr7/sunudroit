@@ -62,7 +62,7 @@
 									<div class="inner-column">
 										<div class="title">{{$banner->title}}</div>
 										<h1>{{$banner->subtitle}} <br> ------</h1>
-										<div class="text">{!! html_entity_decode($banner->description) !!}</div>
+										<div class="text">{!! html_entity_decode(Str::words($banner->description, 20,'....')) !!}</div>
 										<div class="btns-box">
 											<a href="#" class="theme-btn btn-style-one"><span class="txt">Consultation Gratuite <i class="arrow flaticon-right"></i></span></a>
 										</div>
