@@ -98,7 +98,7 @@ class CategorieController extends Controller
         $categorie=Categorie::find($id);
         $parent_cats = Categorie::where('is_parent',1)->orderBy('title','ASC')->get();
         if($categorie){
-            return view('backend.Categories.edit', compact(['categorie','parent_cats']));
+            return view('backend.categories.edit', compact(['categorie','parent_cats']));
         }
         else{
             return back()->with('error', 'Categorie not found');
