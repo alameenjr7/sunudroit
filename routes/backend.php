@@ -46,7 +46,7 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
 
     //Consultation section
     Route::resource('consultation',App\Http\Controllers\ConsultationController::class);
-    Route::put('consultation_update/{id}',[App\Http\Controllers\ConsultationController::class, 'update'])->name('consultation.update');
+    Route::put('consultation_update/{id}',[App\Http\Controllers\ConsultationController::class, 'update'])->name('consultation.updates');
 
 
     //Pub Review
