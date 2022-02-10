@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Categorie extends Model
 {
@@ -33,4 +34,10 @@ class Categorie extends Model
         return strftime("%e %B %Y", strtotime($this->created_at));
     }
 
+    // public function getShortDescriptionAttribute()
+    // {
+    //     return Str::words($this->description, 10, '...');
+    // }
+
+   
 }

@@ -43,7 +43,7 @@
                                         <td>{{$item->title}}</td>
                                         <td>{{$item->subtitle}}</td>
                                         <td>{{$item->slug}}</td>
-                                        <td>{!! html_entity_decode(Str::words($item->description, 20, '....')) !!}</td>
+                                        <td>{!! html_entity_decode(\Illuminate\Support\Str::words($item->description, 20, '....')) !!}</td>
                                         <td style="text-align: center">
                                             <img src="{{asset($item->photo)}}" style="height: 60px; width: 60px;">
                                         </td>

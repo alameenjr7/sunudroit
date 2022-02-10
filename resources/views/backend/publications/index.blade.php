@@ -44,7 +44,7 @@
                                                 </a>
                                             </td>
                                             <td>{{$publication->subtitle}}</td>
-                                            <td>{!! html_entity_decode(Str::words($publication->contenu, 20, '....')) !!}</td>
+                                            <td>{!! html_entity_decode(\Illuminate\Support\Str::words($publication->contenu, 20, '....')) !!}</td>
                                             
                                             <td>
                                                 @if ($publication->conditions == 'publier')
