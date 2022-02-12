@@ -38,7 +38,7 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
                                 <div class="logo">
-                                    <a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/logo-2.png')}}" alt="" style="width: 240px; height: 60px;"/></a>
+                                    <a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/Couleur/Logo_Couleur-180X55.png')}}" alt="" style="width: 240px; height: 60px;"/></a>
                                 </div>
                                 <div class="text">Quis autem vel eum iure reprehenderit aui ea voluptate velit esse molestiae consequatur, vel illum qui dolorem.</div>
                                 <!-- Social Nav -->

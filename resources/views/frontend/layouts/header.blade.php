@@ -24,7 +24,7 @@
         <div class="auto-container clearfix">
             
             <div class="pull-left logo-box">
-                <div class="logo"><a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/logo.png')}}" alt="" title="" style="width: 230px; height: 60px;"></a></div>
+                <div class="logo"><a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_180X55.png')}}" alt="" title="" style="width: 230px; height: 60px;"></a></div>
             </div>
             
             <div class="nav-outer clearfix">
@@ -62,7 +62,7 @@
                                     
                                 </ul>
                             </li>
-                            <li class=""><a href="{{route('service')}}">Nos Services</a>
+                            <li class=""><a href="{{route('service')}}">Infos Pratiques</a>
                                 {{-- <ul>
                                     <li><a href="services_style_01.html">Services Style 01</a></li>
                                     <li><a href="corporate_law.html">Corporate Law</a></li>
@@ -98,7 +98,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="{{route('home')}}" title=""><img src="{{asset('frontend/assets/images/sunudroit-logo/logo.png')}}" alt="" title="" style="width: 180px; height: 55px;"></a>
+                <a href="{{route('home')}}" title=""><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_180X55.png')}}" alt="" title="" style="width: 180px; height: 55px;"></a>
             </div>
             <!--Right Col-->
             <div class="pull-right">

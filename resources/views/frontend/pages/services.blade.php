@@ -5,7 +5,7 @@
 	<!-- Page Title -->
     <section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
     	<div class="auto-container">
-			<h1>Nos Services</h1>
+			<h1>Informations pratiques</h1>
 			<ul class="page-breadcrumb">
 				<li><a href="{{route('home')}}">home</a></li>
 				<li>Services</li>

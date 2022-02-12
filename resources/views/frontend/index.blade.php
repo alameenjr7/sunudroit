@@ -62,9 +62,9 @@
 									<div class="inner-column">
 										<div class="title">{{$banner->title}}</div>
 										<h1>{{$banner->subtitle}} <br> ------</h1>
-										<div class="text"><p>{!! html_entity_decode(\Illuminate\Support\Str::words($banner->description, 20)) !!}</p></div>
+										<div class="text"><p>{!! html_entity_decode(\Illuminate\Support\Str::words($banner->description,20)) !!}</p></div>
 										<div class="btns-box">
-											<a href="#" class="theme-btn btn-style-one"><span class="txt">Consultation Gratuite <i class="arrow flaticon-right"></i></span></a>
+											<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-one"><span class="txt">Calculer Vos Droits <i class="arrow flaticon-right"></i></span></a>
 										</div>
 									</div>
 								</div>
@@ -331,7 +331,7 @@
 	<!-- Fluid Section One -->
 
     <section class="fluid-section-one">
-		<div class="side-icon"><img src="{{asset('frontend/assets/images/sunudroit-logo/logo-nobackground-500.png')}}" alt="" /></div>
+		<div class="side-icon"><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_329X288.png')}}" alt="" /></div>
     	<div class="outer-container clearfix">
         	<!-- Image Column -->
             <div class="image-column clearfix" style="background-image:url({{asset('frontend/assets/images/resource/image-1.jpg')}})">
