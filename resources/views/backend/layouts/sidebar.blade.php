@@ -70,7 +70,7 @@
         <i class="sidebar-close i-Close" (click)="toggelSidebar()"></i>
         <header>
             <div class="logo">
-                <img src="{{asset('frontend/assets/images/sunudroit-logo/logo-2.png')}}" alt="">
+                <img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_230X60.png')}}" alt="">
             </div>
         </header>
         <!-- Submenu Dashboards -->

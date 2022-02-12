@@ -120,7 +120,7 @@
         <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
         
         <nav class="menu-box">
-            <div class="nav-logo"><a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/logo-2.png')}}" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_230X60.png')}}" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
         </nav>
     </div><!-- End Mobile Menu -->
