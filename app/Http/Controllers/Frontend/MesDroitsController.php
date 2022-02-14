@@ -252,8 +252,8 @@ class MesDroitsController extends Controller
             {
                 if($dateDiff_f < 1)
                 {
-                    $result0 = $salaire * 1;
-                    $result1 = $salaire * 1;
+                    $result0 = $cumuleS * 1;
+                    $result1 = $cumuleS * 1;
                     $result = number_format($result0 + $result1,2);
                 }
                 else
@@ -300,8 +300,8 @@ class MesDroitsController extends Controller
             {
                 if($dateDiff_f < 1)
                 {
-                    $result0 = $salaire * 2;
-                    $result1 = $salaire * 1;
+                    $result0 = $cumuleS * 2;
+                    $result1 = $cumuleS * 1;
                     $result = number_format($result0 + $result1,2);
                 }
                 else
@@ -347,8 +347,8 @@ class MesDroitsController extends Controller
             {
                 if($dateDiff_f < 1)
                 {
-                    $result0 = $salaire * 3;
-                    $result1 = $salaire * 1;
+                    $result0 = $cumuleS * 3;
+                    $result1 = $cumuleS * 1;
                     $result = number_format($result0 + $result1,2);
                 }
                 else

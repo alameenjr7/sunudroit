@@ -44,7 +44,7 @@
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group">
-                        <label for="typesDroit">Choisir</label>
+                        <label for="typesDroit">Choisir le type de calcul</label>
                         {{-- <input type="checkbox" id="papa" name="papa" value="1" checked> --}}
                         <select required id="types-droit" name="types-droit"  class="form-control" style="position: relative;
                             width: 100%;
@@ -139,8 +139,26 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="montant">
-                        <label for="salaire">Votre salaire actuel</label>
-                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 75 000"  
+                        <label for="salaire" id="LABELS">Votre salaire actuel</label>
+                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 1 375 000"  
+                            style="position: relative;
+                            display: block;
+                            width: 100%;
+                            line-height: 28px;
+                            padding: 10px 22px;
+                            color: #222222;
+                            height: 55px;
+                            font-size: 16px;
+                            background: #ffffff;
+                            font-weight: 400;
+                            border-radius: 2px;"
+                        >
+                    </div>
+
+                    {{-- cumule de vos salaires sur les 12mois --}}
+                    <div class=" col-md-6 col-sm-12 form-group d-none" id="cumule_salaire">
+                        <label for="cumuleS" id="CUMULESALAIRE">Cumule de vos salaires sur les 12 derniers mois</label>
+                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 1 275 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -156,32 +174,16 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="dateD">
-                        <label for="date_deb">Date debut contrat</label>
+                        <label for="date_deb" id="DATEEMBAUCHE">Date debut contrat</label>
                         <input class="form-control" type="date" id="date_deb" name="date_deb" placeholder="Ex: 01/01/2020" >
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="dateF">
-                        <label for="date_fin">Date fin contrat</label>
+                        <label for="date_fin" id="DATELICENCIEMENT">Date fin contrat</label>
                         <input class="form-control" type="date" name="date_fin" id="date_fin"  placeholder="Ex: 12/05/2022" >
                     </div>
 
-                    {{-- cumule de vos salaires sur les 12mois --}}
-                    <div class=" col-md-6 col-sm-12 form-group d-none" id="cumule_salaire">
-                        <label for="cumuleS">Cumule de vos salaires sur les 12 derniers mois</label>
-                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 1 275 000"  
-                            style="position: relative;
-                            display: block;
-                            width: 100%;
-                            line-height: 28px;
-                            padding: 10px 22px;
-                            color: #222222;
-                            height: 55px;
-                            font-size: 16px;
-                            background: #ffffff;
-                            font-weight: 400;
-                            border-radius: 2px;"
-                        >
-                    </div>
+                    
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_TP">
                         <label for="salaire_cat_tp">Salaire categriciel du tutilaire de poste</label>
@@ -202,7 +204,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_IN">
                         <label for="salaire_cat_in">Salaire categoriciel de l'interimaire</label>
-                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 75 000"  
+                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 1 275 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -327,10 +329,23 @@
             {
                 $('#C_M_I_C_P_types').removeClass('d-none');
                 $('#C_M_I_C_P_types').val('');
+                $('#C_M_I_C_P_types').removeClass('col-md-12');
+                $('#C_M_I_C_P_types').val('');
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
+                $('#montant').removeClass('col-md-12');
+                $('#montant').val('');
+
+                //required
+                document.getElementById('salaire').required = true;
+
+                //Labels title
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#montant').addClass('col-md-6');
                 $('#dateF').addClass('d-none');
                 $('#dateD').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
@@ -342,6 +357,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }      
              
             // Calcul Indemnité de licenciement (Article 80 de la CCNI)
@@ -356,6 +375,18 @@
                 $('#montant').removeClass('col-md-6');
                 $('#montant').val('');
 
+                //required
+                document.getElementById('salaire').required = true;
+                document.getElementById('date_deb').required = true;
+                document.getElementById('date_fin').required = true;
+
+                //Label title
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=DATEEMBAUCHE]').empty();
+                $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
+                $('label[id*=DATELICENCIEMENT]').empty();
+                $('label[id*=DATELICENCIEMENT]').text('Insérer la date du licenciement');
                 // remove class
                 $('#montant').addClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -368,19 +399,40 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Indemnité départ à la retraite (Article 84 de la CCNI)
             else if(responseID == 'C_M_I_D_R')
             {
+                //remove class
                 $('#dateD').removeClass('d-none');
                 $('#dateD').val('');
                 $('#dateF').removeClass('d-none');
                 $('#dateF').val('');
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
+                $('#montant').removeClass('col-md-6');
+                $('#montant').val('');
 
-                // remove class
+                //required
+                document.getElementById('salaire').required = true;
+                document.getElementById('date_deb').required = true;
+                document.getElementById('date_fin').required = true;
+
+                //Label title
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=DATEEMBAUCHE]').empty();
+                $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
+                $('label[id*=DATELICENCIEMENT]').empty();
+                $('label[id*=DATELICENCIEMENT]').text('Insérer la date de départ à la retraite');
+
+                // add class
+                $('#montant').removeClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
                 $('#cumule_salaire').addClass('d-none');
@@ -391,19 +443,40 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Calcul Indemnité de décès (Article 83 de la CCNI)
             else if(responseID == 'C_M_I_D')
             {
+                //remove
                 $('#dateD').removeClass('d-none');
                 $('#dateD').val('');
                 $('#dateF').removeClass('d-none');
                 $('#dateF').val('');
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
+                $('#montant').removeClass('col-md-6');
+                $('#montant').val('');
 
-                // remove class
+                //required
+                document.getElementById('salaire').required = true;
+                document.getElementById('date_deb').required = true;
+                document.getElementById('date_fin').required = true;
+
+                //Label title
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=DATEEMBAUCHE]').empty();
+                $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
+                $('label[id*=DATELICENCIEMENT]').empty();
+                $('label[id*=DATELICENCIEMENT]').text('Insérer la date de décès');
+
+                // add class
+                $('#montant').removeClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
                 $('#cumule_salaire').addClass('d-none');
@@ -414,6 +487,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Calcul indemnité de maladie du travail (Article 87 de la CCNI)
@@ -427,6 +504,16 @@
                 $('#montant').val('');
                 $('#montant').removeClass('col-md-12');
                 $('#montant').val('');
+
+                //required
+                document.getElementById('salaire').required = true;
+                document.getElementById('date_fin').required = true;
+
+                //Label title
+                $('label[id*=DATELICENCIEMENT]').empty();
+                $('label[id*=DATELICENCIEMENT]').text('Insérer votre date d\'embauche');
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -448,7 +535,15 @@
                 $('#cumule_salaire').removeClass('d-none');
                 $('#cumule_salaire').val('');
 
+                //required
+                document.getElementById('cumuleS').required = true;
+
+                //Label title 
+                $('label[id*=CUMULESALAIRE]').empty();
+                $('label[id*=CUMULESALAIRE]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                
                 // remove class
+                $('#montant').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#dateF').addClass('d-none');
                 $('#dateD').addClass('d-none');
@@ -460,6 +555,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Indemnités de licenciement pour motif économique 
@@ -469,14 +568,36 @@
                 $('#C_M_I_C_P_types').val('');
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
+                $('#montant').removeClass('col-md-12');
+                $('#montant').val('');
+                $('#cumule_salaire').removeClass('d-none');
+                $('#cumule_salaire').val('');
+                $('#C_M_I_C_P_types').removeClass('col-md-6');
+                $('#C_M_I_C_P_types').val('');
                 $('#dateD').removeClass('d-none');
                 $('#dateD').val('');
                 $('#dateF').removeClass('d-none');
                 $('#dateF').val('');
 
+                //required
+                document.getElementById('salaire').required = true;
+                document.getElementById('date_deb').required = true;
+                document.getElementById('date_fin').required = true;
+                document.getElementById('cumuleS').required = true;
+
+                //Label title 
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=DATEEMBAUCHE]').empty();
+                $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
+                $('label[id*=DATELICENCIEMENT]').empty();
+                $('label[id*=DATELICENCIEMENT]').text('Insérer la date du licenciement');
+                $('label[id*=CUMULESALAIRE]').empty();
+                $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire actuel');
+
                 //remove class
+                $('#montant').addClass('col-md-6');
                 $('#PRESENCE').addClass('d-none');
-                $('#cumule_salaire').addClass('d-none');
                 $('#ESSAI').addClass('d-none');
                 $('#ABSENCE').addClass('d-none');
                 $('#SPECIALITE').addClass('d-none');
@@ -484,6 +605,11 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#C_M_I_C_P_types').removeClass('col-md-12');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Période d’essai (Article 23 de la CCNI)
@@ -505,6 +631,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Délai d’information du travailleur pour le renouvellement de la période d’essai (Article 23 de la CCNI)
@@ -526,6 +656,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Nombre de jours d’absence pour les événements familiaux
@@ -547,6 +681,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Durée maximale de l’intérim dans un emploi relevant d’une catégorie supérieure (Article 35 de la CCNI)
@@ -568,6 +706,10 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Indemnité d’intérim (Article 35 de la CCNI)
@@ -580,6 +722,10 @@
                 $('#SALAIRE_CAT_IN').removeClass('d-none');
                 $('#SALAIRE_CAT_IN').val('');
 
+                //required
+                document.getElementById('salaire_cat_in').required = true;
+                document.getElementById('salaire_cat_tp').required = true;
+
                 //Remove class
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -590,6 +736,10 @@
                 $('#ESSAI').addClass('d-none');
                 $('#ABSENCE').addClass('d-none');
                 $('#SPECIALITE').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
             // Majoration des heures supplémentaires
@@ -601,6 +751,10 @@
                 $('#SALAIRE_HOR').val('');
                 $('#MAJORATION').removeClass('d-none');
                 $('#MAJORATION').val('');
+
+                //required
+                document.getElementById('heure_supp').required = true;
+                document.getElementById('salaire_hor').required = true;
 
                 //remove class
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -651,6 +805,9 @@
                 $('#RENUMERATION_DUE').removeClass('d-none');
                 $('#RENUMERATION_DUE').val('');
 
+                //required
+                document.getElementById('renumeration_due').required = true;
+
                 //remove class
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -664,10 +821,16 @@
                 $('#SALAIRE_CAT_IN').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
 
-            else{
+            else
+            {
                 $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
                 $('#dateD').addClass('d-none');
@@ -685,6 +848,18 @@
                 $('#SALAIRE_HOR').addClass('d-none');
                 $('#MAJORATION').addClass('d-none');
                 $('#PRIME_PANIER').addClass('d-none');
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
             }
         });
     });
