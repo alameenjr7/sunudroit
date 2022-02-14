@@ -233,6 +233,67 @@
                             border-radius: 2px;"
                         >
                     </div>
+
+                    {{-- Majoration --}}
+                    <div class=" col-md-6 col-sm-12 form-group d-none" id="HEURE_SUPP">
+                        <label for="heure_supp">Insérer le nombre d’heures supplémentaires</label>
+                        <input  type="number" id="heure_supp" name="heure_supp"  placeholder="Ex: 8"  
+                            style="position: relative;
+                            display: block;
+                            width: 100%;
+                            line-height: 28px;
+                            padding: 10px 22px;
+                            color: #222222;
+                            height: 55px;
+                            font-size: 16px;
+                            background: #ffffff;
+                            font-weight: 400;
+                            border-radius: 2px;"
+                        >
+                    </div>
+
+                    <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_HOR">
+                        <label for="salaire_hor">Insérer le salaire horaire</label>
+                        <input  type="number" id="salaire_hor" name="salaire_hor"  placeholder="Ex: 375"  
+                            style="position: relative;
+                            display: block;
+                            width: 100%;
+                            line-height: 28px;
+                            padding: 10px 22px;
+                            color: #222222;
+                            height: 55px;
+                            font-size: 16px;
+                            background: #ffffff;
+                            font-weight: 400;
+                            border-radius: 2px;"
+                        >
+                    </div>
+
+                    <div class=" col-md-12 col-sm-12 form-group d-none" id="MAJORATION">
+                        <label for="majoration">Choisir votre ...</label>
+                        <select name="majoration" class="custom-select-box form-control">
+                            <option value="" >-- Choisir --</option>
+                            <option value="H_S_E_N" >Heures supplémentaire effectuées de nuit</option>
+                            <option value="H_S_E_J_PJRHPF" >Heures supplémentaire effectuées le jour, pendant le jour de repos hebdomadaire ou pendant les jours fériés</option>
+                            <option value="H_S_E_N_PJRHPF" >Heures supplémentaire effectuées la nuit, pendant le jour de repos hebdomadaire ou pendant les jours fériés</option>
+                        </select>
+                    </div>
+                    {{-- End Majoration --}}
+
+                    {{-- PRIME DE PANIER --}}
+                    <div class=" col-md-12 col-sm-12 form-group d-none" id="PRIME_PANIER">
+                        <label for="prime_panier">Choisir votre ...</label>
+                        <select name="prime_panier" class="custom-select-box form-control">
+                            <option value="J_E_M_6_HTN" >J’effectue au moins 6 heures de travail de nuit</option>
+                            <option value="J_E_10_H_I" >J’ai effectué 10 heures ininterrompues</option>
+                            <option value="J_E_3_H_P_H_N" >J’ai effectué 3 heures de plus que mon horaire normal</option>
+                            <option value="J_P_P_P_N" >Je perçois la prime de panier en nature</option>
+                            <option value="J_S_G_C" >Je suis gardien concierge</option>
+                            <option value="AUTRES" >Autres</option>
+                        </select>
+                    </div>
+                    {{-- END PRIME DE PANIER --}}
+
                     <div class=" col-md-12 col-sm-12 form-group text-center">
                         <button class="theme-btn btn-style-two" type="submit">
                             <span class="txt">Calculer 
@@ -293,9 +354,10 @@
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
                 $('#montant').removeClass('col-md-6');
-                $('#montant').addClass('col-md-12');
+                $('#montant').val('');
 
                 // remove class
+                $('#montant').addClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
                 $('#cumule_salaire').addClass('d-none');
@@ -530,6 +592,59 @@
                 $('#SPECIALITE').addClass('d-none');
             }
 
+            // Majoration des heures supplémentaires
+            else if(responseID == 'C_M_H_S')
+            {
+                $('#HEURE_SUPP').removeClass('d-none');
+                $('#HEURE_SUPP').val('');
+                $('#SALAIRE_HOR').removeClass('d-none');
+                $('#SALAIRE_HOR').val('');
+                $('#MAJORATION').removeClass('d-none');
+                $('#MAJORATION').val('');
+
+                //remove class
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#montant').addClass('d-none');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+            }
+
+            // Prime de panier (Article 53 de la CCNI)
+            else if(responseID == 'C_M_P_P')
+            {
+                $('#PRIME_PANIER').removeClass('d-none');
+                $('#PRIME_PANIER').val('');
+
+                //remove class
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#montant').addClass('d-none');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+            }
+
             // Indemnité de fin de contrat à durée déterminée
             else if(responseID == 'C_M_I_F_C_D_D')
             {
@@ -565,6 +680,11 @@
                 $('#SALAIRE_CAT_TP').addClass('d-none');
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
             }
         });
     });

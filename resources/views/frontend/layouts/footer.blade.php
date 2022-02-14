@@ -58,8 +58,8 @@
                                 <h5>Liens utiles</h5>
                                 <ul class="footer-list">
                                     <li><a href="{{route('home')}}">Accueil</a></li>
-                                    <li><a href="{{route('about')}}">A Propos</a></li>
-                                    <li><a href="{{route('service')}}">Services</a></li>
+                                    <li><a href="{{route('about')}}">Qui sommes nous?</a></li>
+                                    <li><a href="{{route('service')}}">Infos Pratiques</a></li>
                                     <li><a href="{{route('publication')}}">Publications</a></li>
                                     <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>

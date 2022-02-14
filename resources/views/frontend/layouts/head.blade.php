@@ -1,6 +1,6 @@
 
 <meta charset="utf-8">
-<title>Sunu Droit | Acceuil</title>
+<title>SunuDroit | Acceuil</title>
 <!-- Stylesheets -->
 <link href="{{asset('frontend/assets/css/bootstrap.css')}}" rel="stylesheet">
 <link href="{{asset('frontend/assets/css/style.css')}}" rel="stylesheet">

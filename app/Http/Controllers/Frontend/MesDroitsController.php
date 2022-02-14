@@ -20,18 +20,49 @@ class MesDroitsController extends Controller
         $titulaire = $request->input('titulaire');
         $salaire = $request->input('salaire');
         $cumuleS = $request->input('cumuleS');
+        $heure_supp = $request->input('heure_supp');
+        $salaire_hor = $request->input('salaire_hor');
+        $majoration = $request->input('majoration');
+        $prime_panier = $request->input('prime_panier');
         $salaire_cat_tp = $request->input('salaire_cat_tp');
         $salaire_cat_in = $request->input('salaire_cat_in');
         $renumeration_due = $request->input('renumeration_due');
         $dateD = $request->input('date_deb');
+
+        //jours restant de l'an
         $dateF = $request->input('date_fin');
+        $years = Carbon::parse($dateF)->format('Y');
+        $dateFinAN = $years."-12-31";
+    
+        $dateFin_1 = $dateF; 
+        $dateFinAn = $dateFinAN; 
+        $dateFin1 = str_replace("/","-",$dateFin_1);
+        $dateFinAn1 = str_replace("/","-",$dateFinAn);
+            // On transforme les 2 dates en timestamp
+        $date3 = strtotime($dateFin1);
+        $date4 = strtotime($dateFinAn1);
+            // On récupère la différence de timestamp entre les 2 précédents
+        $nbJoursTimestamp = $date4 - $date3;
+            // ** Pour convertir le timestamp (exprimé en secondes) en jours **
+            // On sait que 1 heure = 60 secondes * 60 minutes et que 1 jour = 24 heures donc :
+        $joursRestant = $nbJoursTimestamp/86400;
+        //end jours restant de l'an
+
+        //Mois restant de l'an
+        $mois = Carbon::parse($dateF)->format('m');
+        $moisRestant = 12 - $mois;
+        //End Mois restant de l'an
         $date = $dateD;
         $date1 = $dateF;
         $dateDiff = Carbon::parse($date)->floatDiffInRealYears($date1);
         $dateDiff_f = number_format($dateDiff);
         $yearAfter10 = $dateDiff_f - 10;
         $yearAfter20 = $dateDiff_f - 20;
+        $heureSUP_supp8 = $heure_supp - 8;
         $demiSalaire = number_format(($salaire/2),2);
+
+        
+
         
         $result = 0;
 
@@ -74,8 +105,8 @@ class MesDroitsController extends Controller
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                     $result0 = ($salaire * 25)/100 * 5;
                     $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                    $result2 = ($salaire * 30)/100 * 12;
-                    $result3 = ($salaire * 30)/100 * 365;
+                    $result2 = ($salaire * 30)/100 * $moisRestant;
+                    $result3 = ($salaire * 30)/100 * $joursRestant;
                     $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
                     return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de licenciement est: '.$result.' FCFA.');
@@ -85,8 +116,8 @@ class MesDroitsController extends Controller
                     $result0 = ($salaire * 25)/100 * 5;
                     $result1 = ($salaire * 30)/100 * 5;
                     $result2 = ($salaire * 40)/100 * $yearAfter10;
-                    $result3 = ($salaire * 40)/100 * 12;
-                    $result4 = ($salaire * 40)/100 * 365;
+                    $result3 = ($salaire * 40)/100 * $moisRestant;
+                    $result4 = ($salaire * 40)/100 * $joursRestant;
                     $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
                     return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de licenciement est: '.$result.' FCFA.');
@@ -111,8 +142,8 @@ class MesDroitsController extends Controller
             elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                 $result0 = ($salaire * 25)/100 * 5;
                 $result1 = ($salaire * 30)/100 * 4;
-                $result2 = ($salaire * 30)/100 * 12;
-                $result3 = ($salaire * 30)/100 * 365;
+                $result2 = ($salaire * 30)/100 * $moisRestant;
+                $result3 = ($salaire * 30)/100 * $joursRestant;
                 $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
                 return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
@@ -121,8 +152,8 @@ class MesDroitsController extends Controller
                 $result0 = ($salaire * 25)/100 * 5;
                 $result1 = ($salaire * 30)/100 * 5;
                 $result2 = ($salaire * 45)/100 * 10;
-                $result3 = ($salaire * 45)/100 * 12;
-                $result4 = ($salaire * 45)/100 * 365;
+                $result3 = ($salaire * 45)/100 * $moisRestant;
+                $result4 = ($salaire * 45)/100 * $joursRestant;
                 $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
                 return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
@@ -133,9 +164,9 @@ class MesDroitsController extends Controller
                 $result1 = ($salaire * 30)/100 * 5;
                 $result2 = ($salaire * 45)/100 * 10;
                 $result3 = ($salaire * 50)/100 * $yearAfter20;
-                $result4 = ($salaire * 50)/100 * 365;
-                $result4 = ($salaire * 50)/100 * 365;
-                $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
+                $result4 = ($salaire * 50)/100 * $moisRestant;
+                $result5 = ($salaire * 50)/100 * $joursRestant;
+                $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4 + $result5),2);
 
                 return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
             }
@@ -161,8 +192,8 @@ class MesDroitsController extends Controller
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                     $result0 = ($salaire * 25)/100 * 5;
                     $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                    $result2 = ($salaire * 30)/100 * 12;
-                    $result3 = ($salaire * 30)/100 * 365;
+                    $result2 = ($salaire * 30)/100 * $moisRestant;
+                    $result3 = ($salaire * 30)/100 * $joursRestant;
                     $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
                     return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de décès est: '.$result.' FCFA.');
@@ -172,8 +203,8 @@ class MesDroitsController extends Controller
                     $result0 = ($salaire * 25)/100 * 5;
                     $result1 = ($salaire * 30)/100 * 5;
                     $result2 = ($salaire * 40)/100 * $yearAfter10;
-                    $result3 = ($salaire * 40)/100 * 12;
-                    $result4 = ($salaire * 40)/100 * 365;
+                    $result3 = ($salaire * 40)/100 * $moisRestant;
+                    $result4 = ($salaire * 40)/100 * $joursRestant;
                     $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
                     return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de décès est: '.$result.' FCFA.');
@@ -240,8 +271,8 @@ class MesDroitsController extends Controller
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                        $result2 = ($salaire * 30)/100 * 12;
-                        $result3 = ($salaire * 30)/100 * 365;
+                        $result2 = ($salaire * 30)/100 * $moisRestant;
+                        $result3 = ($salaire * 30)/100 * $joursRestant;
                         $result5 = $salaire * 1;
                         $result6 = $salaire * 1;
                         $result7 = $result0 + $result1 + $result2 + $result3;
@@ -252,8 +283,8 @@ class MesDroitsController extends Controller
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * 5;
                         $result2 = ($salaire * 40)/100 * $yearAfter10;
-                        $result3 = ($salaire * 40)/100 * 12;
-                        $result4 = ($salaire * 40)/100 * 365;
+                        $result3 = ($salaire * 40)/100 * $moisRestant;
+                        $result4 = ($salaire * 40)/100 * $joursRestant;
                         $result5 = $result0 + $result1 + $result2 + $result3 + $result4;
                         $result6 = $salaire * 1;
                         $result7 = $salaire * 1;
@@ -288,8 +319,8 @@ class MesDroitsController extends Controller
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                        $result2 = ($salaire * 30)/100 * 12;
-                        $result3 = ($salaire * 30)/100 * 365;
+                        $result2 = ($salaire * 30)/100 * $moisRestant;
+                        $result3 = ($salaire * 30)/100 * $joursRestant;
                         $result5 = $salaire * 2;
                         $result6 = $salaire * 1;
                         $result7 = $result0 + $result1 + $result2 + $result3;
@@ -300,8 +331,8 @@ class MesDroitsController extends Controller
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * 5;
                         $result2 = ($salaire * 40)/100 * $yearAfter10;
-                        $result3 = ($salaire * 40)/100 * 12;
-                        $result4 = ($salaire * 40)/100 * 365;
+                        $result3 = ($salaire * 40)/100 * $moisRestant;
+                        $result4 = ($salaire * 40)/100 * $joursRestant;
                         $result5 = $result0 + $result1 + $result2 + $result3 + $result4;
                         $result6 = $salaire * 2;
                         $result7 = $salaire * 1;
@@ -335,8 +366,8 @@ class MesDroitsController extends Controller
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                        $result2 = ($salaire * 30)/100 * 12;
-                        $result3 = ($salaire * 30)/100 * 365;
+                        $result2 = ($salaire * 30)/100 * $moisRestant;
+                        $result3 = ($salaire * 30)/100 * $joursRestant;
                         $result5 = $salaire * 3;
                         $result6 = $salaire * 1;
                         $result7 = $result0 + $result1 + $result2 + $result3;
@@ -347,8 +378,8 @@ class MesDroitsController extends Controller
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * 5;
                         $result2 = ($salaire * 40)/100 * $yearAfter10;
-                        $result3 = ($salaire * 40)/100 * 12;
-                        $result4 = ($salaire * 40)/100 * 365;
+                        $result3 = ($salaire * 40)/100 * $moisRestant;
+                        $result4 = ($salaire * 40)/100 * $joursRestant;
                         $result5 = $result0 + $result1 + $result2 + $result3 + $result4;
                         $result6 = $salaire * 3;
                         $result7 = $salaire * 1;
@@ -484,25 +515,69 @@ class MesDroitsController extends Controller
         }
 
         // Majoration des heures supplémentaires
-        elseif($typeDroit == 'C_M_H_S'){
+        elseif($typeDroit == 'C_M_H_S')
+        {
+            if($majoration == null)
+            {
+                if($heure_supp <= 8)
+                {
+                    $result0 = ($heure_supp * ($salaire_hor * 15/100));
+                    $result = number_format($result0,2);
+                }
+                else
+                {
+                    $result0 = ((8 * ($salaire_hor * 15/100)) + $heureSUP_supp8 * ($salaire_hor * 40/100));
+                    $result = number_format($result0,2);
+                }
+            }
+            elseif($majoration =='H_S_E_J_PJRHPF')
+            {
+                $result0 = $heure_supp * $salaire_hor;
+                $result = number_format($result0,2);
+            }
+            elseif($majoration == 'H_S_E_N_PJRHPF')
+            {
+                $result0 = $heure_supp * ($salaire_hor * 60/100);
+                $result = number_format($result0,2);
+            }
+            else{
+                $result0 = $heure_supp * ($salaire_hor * 60/100);
+                $result = number_format($result0,2);
+            }
 
+            return redirect()->back()->with('message', 'Bonjour '.$full_name.', Majoration des heures supplémentaires est egale: '.$result.' FCFA.');
         }
 
         // Prime de panier (Article 53 de la CCNI)
-        elseif($typeDroit == 'C_M_P_P'){
+        elseif($typeDroit == 'C_M_P_P')
+        {
+            if($prime_panier == 'J_E_M_6_HTN' || $prime_panier == 'J_E_10_H_I' || $prime_panier == 'J_E_3_H_P_H_N')
+            {
+                $result0 = 333.808 * 3 ;
+                $result = number_format($result0,2);
+            }
+            else
+            {
+                $result0 = 0 ;
+                $result = number_format($result0,2);
+            }
 
+            return redirect()->back()->with('message', 'Bonjour '.$full_name.', Votre Prime de panier est egale a: '.$result.' FCFA.');
         }
 
         // Indemnité de fin de contrat à durée déterminée
         elseif($typeDroit == 'C_M_I_F_C_D_D')
         {
-            $result = number_format(($renumeration_due * 7) / 100,2);
+            $result0 = ($renumeration_due * 7) / 100;
+            $result = number_format($result0,2);
 
             return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de fin de contrat à durée déterminée est: '.$result.' FCFA.');
         }
 
-        else{
-            $result = 0;
+        else
+        {
+            $result0 = 0 ;
+            $result = number_format($result0,2);
         }
 
         return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité compensatrice de préavis: '.$result.' FCFA.');
