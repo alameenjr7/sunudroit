@@ -23,11 +23,15 @@ class PublicationController extends Controller
     public function publicationStatus(Request $request){
         if($request->_this=='true'){
             DB::table('publications')->where('id', $request->id)->update(['status'=>'active']);
+                    
+            return response()->json(['msg'=> 'Publication activer avec succes', 'status'=>true]);
+
         }
         else{
             DB::table('publications')->where('id', $request->id)->update(['status'=>'inactive']);
+
+            return response()->json(['msg'=> 'Publication desactiver avec succes', 'status'=>true]);
         }
-        return response()->json(['msg'=> 'Successfully updated publications', 'status'=>true]);
     }
 
     /**

@@ -19,7 +19,7 @@
                     <div class="col-md-12">
                         @include('components.errors')
                     </div>
-                    <form action="{{route('banner.update',$banner->id)}}" method="post">
+                    <form action="{{route('banniere.update',$banner->id)}}" method="post">
                         @csrf
                         @method('patch')
                         <div class="row">
@@ -52,7 +52,11 @@
                                     </span>
                                     <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$banner->photo}}">
                                 </div>
-                                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                                <div id="holder" style="margin-top: 15px;height: 100px;">
+                                    @if ($banner->photo != null)
+                                        <img src="{{asset($banner->photo)}}" alt="logo" style="border: 1px solid #ddd; padding: 4px 8px; max-height: 100px;">
+                                    @endif
+                                </div>
                             </div>
                             
                             <div class="col-md-12 form-group mb-3">

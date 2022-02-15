@@ -70,7 +70,7 @@
         <i class="sidebar-close i-Close" (click)="toggelSidebar()"></i>
         <header>
             <div class="logo">
-                <img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_230X60.png')}}" alt="">
+                <img src="{{asset(get_setting('logo'))}}" alt="">
             </div>
         </header>
         <!-- Submenu Dashboards -->
@@ -289,13 +289,13 @@
             </header>
             <ul class="childNav">
                 <li class="nav-item">
-                    <a href="{{route('banner.index')}}">
+                    <a href="{{route('banniere.index')}}">
                         <i class="nav-icon i-Bell1"></i>
                         <span class="item-name">Liste des Bannieres</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('banner.create')}}">
+                    <a href="{{route('banniere.create')}}">
                         <i class="nav-icon i-Split-Horizontal-2-Window"></i>
                         <span class="item-name">Ajouter une Banniere</span>
                     </a>
@@ -414,14 +414,14 @@
         </div>
         <div class="submenu-area" data-parent="others">
             <header>
-                <h6>Others</h6>
+                <h6>Settings</h6>
                 <p>Lorem ipsum dolor sit.</p>
             </header>
             <ul class="childNav" data-parent="">
                 <li class="nav-item">
-                    <a href="../sessions/not-found.html">
+                    <a href="{{route('settings')}}">
                         <i class="nav-icon i-Error-404-Window"></i>
-                        <span class="item-name">Not Found</span>
+                        <span class="item-name">Settings</span>
                     </a>
                 </li>
                 <li class="nav-item">

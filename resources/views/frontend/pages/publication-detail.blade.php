@@ -1,18 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
-	<!-- Page Title -->
-    {{-- <section class="page-title style-two" style="background-image:url(images/background/1.jpg)">
-    	<div class="auto-container">
-			<h1>Detail publications</h1>
-			<ul class="page-breadcrumb">
-				<li><a href="{{route('home')}}">Accueil</a></li>
-				<li>Publications</li>
-			</ul>
-        </div>
-    </section> --}}
-    <!-- End Page Title -->
 	
 	<!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
@@ -24,62 +12,44 @@
                 	<!-- Block Detail -->
                     {{-- @if (count($publication)>0)    --}}
                         <div class="blog-detail">
-                            {{-- @foreach ($publication as $publication) --}}
                                 <div class="inner-box">
                                     <div class="image" style="max-width: 769.980px; max-height: 460.918px;">
                                         <img src="{{$publication->photo}}" alt="{{$publication->title}}" />
                                         <div class="category">Admin</div>
                                         <ul class="post-meta">
                                             <li><span class="icon flaticon-timetable"></span>{{$publication->getCreatedAt()}}</li>
-                                            <li><span class="icon flaticon-email"></span>Comments 03</li>
-                                            <li><span class="icon flaticon-user-2"></span>Admin</li>
+                                            <li><span class="icon flaticon-email"></span>{{App\Models\PublicationReview::where('publication_id',$publication->id)->count()}} Commentaire(s)</li>
+                                            @if ($publication->added_by != null)
+                                                <li><span class="icon flaticon-user-2"></span>{{$publication->added_by}}</li>
+                                            @endif
                                         </ul>
                                     </div>
                                     <div class="lower-content">
-                                        <h3 href="{{route('publication.detail1',$publication->id)}}">{{ucfirst($publication->title)}} </h3>
+                                        <h3>{{ucfirst($publication->title )}} 
+                                            @for ($i=0; $i<5; $i++)
+                                                @if (round($publication->reviews->avg('rate'))>$i)
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                @else
+                                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                                @endif
+                                            @endfor
+                                        </h3>
                                         <h6>{{ucfirst($publication->subtitle)}}</h6>
                                         <p>{!! html_entity_decode($publication->contenu) !!} </p>
                                         <blockquote>
                                             <span class="quote-icon flaticon-quote-1"></span>
                                             <div class="quote-text"></div>
                                         </blockquote>
-                                        
-                                        <!-- Post Share Options-->
-                                        {{-- <div class="post-share-options">
-                                            <div class="post-share-inner clearfix">
-                                                <div class="pull-left tags">TAGS: <a href="#">Business,</a> <a href="#">Law,</a><a href="#">Technology</a></div>
-                                                <div class="tags pull-right">
-                                                    <div class="business">Category: <a href="#">Business,</a> <a href="#">Online Law</a></div>
-                                                </div>
-                                            </div>
-                                        </div> --}}
                                     </div>
                                     
-                                    <!-- Blog Author Box -->
-                                    {{-- <div class="blog-author-box">
-                                        <div class="author-inner">
-                                            <div class="thumb"><img src="images/resource/author-8.jpg" alt=""></div>
-                                            <h4 class="name">CHRISTINE EVE</h4>
-                                            <div class="text">Lorem ipsum is simply free text used by copytyping. Neque porro est qui dolorem ipsum quia quaed veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
-                                            <ul class="social-icon clearfix">
-                                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div> --}}
-                                    
                                 </div>
-                            {{-- @endforeach --}}
                             
                             <div class="comments-area">
                                 <div class="group-title">
                                     <h5>Commentaires ({{App\Models\PublicationReview::where('publication_id',$publication->id)->count()}})</h5>
                                 </div>
                                 @php
-                                    $reviews = App\Models\PublicationReview::where('publication_id',$publication->id)->latest()->paginate(2);
+                                    $reviews = App\Models\PublicationReview::where(['publication_id'=>$publication->id,'status'=>'active'])->latest()->paginate(2);
                                 @endphp
                                 @if (count($reviews)>0)
                                     <div class="comment-box">
@@ -129,7 +99,6 @@
                                                         <label for="star-3" class="star-3">3</label>
                                                         <input type="radio" name="rate" class="star-4" id="star-4" value="4">
                                                         <label for="star-4" class="star-4">4</label>
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,7 +178,7 @@
 							
 							<!-- Tags Widget -->
 							<div class="sidebar-widget popular-tags">
-								<div class="widget-content">
+								{{-- <div class="widget-content">
 									<div class="sidebar-title">
 										<h5>Tags</h5>
 									</div>
@@ -217,7 +186,7 @@
 									<a href="#">Life style</a>
 									<a href="#">Hosting</a>
 									<a href="#">Business</a>
-								</div>
+								</div> --}}
 							</div>
 							
 						</div>

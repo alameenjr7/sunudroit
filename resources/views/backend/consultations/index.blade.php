@@ -27,8 +27,8 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="chat-content-wrap"  data-sidebar-content="chat" > --}}
-            {{-- <div class="d-flex pl-3 pr-3 pt-2 pb-2 o-hidden box-shadow-1 chat-topbar"><a class="link-icon d-md-none" data-sidebar-toggle="chat"><i class="icon-regular i-Right ml-0 mr-3"></i></a>
+        <div class="chat-content-wrap"  data-sidebar-content="chat" >
+            <div class="d-flex pl-3 pr-3 pt-2 pb-2 o-hidden box-shadow-1 chat-topbar"><a class="link-icon d-md-none" data-sidebar-toggle="chat"><i class="icon-regular i-Right ml-0 mr-3"></i></a>
                 <div class="d-flex align-items-center"><img class="avatar-sm rounded-circle mr-2" src="{{asset('backend/assets/dist-assets/images/faces/13.jpg')}}" alt="alt" />
                     <p class="m-0 text-title text-16 flex-grow-1">{{$consultation->full_name}}</p>
                 </div>
@@ -50,9 +50,9 @@
                         <p class="m-0">{{$consultation->response}}</p>
                     </div>
                 </div>
-            </div> --}}
+            </div>
             
-            {{-- <div class="pl-3 pr-3 pt-3 pb-3 box-shadow-1 chat-input-area">
+            <div class="pl-3 pr-3 pt-3 pb-3 box-shadow-1 chat-input-area">
                 <form class="inputForm" action="{{route('consultation.updates',$consultation->id)}}" method="post">
                     @csrf
                     @method('put')
@@ -64,9 +64,9 @@
                         <button type="submit" class="btn btn-icon btn-rounded btn-primary mr-2"><i class="i-Paper-Plane"></i></button>
                     </div>
                 </form>
-            </div> --}}
-        {{-- </div> --}}
-    </div><!-- end of main-content -->
+            </div>
+        </div>
+    </div>
     
 </div>
 

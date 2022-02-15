@@ -8,8 +8,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Open+Sans:wght@300;400;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="shortcut icon" href="{{asset('frontend/assets/images/sunudroit-logo/favicon/android-chrome-512x512.png')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('frontend/assets/images/sunudroit-logo/favicon/android-chrome-512x512.png')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset(get_setting('favicon'))}}" type="image/x-icon">
+<link rel="icon" href="{{asset(get_setting('logo'))}}" type="image/x-icon">
 
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

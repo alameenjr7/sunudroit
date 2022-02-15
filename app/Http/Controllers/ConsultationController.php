@@ -40,4 +40,28 @@ class ConsultationController extends Controller
             return back()->with('error', 'Data not found');
         }
     }
+
+        // consultation
+        public function consultationSubmit(Request $request)
+        {
+            $this->validate($request,[
+                'full_name' => 'string|required',
+                'email' => 'string|required',
+                'sujet' => 'string|required',
+                'message' => 'string|required|max:1000',
+            ]);
+    
+            $data = $request->all();
+    
+            $status = Consultation::create($data);
+    
+            if($status){
+                // Mail::to('babangom673@gmail.com')->send(new Contact($data));
+    
+                return back()->with('success','Consultation envoyer avec succes');
+            }
+            else {
+                return back()->with('error','Quelque chose s\'est mal passé!');
+            }
+        }
 }

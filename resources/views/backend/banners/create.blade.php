@@ -19,7 +19,7 @@
                     <div class="col-md-12">
                         @include('components.errors')
                     </div>
-                    <form action="{{route('banner.store')}}" method="post">
+                    <form action="{{route('banniere.store')}}" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">

@@ -42,16 +42,16 @@
 		<section class="banner-section style-three">
 			<!-- Social Nav -->
 			<ul class="social-nav">
-				<li class="facebook"><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-				<li class="twitter"><a href="#"><span class="fa fa-twitter"></span></a></li>
-				<li class="linkedin"><a href="#"><span class="fa fa-linkedin"></span></a></li>
-				<li class="instagram"><a href="#"><span class="fa fa-instagram"></span></a></li>
-				<li class="youtube"><a href="#"><span class="fa fa-youtube"></span></a></li>
+				<li class="facebook"><a href="{{App\Models\Setting::value('facebook_url')}}"><span class="fa fa-facebook-f"></span></a></li>
+				<li class="twitter"><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li>
+				<li class="linkedin"><a href="{{App\Models\Setting::value('linkedin_url')}}"><span class="fa fa-linkedin"></span></a></li>
+				<li class="instagram"><a href="{{App\Models\Setting::value('instagram_url')}}"><span class="fa fa-instagram"></span></a></li>
+				<li class="youtube"><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li>
 			</ul>
 			<div class="banner-carousel owl-theme owl-carousel owl-dots-none">
 				@foreach ($banners as $banner)
 					<div class="slide-item">
-						<div class="image-layer" style="background-image:url({{$banner->photo}})"></div>
+						<div class="image-layer" style="background-image:url({{asset($banner->photo)}})"></div>
 						<div class="pattern-layer">
 							<div class="pattern-3" style="background-image: url({{asset('frontend/assets/images/shape/pattern-28.png')}});"></div>
 							<div class="pattern-4" style="background-image: url({{asset('frontend/assets/images/shape/pattern-29.png')}});"></div>

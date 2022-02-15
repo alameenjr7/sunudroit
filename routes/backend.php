@@ -18,8 +18,8 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::get('/',[App\Http\Controllers\AdminController::class, 'admin'])->name('admin');
 
     //Banner section
-    Route::resource('/banner',App\Http\Controllers\BannerController::class);
-    Route::post('banner_status',[App\Http\Controllers\BannerController::class, 'bannerStatus'])->name('banner.status');
+    Route::resource('/banniere',App\Http\Controllers\BannerController::class);
+    Route::post('banniere_status',[App\Http\Controllers\BannerController::class, 'bannerStatus'])->name('banner.status');
 
     //Brand Company section
     Route::resource('/categorie',App\Http\Controllers\CategorieController::class);
@@ -51,5 +51,6 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
 
     //Pub Review
     Route::get('commentaires',[App\Http\Controllers\PublicationReviewController::class, 'index'])->name('commentaires.index');
+    Route::post('pub-review-status',[App\Http\Controllers\PublicationReviewController::class, 'pubReviewStatus'])->name('pub.review.status');
 
 });

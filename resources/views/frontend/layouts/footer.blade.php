@@ -5,14 +5,15 @@
     <div class="auto-container">
         <div class="inner-container">
             <div class="image">
-                <img src="{{asset('frontend/assets/images/resource/cta.jpg')}}" alt="" />
+                <img src="{{asset(get_setting('background_footer'))}}" alt="" />
             </div>
             <div class="content">
-                <h2>Parlez avec nos <br> experts aujourd'hui!</h2>
-                <a href="contact.html" class="theme-btn btn-style-two"><span class="txt">Obtenez un devis <i class="arrow flaticon-right"></i></span></a>
+                <h2>Parlez avec nos <br> experts aujourd'hui!</h2>  
+                
+                <a href="tel:+{{get_setting('telephone1')}}" class="theme-btn btn-style-two"><span class="txt">{{-- Obtener un devis --}} <i class="arrow flaticon-right"></i></span></a>
             </div>
             <div class="hammer-image">
-                <img src="{{asset('frontend/assets/images/resource/hammer.png')}}" alt="" />
+                <img src="{{asset(get_setting('image_footer'))}}" alt="" />
             </div>
         </div>
     </div>
@@ -38,16 +39,16 @@
                         <div class="footer-column col-lg-7 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
                                 <div class="logo">
-                                    <a href="{{route('home')}}"><img src="{{asset('frontend/assets/images/sunudroit-logo/Couleur/Logo_Couleur-180X55.png')}}" alt="" style="width: 240px; height: 60px;"/></a>
+                                    <a href="{{route('home')}}"><img src="{{asset(get_setting('favicon'))}}" alt="" style="width: 240px; height: 60px;"/></a>
                                 </div>
-                                <div class="text">Quis autem vel eum iure reprehenderit aui ea voluptate velit esse molestiae consequatur, vel illum qui dolorem.</div>
+                                <div class="text">{{get_setting('footer')}}</div>
                                 <!-- Social Nav -->
                                 <ul class="social-nav">
-                                    <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                                    <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+                                    <li><a href="{{App\Models\Setting::value('facebook_url')}}"><span class="fa fa-facebook-f"></span></a></li>
+                                    <li><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li>
+                                    <li><a href="{{App\Models\Setting::value('linkedin_url')}}"><span class="fa fa-linkedin"></span></a></li>
+                                    <li><a href="{{App\Models\Setting::value('instagram_url')}}"><span class="fa fa-instagram"></span></a></li>
+                                    <li><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,19 +81,19 @@
                                 <ul>
                                     <li>
                                         <span class="icon flaticon-call-1"></span>
-                                        <a href="tel:+221-77-655-14-84">+221 77 655 14 84</a>
+                                        <a href="tel:+{{get_setting('telephone1')}}">+{{get_setting('telephone1')}}</a>
                                     </li>
                                     <li>
                                         <span class="icon flaticon-call-1"></span>
-                                        <a href="tel:+221-33-848-7988">+221 33 848 79 88</a>
+                                        <a href="tel:+{{get_setting('telephone2')}}">+{{get_setting('telephone2')}}</a>
                                     </li>
                                     <li>
                                         <span class="icon flaticon-email-2"></span>
-                                        <a href="mailto:management@sunudroit.tech">management@sunudroit.tech</a>
+                                        <a href="mailto:{{get_setting('email_1')}}">{{get_setting('email_1')}}</a>
                                     </li>
                                     <li>
                                         <span class="icon flaticon-maps-and-flags"></span>
-                                        Cité Keur Gougui, Lot N°R85,<br> Imm. Neptune Optique
+                                        {{get_setting('adresse')}}, {{get_setting('lot')}},<br> {{get_setting('appartement')}}
                                     </li>
                                 </ul>
                             </div>
@@ -102,7 +103,7 @@
                         <div class="footer-column col-lg-6 col-md-6 col-sm-12">
                             <div class="footer-widget newsletter-widget">
                                 <h5>ABONNEZ-VOUS MAINTENANT!</h5>
-                                <div class="text">Quis autem vel eum iure reprehenderit aui ea voluptate.</div>
+                                <div class="text">{{get_setting('text_abonnement')}}</div>
                                 <div class="newsletter-form">
                                     @include('components.errors')
                                     <form method="post" action="{{route('mailing.list.submit')}}">
@@ -124,7 +125,7 @@
     </div>
     <div class="footer-bottom">
         <div class="auto-container">
-            <div class="copyright">Copyright 2022, Sunudroit. Tous droits réservés.</div>
+            <div class="copyright">{{get_setting('meta_description')}}</div>
         </div>
     </div>
 </footer>

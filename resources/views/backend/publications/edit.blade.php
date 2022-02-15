@@ -42,7 +42,11 @@
                                     </span>
                                     <input type="text" id="thumbnail" class="form-control" name="photo" value="{{$publication->photo}}">
                                 </div>
-                                <div id="holder" style="margin-top:15px; max-height: 100px;"></div>
+                                <div id="holder" style="margin-top: 15px;height: 100px;">
+                                    @if ($publication->photo != null)
+                                        <img src="{{asset($publication->photo)}}" alt="logo" style="border: 1px solid #ddd; padding: 4px 8px; max-height: 100px;">
+                                    @endif
+                                </div>
                             </div>
 
                             <div class="col-md-6 form-group mb-3">

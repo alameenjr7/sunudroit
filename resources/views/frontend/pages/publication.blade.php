@@ -3,7 +3,7 @@
 @section('content')
 
 	<!-- Page Title -->
-    <section class="page-title style-two" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
+    <section class="page-title style-two" style="background-image:url({{asset(get_setting('background_header'))}})">
     	<div class="auto-container">
 			<h1>Nos publications</h1>
 			<ul class="page-breadcrumb">
@@ -84,7 +84,7 @@
 
 								<!-- Tags Widget -->
 								<div class="sidebar-widget popular-tags">
-									<div class="widget-content">
+									{{-- <div class="widget-content">
 										<div class="sidebar-title">
 											<h5>Tags</h5>
 										</div>
@@ -92,7 +92,7 @@
 										<a href="#">Life style</a>
 										<a href="#">Hosting</a>
 										<a href="#">Business</a>
-									</div>
+									</div> --}}
 								</div>
 
 							</div>

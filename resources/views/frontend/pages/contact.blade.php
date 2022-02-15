@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Page Title -->
-<section class="page-title" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
+<section class="page-title" style="background-image:url({{asset(get_setting('background_header'))}})">
     <div class="auto-container">
         <h1>Nous contacter</h1>
         <ul class="page-breadcrumb">
@@ -22,8 +22,8 @@
             <div class="map-boxed">
                 <!-- Map Outer -->
                 <div class="map-outer">
-                    {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6331292129!2d144.49266890254142!3d-37.97123689954809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1574408946759!5m2!1sen!2s" allowfullscreen=""></iframe> --}}
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.028235227538!2d-17.469440185846533!3d14.710995378307327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40W%2C%20SCP%20d&#39;Avocats!5e0!3m2!1sen!2sus!4v1643800014744!5m2!1sen!2sus"  allowfullscreen="" ></iframe>
+                    {{-- <iframe src="{{get_setting('map_url')}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30871.422163572603!2d-17.476441308672943!3d14.716675585242383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40w%2C%20Cabinet%20d&#39;Avocats!5e0!3m2!1sfr!2ssn!4v1644925974084!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -72,7 +72,6 @@
 
                 </div>
             </form>
-
             <!--End Contact Form -->
         </div>
     </div>
@@ -93,7 +92,7 @@
                 <div class="inner-box">
                     <div class="icon flaticon-location-pin"></div>
                     <h5>Adresse</h5>
-                    <div class="text"> Cité Keur Gougui, Lot N°R85, <br> Imm. Neptune Optique</div>
+                    <div class="text"> {{get_setting('adresse')}}, {{get_setting('lot')}}, <br> {{get_setting('appartement')}}</div>
                 </div>
             </div>
 
@@ -103,8 +102,8 @@
                     <div class="icon flaticon-smartphone"></div>
                     <h5>Telephone</h5>
                     <ul class="info-list">
-                        <li><a href="tel:+221-77-655-14-84">+221 77 655 14 84</a></li>
-                        <li><a href="tel:+221-33-848-7988">+221 33 848 79 88</a></li>
+                        <li><a href="tel:+{{get_setting('telephone1')}}">+{{App\Models\Setting::value('telephone1')}}</a></li>
+                        <li><a href="tel:+{{get_setting('telephone2')}}">+{{App\Models\Setting::value('telephone2')}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -115,8 +114,8 @@
                     <div class="icon flaticon-email-3"></div>
                     <h5>Email</h5>
                     <ul class="info-list">
-                        <li><a href="mailto:management@sunudroit.tech">management@sunudroit.tech</a></li>
-                        <li><a href="mailto:management@sunudroit.tech">info@sunudroit.com</a></li>
+                        <li><a href="mailto:{{get_setting('email_1')}}">{{App\Models\Setting::value('email_1')}}</a></li>
+                        <li><a href="mailto:{{get_setting('email_2')}}">{{App\Models\Setting::value('email_2')}}</a></li>
                     </ul>
                 </div>
             </div>

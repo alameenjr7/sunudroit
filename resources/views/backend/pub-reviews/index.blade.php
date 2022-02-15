@@ -57,6 +57,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Date</th>
                                     <th scope="col">Rate</th>
+                                    <th scope="col">Status</th>
                                 </tr>
                             </thead>
                             <tbody id="names">
@@ -86,15 +87,28 @@
                                             <div class="d-inline-flex align-items-center calendar align-middle"><i class="i-Calendar-4"></i><span>{{$pubRev->getCreatedAt()}}</span></div>
                                         </td>
                                         <td class="custom-align">
-                                            <div class="rating">
+                                            <div class="">
                                                 @for ($i=0; $i<4; $i++)
-                                                    @if ($pubRev->rate<$i)
+                                                    @if ($pubRev->rate>$i)
                                                         <i class="fa fa-star" aria-hidden="true"></i>
                                                     @else
                                                         <i class="fa fa-star-o" aria-hidden="true"></i>
                                                     @endif
                                                 @endfor
                                             </div>
+                                        </td>
+                                        <td class="custom-align">
+                                            <input 
+                                                type="checkbox" 
+                                                name="toggle-state"
+                                                value="{{$pubRev->id}}"
+                                                data-toggle="toggle"
+                                                {{$pubRev->status=='active' ? 'checked' : ''}}  
+                                                data-onstyle="outline-success" 
+                                                data-offstyle="outline-danger"
+                                                data-on="Activer"
+                                                data-off="Desactiver"
+                                            >
                                         </td>
                                         
                                     </tr>
@@ -115,5 +129,41 @@
     <div class="flex-grow-1"></div>
     
 </div>
+
+@endsection
+
+@section('scripts')
+
+<script>
+    $(function() {
+        $('input[name=toggle-state]').change(function(){
+           const _this = $(this).prop('checked');
+           const id = $(this).val();
+        //    console.log(id);
+            
+            $.ajax({
+                url:"{{route('pub.review.status')}}",
+                type:"POST",
+                data:{
+                    _token:"{{csrf_token()}}",
+                    _this:_this,
+                    id:id,
+                },
+                success:function(response){
+                    if(response.status){
+                        // console.log(response.msg)
+                        toastr.success(response.msg);
+                        // showToastr('success', 'Success!', html)
+                    }
+                    else{
+                        toastr.error('Essai encore');
+                        // showToastr('error', 'Error!', html)
+                    }
+                }
+            });
+            
+        });
+    });
+</script>
 
 @endsection

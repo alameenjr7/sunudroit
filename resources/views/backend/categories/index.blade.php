@@ -50,11 +50,17 @@
                                             {{App\Models\Categorie::where('id',$item->parent_id)->value('title')}}
                                         </td>
                                         <td>
-                                            @if ($item->status=='active')
-                                            <span class="badge badge-success">Active</span>
-                                            @else
-                                            <span class="badge badge-danger">Inactive</span>
-                                            @endif
+                                            <input 
+                                                type="checkbox" 
+                                                name="toggle-state"
+                                                value="{{$item->id}}"
+                                                data-toggle="toggle"
+                                                {{$item->status=='active' ? 'checked' : ''}}  
+                                                data-onstyle="outline-success" 
+                                                data-offstyle="outline-danger"
+                                                data-on="Activer"
+                                                data-off="Desactiver"
+                                            >
                                         </td>
                                         <td>
                                             <a class="btn btn-success float-left" href="{{route('categorie.edit',$item->id)}}"
@@ -145,6 +151,38 @@
         if (dismiss === 'cancel') {
             swal('Cancelled', 'Your imaginary file is safe :)', 'error');
         }
+        });
+    });
+</script>
+
+<script>
+    $(function() {
+        $('input[name=toggle-state]').change(function(){
+           const _this = $(this).prop('checked');
+           const id = $(this).val();
+        //    console.log(id);
+            
+            $.ajax({
+                url:"{{route('categorie.status')}}",
+                type:"POST",
+                data:{
+                    _token:"{{csrf_token()}}",
+                    _this:_this,
+                    id:id,
+                },
+                success:function(response){
+                    if(response.status){
+                        // console.log(response.msg)
+                        toastr.success(response.msg);
+                        // showToastr('success', 'Success!', html)
+                    }
+                    else{
+                        toastr.error('Essai encore');
+                        // showToastr('error', 'Error!', html)
+                    }
+                }
+            });
+            
         });
     });
 </script>

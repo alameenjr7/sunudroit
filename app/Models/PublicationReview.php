@@ -9,7 +9,7 @@ class PublicationReview extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rate', 'full_name', 'publication_id', 'email', 'review'];
+    protected $fillable = ['rate', 'full_name', 'publication_id', 'email', 'review','status'];
 
     public function getCreatedAt()
     {

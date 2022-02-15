@@ -21,13 +21,17 @@ class CategorieController extends Controller
     }
 
     public function categorieStatus(Request $request){
-        if($request->mode=='true'){
+        if($request->_this=='true'){
             DB::table('categories')->where('id', $request->id)->update(['status'=>'active']);
+
+            return response()->json(['msg'=> 'Categorie active avec succes', 'status'=>true]);
+
         }
         else{
             DB::table('categories')->where('id', $request->id)->update(['status'=>'inactive']);
+            
+            return response()->json(['msg'=> 'Categorie desactive avec succes', 'status'=>true]);
         }
-        return response()->json(['msg'=> 'Successfully updated status', 'status'=>true]);
     }
 
     /**

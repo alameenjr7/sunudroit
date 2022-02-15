@@ -28,9 +28,9 @@ class Publication extends Model
         return $this->hasMany('App\Models\Publication','cat_id','cat_id')->where('status','active')->limit(5);
     }
 
-    // public function reviews()
-    // {
-    //     return $this->hasMany(PublicationReview::class);
-    // }
+    public function reviews()
+    {
+        return $this->hasMany(PublicationReview::class);
+    }
 
 }

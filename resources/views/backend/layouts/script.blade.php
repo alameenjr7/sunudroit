@@ -17,6 +17,7 @@
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script src="{{asset('backend/assets/dist-assets/js/scripts/sidebar.script.min.js')}}"></script>
+    
    
 
     @if (session()->has('success'))

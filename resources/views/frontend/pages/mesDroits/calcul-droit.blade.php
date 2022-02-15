@@ -15,9 +15,8 @@
                             <h3>{{session('message')}}</h3>
                             <p style="font-size: 14px; font-family:'Times New Roman', Times, serif; font-wight: bold">
                                 <h4>
-                                    Notes: Les résultats affichés ne sont qu'indicatifs et peuvent dans le cas où ils seraient soumis à l’administration ou à un juge, être déclarés comme mal ou non fondés fondés sans que cela ne puisse en quoi que ce soit engager la responsabilité  de Sunudroit.Tech <br>
-                                    Le droit à votre portée. <br>
-                                    {{-- Le slogan : Le droit à votre portée --}}
+                                    Notes: {{get_setting('meta_keywords')}}<br>
+                                    {{get_setting('title')}} <br>
                                 </h4>
                             </p>
                         </div>
@@ -45,7 +44,6 @@
 
                     <div class=" col-md-12 col-sm-12 form-group">
                         <label for="typesDroit">Choisir le type de calcul</label>
-                        {{-- <input type="checkbox" id="papa" name="papa" value="1" checked> --}}
                         <select required id="types-droit" name="types-droit"  class="form-control" style="position: relative;
                             width: 100%;
                             line-height: 28px;
@@ -57,7 +55,7 @@
                             font-weight: 400;
                             border-radius: 2px;"
                         >
-                            <option value="" selected>--Choisir--</option>
+                            <option value="" selected>-- Choisir --</option>
                             <option value="C_M_I_C_P" >Calculer Mon Indemnité compensatrice de préavis (Article 75 de la CCNI)</option>
                             <option value="C_M_I_L" >Calculer Mon Indemnité de licenciement (Article 80 de la CCNI)</option>
                             <option value="C_M_I_D_R" >Calculer Mon Indemnité départ à la retraite (Article 84 de la CCNI)</option>

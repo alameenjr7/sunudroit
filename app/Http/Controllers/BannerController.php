@@ -22,13 +22,16 @@ class BannerController extends Controller
     }
 
     public function bannerStatus(Request $request){
-        if($request->mode=='true'){
+        if($request->_this =='true'){
             DB::table('banners')->where('id', $request->id)->update(['status'=>'active']);
+
+            return response()->json(['msg'=> 'Banniere activer avec succes', 'status'=>true]);
         }
         else{
             DB::table('banners')->where('id', $request->id)->update(['status'=>'inactive']);
+
+            return response()->json(['msg'=> 'Banniere desactiver avec succes', 'status'=>true]);
         }
-        return response()->json(['msg'=> 'Successfully updated status', 'status'=>true]);
     }
 
     /**
@@ -67,7 +70,7 @@ class BannerController extends Controller
 
         $status=Banner::create($data);
         if($status){
-            return redirect()->route('banner.index')->with('success', 'Successfully created banner');
+            return redirect()->route('banniere.index')->with('success', 'Successfully created banner');
         } else {
             return back()->while('error', 'Something went wrong!');
         }
@@ -123,7 +126,7 @@ class BannerController extends Controller
 
             $status=$banner->fill($data)->save();
             if($status){
-                return redirect()->route('banner.index')->with('success', 'Successfully updated banner');
+                return redirect()->route('banniere.index')->with('success', 'Successfully updated banner');
             } else {
                 return back()->while('error', 'Something went wrong!');
             }
@@ -145,7 +148,7 @@ class BannerController extends Controller
         if($banner){
             $status = $banner->delete();
             if($status){
-                return redirect()->route('banner.index')->with('success', 'Banner successfully deleted');
+                return redirect()->route('banniere.index')->with('success', 'Banner successfully deleted');
             }
             else {
                 return back()->with('error', 'Something went wrong');

@@ -3,7 +3,7 @@
 @section('content')
 
 	<!-- Page Title -->
-    <section class="page-title style-two" style="background-image:url({{asset('frontend/assets/images/background/1.jpg')}})">
+    <section class="page-title style-two" style="background-image:url({{asset(get_setting('background_header'))}})">
     	<div class="auto-container">
 			{{-- <h1>Nos publications</h1> --}}
 			<ul class="page-breadcrumb">

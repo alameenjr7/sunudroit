@@ -11,4 +11,4 @@
     <link rel="stylesheet" href="{{asset('backend/assets/dist-assets/css/plugins/toastr.css')}}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('backend/assets/dist-assets/css/themes/rate.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/font-awesome.css')}}">

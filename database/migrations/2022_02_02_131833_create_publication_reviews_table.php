@@ -20,6 +20,7 @@ class CreatePublicationReviewsTable extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->text('review');
+            $table->enum('status',['active','inactive'])->default('active');
 
             $table->foreign('publication_id')->references('id')->on('publications')->onDelete('CASCADE');
             $table->timestamps();
