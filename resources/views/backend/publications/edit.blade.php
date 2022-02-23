@@ -36,7 +36,7 @@
                                 <label for="exampleInputEmail1">Photo</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                        <a href="" id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                        <a style="color: #ddd" href="" id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
                                             <i class="fa fa-picture-o"></i>Choisir une image
                                         </a>
                                     </span>
@@ -69,7 +69,7 @@
                                 <label for="cat_id">Select</label>
                                 <select id="cat_id" name="cat_id" class="form-control">
                                     <option value="">-- Categories --</option>
-                                    @foreach (\App\Models\Categorie::where('is_parent',1)->get() as $cat)
+                                    @foreach (\App\Models\Categorie::where(['is_parent'=>1,'status'=>'active'])->get() as $cat)
                                         <option value="{{$cat->id}}" {{$cat->id==$publication->cat_id ? 'selected' : ''}}>{{ucfirst($cat->title)}}</option>
                                     @endforeach
                                 </select>

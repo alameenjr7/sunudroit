@@ -53,4 +53,8 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     Route::get('commentaires',[App\Http\Controllers\PublicationReviewController::class, 'index'])->name('commentaires.index');
     Route::post('pub-review-status',[App\Http\Controllers\PublicationReviewController::class, 'pubReviewStatus'])->name('pub.review.status');
 
+
+    //Contrat
+    Route::resource('contrats',App\Http\Controllers\ContratController::class);
+    Route::post('contrat_status',[App\Http\Controllers\ContratController::class, 'contratStatus'])->name('contrats.status');
 });

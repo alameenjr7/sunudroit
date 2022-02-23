@@ -27,7 +27,9 @@ Route::get('mes-droits', [App\Http\Controllers\Frontend\MesDroitsController::cla
 Route::post('calcul-submit', [App\Http\Controllers\Frontend\MesDroitsController::class, 'index'])->name('calcul.submit');
 
 //Telecharger pdf
-Route::get('telecharger-pdf', [App\Http\Controllers\Frontend\MesDroitsController::class, 'document'])->name('document.pdf');
+Route::get('documents', [App\Http\Controllers\Frontend\DownloadPDFViewController::class, 'index'])->name('document.pdf');
+Route::get('voir-pdf/{slug}/', [App\Http\Controllers\Frontend\DownloadPDFViewController::class, 'showPDF'])->name('voir.pdf');
+Route::get('telecharger-pdf/{id}', [App\Http\Controllers\Frontend\DownloadPDFViewController::class, 'downloadPDF'])->name('download.pdf');
 
 
 //Publication detail

@@ -588,9 +588,4 @@ class MesDroitsController extends Controller
     {
         return view('frontend.pages.mesDroits.calcul-droit');
     }
-
-    public function document()
-    {
-        return view('frontend.pages.mesDroits.document');
-    }
 }

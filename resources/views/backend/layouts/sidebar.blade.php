@@ -57,8 +57,8 @@
                 </a>
                 <div class="triangle"></div>
             </li>
-            <li class="nav-item">
-                <a class="nav-item-hold" href="http://demos.ui-lib.com/gull-html-doc/" target="_blank">
+            <li class="nav-item" >
+                <a class="nav-item-hold" href="{{route('contrats.index')}}">
                     <i class="nav-icon i-Safe-Box1"></i>
                     <span class="nav-text">Doc</span>
                 </a>
@@ -69,8 +69,8 @@
     <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
         <i class="sidebar-close i-Close" (click)="toggelSidebar()"></i>
         <header>
-            <div class="logo">
-                <img src="{{asset(get_setting('logo'))}}" alt="">
+            <div class="logo" >
+                <img src="{{asset(get_setting('logo'))}}" alt="" style="height: 70px; width: 130px;">
             </div>
         </header>
         <!-- Submenu Dashboards -->

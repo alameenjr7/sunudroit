@@ -3,6 +3,13 @@
 
 <head>
     @include('backend.layouts.head')
+    <style>
+        /* .no-overflow{
+            white-space: no-wrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        } */
+    </style>
 </head>
 
 <body class="text-left">

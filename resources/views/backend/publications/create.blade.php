@@ -63,7 +63,7 @@
                                 <label for="cat_id">Select</label>
                                 <select id="cat_id" name="cat_id" class="form-control">
                                     <option value="">-- Categories --</option>
-                                    @foreach (\App\Models\Categorie::where('is_parent',1)->get() as $cat)
+                                    @foreach (\App\Models\Categorie::where(['is_parent'=>1,'status'=>'active'])->get() as $cat)
                                         <option value="{{$cat->id}}">{{ucfirst($cat->title)}}</option>
                                     @endforeach
                                 </select>

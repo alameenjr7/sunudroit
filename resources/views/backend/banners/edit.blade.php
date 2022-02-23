@@ -46,7 +46,7 @@
                                 <label for="website2">Photo</label>
                                 <div class="input-group">
                                     <span class="input-group-btn">
-                                      <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+                                      <a style="color: #ddd" id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
                                         <i class="fa fa-picture-o"></i> Choisir
                                       </a>
                                     </span>

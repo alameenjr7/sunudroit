@@ -127,9 +127,11 @@ class IndexController extends Controller
         ->orderBy('id','DESC')
         ->limit(3)
         ->get();
+        $categories = Categorie::where(['status'=>'active','is_parent'=>1])->with('publications')->orderBy('title','ASC')->get();
+
 
         if($publication) {
-            return view('frontend.pages.publication-detail',compact(['publication','lastPublication']));
+            return view('frontend.pages.publication-detail',compact(['publication','lastPublication','categories']));
         }
         else {
             return view('errors.404');

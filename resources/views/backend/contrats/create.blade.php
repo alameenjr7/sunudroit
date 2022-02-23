@@ -6,8 +6,8 @@
     <div class="breadcrumb">
         <h1><a href="{{route('admin')}}">Tableau de bord</a></h1>
         <ul>
-            <li>Banniere</li>
-            <li>Creation d'une Banniere</li>
+            <li>Contrat</li>
+            <li>Creation d'une Contrat</li>
         </ul>
     </div>
     <div class="separator-breadcrumb border-top"></div>
@@ -19,45 +19,38 @@
                     <div class="col-md-12">
                         @include('components.errors')
                     </div>
-                    <form action="{{route('banniere.store')}}" method="post">
+                    <form action="{{route('contrats.store')}}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6 form-group mb-3">
+                            <div class="col-md-12 form-group mb-3">
                                 <label for="firstName2">Title</label>
                                 <input class="form-control form-control-rounded" id="firstName2" type="text" name="title" value="{{old('title')}}" required placeholder="Enter your title" />
                             </div>
                             <div class="col-md-6 form-group mb-3">
-                                <label for="lastName2">Sous Titre</label>
-                                <input class="form-control form-control-rounded" id="lastName2" type="text" name="subtitle" value="{{old('subtitle')}}" required placeholder="Enter your subtitle" />
-                            </div>
-                            {{-- <div class="col-md-6 form-group mb-3">
-                                <label for="exampleInputEmail2">URL</label>
-                                <input class="form-control form-control-rounded" id="exampleInputEmail2" type="text" name="slug" value="{{old('slug')}}" placeholder="SLUG" />
-                            </div> --}}
-                            <div class="col-md-12 form-group mb-3">
                                 <label for="picker1">Status</label>
                                 <select name="status" class="form-control form-control-rounded">
-                                    <option value="active" {{old('status')=='active' ? 'selected' : ''}}>Active</option>
-                                    <option value="inactive" {{old('status')=='inactive' ? 'selected' : ''}}>Desactiver</option>
+                                    <option value="activer" {{old('status')=='activer' ? 'selected' : ''}}>Active</option>
+                                    <option value="desactiver" {{old('status')=='desactiver' ? 'selected' : ''}}>Desactiver</option>
                                 </select>
                             </div>
-                            <div class="col-md-12 form-group mb-3">
-                                <label for="website2">Photo</label>
-                                <div class="input-group">
-                                    <span class="input-group-btn">
-                                      <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary" style="color: #ddd">
-                                        <i class="fa fa-picture-o"></i> Choisir
-                                      </a>
-                                    </span>
-                                    <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
-                                </div>
-                                <div id="holder" style="margin-top:15px;max-height:100px;"></div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="picker1">Condition</label>
+                                <select name="conditions" id="CONDITIONS" class="form-control form-control-rounded">
+                                    <option value="gratuit" {{old('conditions')=='gratuit' ? 'selected' : ''}}>Gratuit</option>
+                                    <option value="payant" {{old('conditions')=='payant' ? 'selected' : ''}}>Payant</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 form-group mb-3 d-none" id="PRIX">
+                                <label for="prix">Prix</label>
+                                <input class="form-control form-control-rounded" id="prix" type="number" name="prix" value="{{old('prix')}}" placeholder="Ex: 1000" />
                             </div>
                             
                             <div class="col-md-12 form-group mb-3">
-                                <label for="website2">Description</label>
-                                <textarea class="form-control form-control-rounded" id="contenu" placeholder="Web address" name="description" placeholder="Description ...">{{old('description')}}</textarea>
+                                <label for="website2">Contenu</label>
+                                <textarea class="form-control form-control-rounded" id="contenu" name="contenu" placeholder="Contenu ...">{{old('contenu')}}</textarea>
                             </div>
+
                             <div class="col-md-12">
                                 <button type="submit" class="create btn btn-primary">Submit</button>
                             </div>
@@ -98,5 +91,32 @@
             }
          });
     });
+
+    $(document).ready(function(){
+        $("#CONDITIONS").change(function(){
+            // e.preventDefault();
+            var responseID = $(this).val();
+            console.log(responseID);
+
+            if(responseID == "payant")
+            {
+                $('#PRIX').removeClass('d-none');
+                $('#PRIX').val('');
+                document.getElementById('prix').required = true;
+            }
+            else
+            {
+                $('#PRIX').addClass('d-none');
+                document.getElementById('prix').required = false;
+            }
+        });
+    });
+
+    function htmlDecode(value){
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
  </script>
 @endsection

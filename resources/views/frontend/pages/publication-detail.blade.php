@@ -149,19 +149,13 @@
 							</div>
 							
 							<!--Blog Category Widget-->
-							<div class="sidebar-widget sidebar-blog-category">
-								<div class="widget-content">
-									<div class="sidebar-title">
-										<h5>Categories</h5>
-									</div>
-									<ul class="cat-list-two">
-										<li><a href="#">Consulting <span>(25)</span></a></li>
-										<li><a href="#">Life Style<span>(80)</span></a></li>
-										<li><a href="#">Technology<span>(95)</span></a></li>
-									</ul>
-								</div>
-							</div>
+                            
+                                @include('frontend.layouts._categorieFilter')
+                            
+                            <!--End Blog Category Widget-->
 							
+                            <div class="sidebar-page-container"></div>
+                            
 							<!-- Popular Post Widget -->
 							<div class="sidebar-widget popular-posts">
 								{{-- @if (count($lastPublication)>0)	 --}}
