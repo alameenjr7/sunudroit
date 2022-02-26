@@ -12,15 +12,15 @@
         <div class="row">
                 <div class="col-md-12 m-auto">
                     @if (session('message'))
-                        <div class="alert alert-success text-center">
-                            <h3>{{session('message')}}</h3>
-                            <p style="font-size: 14px; font-family:'Times New Roman', Times, serif; font-wight: bold">
-                                <h4>
-                                    Notes: {{get_setting('meta_keywords')}}<br>
-                                    {{get_setting('title')}} <br>
-                                </h4>
-                            </p>
-                        </div>
+                    <div class="alert alert-success text-center" role="alert">
+                        {!! nl2br(session('message'),true) !!} <br>
+                        <p style="font-size: 14px; font-family:'Times New Roman', Times, serif; font-wight: bold">
+                            <h4>
+                                Notes: {{get_setting('meta_keywords')}}<br>
+                                {{get_setting('title')}} <br>
+                            </h4>
+                        </p>
+                      </div>
                     @endif
                 </div>
             </div>
@@ -34,13 +34,13 @@
                 <div class="row clearfix">
 
                     <div class=" col-md-6 col-sm-12 form-group">
-                        <label for="full_name">Votre nom complet</label>
-                        <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Baba NGOM" required>
+                        <label for="full_name">Votre prenom</label>
+                        <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Ex: Baba Al Ameen JR" required>
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group">
-                        <label for="email">Votre adresse e-mail</label>
-                        <input class="form-control" type="email" name="email" id="email"  placeholder="sunudroit@gmail.com">
+                        <label for="email">Votre nom</label>
+                        <input class="form-control" type="text" name="last_name" id="last_name"  placeholder="Ex: NGOM">
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group">

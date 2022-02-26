@@ -13,6 +13,7 @@ class MesDroitsController extends Controller
     public function index(Request $request)
     {
         $full_name = $request->input('full_name');
+        $last_name = $request->input('last_name');
         $typeDroit = $request->input('types-droit');
         $types = $request->input('types');
         $presences = $request->input('presence');
@@ -66,24 +67,28 @@ class MesDroitsController extends Controller
         //END NOMBRE DE JOUR / 365
 
         //NOMBRE DE MOIS / 12
-        $tab_debut = explode ('-', $dateD);
-        $tab_fin = explode ('-', $dateF);
-        $mois_debut = $tab_debut['1']; // (0 annee, 1 mois, 2 jour)
-        $mois_fin = $tab_fin['1'];
-        $annee_debut = $tab_debut['0'];
-        $anne_fin = $tab_fin['0'];
-        $moisEntre = ($anne_fin - $annee_debut)*12 + ($mois_fin - $mois_debut);
-        $nbrMois_Par12 = ($moisEntre/12);
+        if($dateD !=null && $dateF != null)
+        {
+            $tab_debut = explode ('-', $dateD);
+            $tab_fin = explode ('-', $dateF);
+            $mois_debut = $tab_debut['1']; // (0 annee, 1 mois, 2 jour)
+            $mois_fin = $tab_fin['1'];
+            $annee_debut = $tab_debut['0'];
+            $anne_fin = $tab_fin['0'];
+            $moisEntre = ($anne_fin - $annee_debut)*12 + ($mois_fin - $mois_debut);
+            $nbrMois_Par12 = number_format($moisEntre/12,2);
+        }
+        $nbrMois_Par12;
         //END NOMBRE DE MOIS / 12
 
         $date = $dateD;
         $date1 = $dateF;
         $dateDiff = Carbon::parse($date)->floatDiffInRealYears($date1);
-        $dateDiff_f = (float) number_format($dateDiff);
+        $dateDiff_f = number_format($dateDiff);
         $yearAfter10 = $dateDiff_f - 10;
         $yearAfter20 = $dateDiff_f - 20;
         $heureSUP_supp8 = $heure_supp - 8;
-        $demiSalaire = (float) number_format(($salaire/2),2);
+        $demiSalaire = number_format(($salaire/2),2);
 
         
 
@@ -95,17 +100,17 @@ class MesDroitsController extends Controller
         {
             // Je suis ouvrier ou employé
             if( $types == 'J_S_O_E'){
-                $result = (float) number_format($salaire * 1);
+                $result = number_format($salaire * 1);
             }
             // Je suis agent de maitrise ou assimilé
             elseif($types == 'J_S_A_M_A')
             {
-                $result = (float) number_format($salaire * 2);
+                $result = number_format($salaire * 2);
             }
             // Je suis cadre ou assimilé
             else
             {
-                $result = (float) number_format($salaire * 3);
+                $result = number_format($salaire * 3);
             }
         }
 
@@ -114,7 +119,9 @@ class MesDroitsController extends Controller
         {
             if($dateDiff_f < 1)
             {
-                return redirect()->back()->with('message','L’indemnité de licenciement n’est pas due');
+                return redirect()
+                    ->back()
+                    ->with('message','L’indemnité de licenciement n’est pas due');
             }
             else
             {
@@ -125,7 +132,11 @@ class MesDroitsController extends Controller
                     $result = number_format($result0 + $result1 + $result2,2);
                     // dd($result);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de licenciement est: '.$result.' FCFA.');
+                    return redirect()
+                        ->back()
+                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            Votre indemnite de licenciement est: '.$result.' FCFA.'
+                        );
                 }
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                     $result0 = ($salaire * 25)/100 * 5;
@@ -134,7 +145,11 @@ class MesDroitsController extends Controller
                     $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
                     $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de licenciement est: '.$result.' FCFA.');
+                    return redirect()
+                        ->back()
+                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnite de licenciement est: '.$result.' FCFA.'
+                            );
                 }
                 else{
                     $yearAfter10 = $dateDiff_f - 10;
@@ -145,7 +160,11 @@ class MesDroitsController extends Controller
                     $result4 = ($salaire * 40)/100 * $NbrJrRestant_par365;
                     $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de licenciement est: '.$result.' FCFA.');
+                    return redirect()
+                        ->back()
+                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                            Votre indemnite de licenciement est: '.$result.' FCFA.'
+                        );
                 }
 
             }
@@ -162,7 +181,11 @@ class MesDroitsController extends Controller
                 $result2 = ($salaire * 25)/100 * $NbrJours_par365;
                 $result = number_format($result0 + $result1 + $result2,2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de départ à la retraite est: '.$result.' FCFA.');
+                return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    Votre indemnité de départ à la retraite est: '.$result.' FCFA.'
+                );
             }
             elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                 $result0 = ($salaire * 25)/100 * 5;
@@ -171,7 +194,11 @@ class MesDroitsController extends Controller
                 $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
                 $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
+                    );
             }
             elseif($dateDiff_f > 10 && $dateDiff_f <= 20){
                 $result0 = ($salaire * 25)/100 * 5;
@@ -181,7 +208,11 @@ class MesDroitsController extends Controller
                 $result4 = ($salaire * 45)/100 * $NbrJrRestant_par365;
                 $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
+                    );
             }
             //  plus de 20ans
             else{
@@ -193,7 +224,11 @@ class MesDroitsController extends Controller
                 $result5 = ($salaire * 50)/100 * $NbrJrRestant_par365;
                 $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4 + $result5),2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de départ à la retraite est: '.$result.' FCFA.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
+                    );
             }
         }
 
@@ -202,7 +237,9 @@ class MesDroitsController extends Controller
         {
             if($dateDiff_f < 1)
             {
-                return redirect()->back()->with('message','L’indemnité de décès n’est pas due');
+                return redirect()
+                    ->back()
+                    ->with('message','L’indemnité de décès n’est pas due');
             }
             elseif($dateDiff_f > 1)
             {
@@ -212,7 +249,11 @@ class MesDroitsController extends Controller
                     $result2 = ($salaire * 25)/100 * $NbrJours_par365;
                     $result = number_format(($result0 + $result1 + $result2),2);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de décès est: '.$result.' FCFA.');
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnite de décès est: '.$result.' FCFA.'
+                    );
                 }
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                     $result0 = ($salaire * 25)/100 * 5;
@@ -221,7 +262,11 @@ class MesDroitsController extends Controller
                     $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
                     $result = number_format(($result0 + $result1 + $result2 + $result3),2);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de décès est: '.$result.' FCFA.');
+                    return redirect()
+                        ->back()
+                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            Votre indemnite de décès est: '.$result.' FCFA.'
+                        );
                 }
                 else{
                     $yearAfter10 = $dateDiff_f - 10;
@@ -232,7 +277,11 @@ class MesDroitsController extends Controller
                     $result4 = ($salaire * 40)/100 * $NbrJrRestant_par365;
                     $result = number_format(($result0 + $result1 + $result2 + $result3 + $result4),2);
 
-                    return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnite de décès est: '.$result.' FCFA.');
+                    return redirect()
+                        ->back()
+                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            Votre indemnite de décès est: '.$result.' FCFA.'
+                        );
                 }
 
             }
@@ -245,19 +294,31 @@ class MesDroitsController extends Controller
             {
                 $result = number_format($salaire,2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de maladie du travail est: '.$result.' FCFA. pendant 1 mois et '.$demiSalaire.' pendant 3 mois.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 1 mois et '.$demiSalaire.' FCFA pendant 3 mois.'
+                    );
             }
             elseif($presences == '1_5_A_P')
             {
                 $result = number_format($salaire,2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de maladie du travail est: '.$result.' FCFA. pendant 1 mois et '.$demiSalaire.' pendant 4 mois.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 1 mois et '.$demiSalaire.' FCFA pendant 4 mois.'
+                    );
             }
             else
             {
                 $result = number_format($salaire,2);
 
-                return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de maladie du travail est: '.$result.' FCFA. pendant 2 mois et '.$demiSalaire.' pendant 5 mois.');
+                return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 2 mois et '.$demiSalaire.' FCFA pendant 5 mois.'
+                    );
             }
         }
 
@@ -266,7 +327,11 @@ class MesDroitsController extends Controller
         {
             $result = number_format(($cumuleS / 12),2);
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre allocation de congé est: '.$result.' FCFA.');
+            return redirect()
+            ->back()
+            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                Votre allocation de congé est: '.$result.' FCFA.'
+            );
         }
 
         // Indemnités de licenciement pour motif économique 
@@ -280,6 +345,15 @@ class MesDroitsController extends Controller
                     $result0 = $cumuleS * 1;
                     $result1 = $cumuleS * 1;
                     $result = number_format($result0 + $result1,2);
+                    return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result0,2).' FCFA,
+                                Votre indemnité de licenciement n\'est pas due,
+                                Votre indemnité spéciale est: '.number_format($result1,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
                 }
                 else
                 {
@@ -291,6 +365,15 @@ class MesDroitsController extends Controller
                         $result5 = $salaire * 1;
                         $result6 = $salaire * 1;
                         $result = number_format($result4 + $result5 + $result6,2);
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
 
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
@@ -302,6 +385,16 @@ class MesDroitsController extends Controller
                         $result6 = $salaire * 1;
                         $result7 = $result0 + $result1 + $result2 + $result3;
                         $result = number_format($result5 + $result6 + $result7,2);
+
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
 
                     }
                     else{
@@ -315,6 +408,15 @@ class MesDroitsController extends Controller
                         $result7 = $salaire * 1;
                         $result = number_format($result5 + $result6 + $result7,2);
 
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
                     }
 
                 }
@@ -340,6 +442,16 @@ class MesDroitsController extends Controller
                         $result6 = $salaire * 1;
                         $result = number_format($result4 + $result5 + $result6,2);
 
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
+
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 25)/100 * 5;
@@ -350,6 +462,16 @@ class MesDroitsController extends Controller
                         $result6 = $salaire * 1;
                         $result7 = $result0 + $result1 + $result2 + $result3;
                         $result = number_format($result5 + $result6 + $result7,2);
+
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
 
                     }
                     else{
@@ -362,6 +484,16 @@ class MesDroitsController extends Controller
                         $result6 = $salaire * 2;
                         $result7 = $salaire * 1;
                         $result = number_format($result5 + $result6 + $result7,2);
+
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
 
                     }
 
@@ -387,6 +519,15 @@ class MesDroitsController extends Controller
                         $result6 = $salaire * 1;
                         $result = number_format($result4 + $result5 + $result6,2);
 
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 25)/100 * 5;
@@ -398,6 +539,15 @@ class MesDroitsController extends Controller
                         $result7 = $result0 + $result1 + $result2 + $result3;
                         $result = number_format($result5 + $result6 + $result7,2);
 
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
                     }
                     else{
                         $result0 = ($salaire * 25)/100 * 5;
@@ -410,12 +560,22 @@ class MesDroitsController extends Controller
                         $result7 = $salaire * 1;
                         $result = number_format($result5 + $result6 + $result7,2);
 
+                        return redirect()
+                        ->back()
+                        ->with('message',
+                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
+                                Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
+                                Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
+                                Votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.'
+                            );
+
                     }
 
                 }
             }
 
-            return redirect()->back()->with('message','Bonjour '.$full_name.', votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.');
+            // return redirect()->back()->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.');
         }
 
         // Période d’essai (Article 23 de la CCNI)
@@ -437,7 +597,11 @@ class MesDroitsController extends Controller
             {
                 $result = "Votre periode d'essai est de 3 mois";
             }
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', '.$result);
+            return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    '.$result
+                );
         }
 
         // Délai d’information du travailleur pour le renouvellement de la période d’essai (Article 23 de la CCNI)
@@ -459,7 +623,11 @@ class MesDroitsController extends Controller
             {
                 $result = "La délai d’information pour le renouvellement est de 15 jours au moins avant la fin de la période d'essai";
             }
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', '.$result);
+            return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        '.$result
+                    );
         }
 
         // Nombre de jours d’absence pour les événements familiaux
@@ -501,7 +669,11 @@ class MesDroitsController extends Controller
             {
                 $result = "Le nombre de jours d'absence legalement autorise est de 2 jours";
             }
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', '.$result);
+            return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            '.$result
+                    );
         }
 
         // Durée maximale de l’intérim dans un emploi relevant d’une catégorie supérieure (Article 35 de la CCNI)
@@ -520,7 +692,11 @@ class MesDroitsController extends Controller
                 $result = "La durée maximale de l’intérim est de 3 mois!";
             }
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', '.$result.' Passer ce délai, l\'employer doit d\'office vous reclasser dans le nouvel emploi occupé.');
+            return redirect()
+            ->back()
+            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, '.$result.'.
+                    Passer ce délai, l\'employer doit d\'office vous reclasser dans le nouvel emploi occupé.'
+                );
 
         }
 
@@ -536,7 +712,11 @@ class MesDroitsController extends Controller
                 $result = $salaire_cat_tp - $salaire_cat_in;
             }
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', Votre Indemnité d\'interim est de '.$result.' FCFA.');
+            return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre Indemnité d\'interim est de '.$result.' FCFA.'
+                    );
         }
 
         // Majoration des heures supplémentaires
@@ -547,30 +727,34 @@ class MesDroitsController extends Controller
                 if($heure_supp <= 8)
                 {
                     $result0 = ($heure_supp * ($salaire_hor * 15/100));
-                    $result = (float) number_format($result0,2);
+                    $result = number_format($result0,2);
                 }
                 else
                 {
                     $result0 = ((8 * ($salaire_hor * 15/100)) + $heureSUP_supp8 * ($salaire_hor * 40/100));
-                    $result = (float) number_format($result0,2);
+                    $result = number_format($result0,2);
                 }
             }
             elseif($majoration =='H_S_E_J_PJRHPF')
             {
                 $result0 = $heure_supp * $salaire_hor;
-                $result = (float) number_format($result0,2);
+                $result = number_format($result0,2);
             }
             elseif($majoration == 'H_S_E_N_PJRHPF')
             {
                 $result0 = $heure_supp * ($salaire_hor * 60/100);
-                $result = (float) number_format($result0,2);
+                $result = number_format($result0,2);
             }
             else{
                 $result0 = $heure_supp * ($salaire_hor * 60/100);
-                $result = (float) number_format($result0,2);
+                $result = number_format($result0,2);
             }
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', Majoration des heures supplémentaires est egale: '.$result.' FCFA.');
+            return redirect()
+                    ->back()
+                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            Votre majoration des heures supplémentaires est egale: '.$result.' FCFA.'
+                        );
         }
 
         // Prime de panier (Article 53 de la CCNI)
@@ -579,33 +763,45 @@ class MesDroitsController extends Controller
             if($prime_panier == 'J_E_M_6_HTN' || $prime_panier == 'J_E_10_H_I' || $prime_panier == 'J_E_3_H_P_H_N')
             {
                 $result0 = 333.808 * 3 ;
-                $result = (float) number_format($result0,2);
+                $result = number_format($result0,2);
             }
             else
             {
                 $result0 = 0 ;
-                $result = (float) number_format($result0,2);
+                $result = number_format($result0,2);
             }
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', Votre Prime de panier est egale a: '.$result.' FCFA.');
+            return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre Prime de panier est egale a: '.$result.' FCFA.'
+                    );
         }
 
         // Indemnité de fin de contrat à durée déterminée
         elseif($typeDroit == 'C_M_I_F_C_D_D')
         {
             $result0 = ($renumeration_due * 7) / 100;
-            $result = (float) number_format($result0,2);
+            $result =  number_format($result0,2);
 
-            return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité de fin de contrat à durée déterminée est: '.$result.' FCFA.');
+            return redirect()
+                ->back()
+                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre indemnité de fin de contrat à durée déterminée est: '.$result.' FCFA.'
+                    );
         }
 
         else
         {
             $result0 = 0 ;
-            $result = (float) number_format($result0,2);
+            $result =  number_format($result0,2);
         }
 
-        return redirect()->back()->with('message', 'Bonjour '.$full_name.', votre indemnité compensatrice de préavis: '.$result.' FCFA.');
+        return redirect()
+            ->back()
+            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    Votre indemnité compensatrice de préavis est égale à: '.$result.' FCFA.'
+                );
 
     }
 
