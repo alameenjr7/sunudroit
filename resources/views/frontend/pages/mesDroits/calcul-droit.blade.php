@@ -6,7 +6,8 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>CALCULER MES DROITS</h2>
+            <h2> CALCULER MES DROITS </h2>
+            <div class="text">N'hésitez pas à nous contacter si vous avez besoin d'<strong>assistance</strong>.</div>
         </div>
         <div class="row">
                 <div class="col-md-12 m-auto">
@@ -39,7 +40,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group">
                         <label for="email">Votre adresse e-mail</label>
-                        <input class="form-control" type="email" name="email" id="email"  placeholder="sunudroit@gmail.cm" required>
+                        <input class="form-control" type="email" name="email" id="email"  placeholder="sunudroit@gmail.com">
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group">
@@ -380,7 +381,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -423,7 +424,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -467,7 +468,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -538,7 +539,7 @@
 
                 //Label title 
                 $('label[id*=CUMULESALAIRE]').empty();
-                $('label[id*=CUMULESALAIRE]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen');
                 
                 // remove class
                 $('#montant').addClass('d-none');
@@ -585,7 +586,7 @@
 
                 //Label title 
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer le montant total du salaire brut des 12 derniers mois');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
