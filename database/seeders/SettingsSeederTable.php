@@ -47,7 +47,7 @@ class SettingsSeederTable extends Seeder
 
         DB::table('banners')->insert(
             [
-                'photo' => 'storage/photos/1/banner-7.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
                 'title' => 'Droit de la famille',
                 'subtitle' => 'Famille',
                 'status' => 'active',
@@ -55,7 +55,7 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'photo' => 'storage/photos/1/banner-9.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
                 'title' => 'Droit des affaires',
                 'subtitle' => 'Affaires',
                 'status' => 'active',
@@ -66,7 +66,7 @@ class SettingsSeederTable extends Seeder
 
         DB::table('categories')->insert(
             [
-                'photo' => 'storage/photos/1/banner-7.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
                 'title' => 'Droit de la famille',
                 'is_parent' => 1,
                 'slug'=>'droit-de-la-famille',
@@ -76,7 +76,7 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'photo' => 'storage/photos/1/banner-9.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
                 'title' => 'Droit des affaires',
                 'is_parent' => 1,
                 'slug'=>'droit-des-affaires',
@@ -86,7 +86,7 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'photo' => 'storage/photos/1/banner-7.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
                 'title' => 'Droit de la famille',
                 'slug'=>'droit-d-la-famille',
                 'is_parent' => 1,
@@ -96,7 +96,7 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'photo' => 'storage/photos/1/banner-9.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
                 'title' => 'Droit des affaires',
                 'is_parent' => 1,
                 'slug'=>'droit-des-affaire',
@@ -109,7 +109,7 @@ class SettingsSeederTable extends Seeder
 
         DB::table('publications')->insert(
             [
-                'photo' => 'storage/photos/1/banner-7.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
                 'title' => 'Droit de la famille',
                 'subtitle' => 'Famille',
                 'slug'=>'droit-de-la-famille',
@@ -121,7 +121,7 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'photo' => 'storage/photos/1/banner-9.jpg',
+                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
                 'title' => 'Droit des affaires',
                 'slug'=>'droit-des-affaires',
                 'subtitle' => 'Affaires',
