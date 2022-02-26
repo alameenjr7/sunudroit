@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -43,5 +44,88 @@ class SettingsSeederTable extends Seeder
             'youtube_url' => '',
             'map_url' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.028235227538!2d-17.469440185846533!3d14.710995378307327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40W%2C%20SCP%20d&#39;Avocats!5e0!3m2!1sen!2sus!4v1643800014744!5m2!1sen!2sus',
         ]);
+
+        DB::table('banners')->insert(
+            [
+                'photo' => 'storage/photos/1/banner-7.jpg',
+                'title' => 'Droit de la famille',
+                'subtitle' => 'Famille',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'photo' => 'storage/photos/1/banner-9.jpg',
+                'title' => 'Droit des affaires',
+                'subtitle' => 'Affaires',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        );
+
+        DB::table('categories')->insert(
+            [
+                'photo' => 'storage/photos/1/banner-7.jpg',
+                'title' => 'Droit de la famille',
+                'is_parent' => 1,
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'photo' => 'storage/photos/1/banner-9.jpg',
+                'title' => 'Droit des affaires',
+                'is_parent' => 1,
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'photo' => 'storage/photos/1/banner-7.jpg',
+                'title' => 'Droit de la famille',
+                'is_parent' => 1,
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'photo' => 'storage/photos/1/banner-9.jpg',
+                'title' => 'Droit des affaires',
+                'is_parent' => 1,
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        );
+
+        DB::table('publications')->insert(
+            [
+                'photo' => 'storage/photos/1/banner-7.jpg',
+                'title' => 'Droit de la famille',
+                'subtitle' => 'Famille',
+                'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'cat_id' => 1,
+                'conditions' => 'publier',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'photo' => 'storage/photos/1/banner-9.jpg',
+                'title' => 'Droit des affaires',
+                'subtitle' => 'Affaires',
+                'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'cat_id' => 2,
+                'conditions' => 'publier',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        );
     }
 }
