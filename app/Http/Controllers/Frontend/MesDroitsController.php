@@ -121,7 +121,9 @@ class MesDroitsController extends Controller
             {
                 return redirect()
                     ->back()
-                    ->with('message','L’indemnité de licenciement n’est pas due');
+                    ->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                        Votre indemnité de licenciement n’est pas due'
+                    );
             }
             else
             {
@@ -239,7 +241,9 @@ class MesDroitsController extends Controller
             {
                 return redirect()
                     ->back()
-                    ->with('message','L’indemnité de décès n’est pas due');
+                    ->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                        Votre indemnité de licenciement n’est pas due'
+                    );
             }
             elseif($dateDiff_f > 1)
             {
