@@ -35,7 +35,7 @@
                                             @endfor
                                         </h3>
                                         <h6>{{ucfirst($publication->subtitle)}}</h6>
-                                        <p>{!! html_entity_decode($publication->contenu) !!} </p>
+                                        <p class="text-justify">{!! html_entity_decode($publication->contenu) !!} </p>
                                         <blockquote>
                                             <span class="quote-icon flaticon-quote-1"></span>
                                             <div class="quote-text"></div>

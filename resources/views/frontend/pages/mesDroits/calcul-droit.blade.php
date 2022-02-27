@@ -12,13 +12,13 @@
         <div class="row">
                 <div class="col-md-12 m-auto">
                     @if (session('message'))
-                    <div class="alert alert-success text-center" role="alert">
-                        {!! nl2br(session('message'),true) !!} <br>
-                        <p style="font-size: 14px; font-family:'Times New Roman', Times, serif; font-wight: bold">
-                            <h4>
-                                Notes: {{get_setting('meta_keywords')}}<br>
-                                {{get_setting('title')}} <br>
-                            </h4>
+                      <div class="alert alert-success text-center" role="alert">
+                        <h4 class="alert-heading">Resultat !</h4>
+                        <p>{!! nl2br(session('message'),true) !!}</p>
+                        <hr>
+                        <p class="mb-0">
+                            <strong>Note:</strong> {{get_setting('meta_keywords')}}<br>
+                            <strong class="font-italic">{{get_setting('title')}} </strong>
                         </p>
                       </div>
                     @endif

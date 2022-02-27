@@ -25,7 +25,7 @@
                 @endfor
             </h3>
             <h6>{{ucfirst($pub->subtitle)}}</h6>
-            <div class="text"><p>{!! html_entity_decode(\Illuminate\Support\Str::limit($pub->contenu, 200)) !!}</p></div>
+            <div class="text"><p class="text-justify">{!! html_entity_decode(\Illuminate\Support\Str::limit($pub->contenu, 200)) !!}</p></div>
             <div class="btn-box">
                 <a href="{{route('publication.detail',$pub->slug)}}" class="theme-btn btn-style-two"><span class="txt">Voir plus</span></a>
             </div>
