@@ -370,17 +370,17 @@
 
 					<!-- Default Form -->
 					<div class="default-form">
-						@include('components.errors')
+						{{-- @include('components.errors') --}}
 						<form method="post" action="{{route('consultation.submit')}}">
 							@csrf
 							<div class="row clearfix">
 
 								<div class="col-lg-6 col-md-6 col-sm-12 form-group">
-									<input type="text" name="full_name" id="full_name" value="{{old('full_name')}}" placeholder="Nom complet" required>
+									<input class="form-control @error('full_name') is-invalid @enderror" type="text" name="full_name" id="full_name" value="{{old('full_name')}}" placeholder="Nom complet" required>
 								</div>
 
 								<div class="col-lg-6 col-md-6 col-sm-12 form-group">
-									<input type="email" name="email" id="email" value="{{old('email')}}" placeholder="E-mail" required>
+									<input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" value="{{old('email')}}" placeholder="E-mail" required>
 								</div>
 
 								<div class="col-lg-12 col-md-12 col-sm-12 form-group">
@@ -397,7 +397,7 @@
 								</div>
 
 								<div class="col-lg-12 col-md-12 col-sm-12 form-group">
-									<textarea name="message" placeholder="Message">{{old('message')}}</textarea>
+									<textarea class="form-control @error('message') is-invalid @enderror" name="message" placeholder="Message">{{old('message')}}</textarea>
 								</div>
 
 								<div class="col-lg-12 col-md-12 col-sm-12 form-group">

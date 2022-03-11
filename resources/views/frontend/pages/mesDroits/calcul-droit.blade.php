@@ -12,15 +12,18 @@
         <div class="row">
                 <div class="col-md-12 m-auto">
                     @if (session('message'))
-                      <div class="alert alert-success text-center" role="alert">
-                        <h4 class="alert-heading">Resultat !</h4>
-                        <p>{!! nl2br(session('message'),true) !!}</p>
-                        <hr>
-                        <p class="mb-0">
-                            <strong>Note:</strong> {{get_setting('meta_keywords')}}<br>
-                            <strong class="font-italic">{{get_setting('title')}} </strong>
-                        </p>
-                      </div>
+                        <div class="alert alert-success alert-dismissible text-center" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+                            <h4 class="alert-heading">Resultat !</h4>
+                            <div>
+                                <p>{!! nl2br(session('message'),true) !!}</p>
+                            </div>
+                            <hr>
+                            <p class="mb-0">
+                                <strong>Note:</strong> {{get_setting('meta_keywords')}}<br>
+                                <strong class="font-italic">{{get_setting('title')}} </strong>
+                            </p>
+                        </div>
                     @endif
                 </div>
             </div>

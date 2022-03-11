@@ -55,7 +55,7 @@
         <script>
             const notyf = new Notyf({
                 dismissible: true,
-                duration: 4000,
+                duration: 5000,
                 position: {
                     x:'right',
                     y:'top'
@@ -66,10 +66,17 @@
     @endif
 
 
-    @if (session()->has('error'))
+    @if (session()->has('errors'))
         <script>
-            const notyf = new Notyf({dismissible:true})
-            notyf.error('{{ session('error') }}')
+            const notyf = new Notyf({
+                dismissible:true,
+                duration: 6000,
+                position: {
+                    x:'right',
+                    y:'top'
+                }
+            })
+            notyf.error('{{ session('errors') }}')
         </script>
     @endif
 

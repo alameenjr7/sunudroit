@@ -105,11 +105,11 @@
                                 <h5>ABONNEZ-VOUS MAINTENANT!</h5>
                                 <div class="text">{{get_setting('text_abonnement')}}</div>
                                 <div class="newsletter-form">
-                                    @include('components.errors')
+                                    {{-- @include('components.errors') --}}
                                     <form method="post" action="{{route('mailing.list.submit')}}">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="email" value="{{old('email')}}" placeholder="Entrer votre Adresse Email" required>
+                                            <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" value="{{old('email')}}" placeholder="Votre Adresse Email" required>
                                             <button type="submit" class="theme-btn btn-style-one"><span class="txt">S'abonner <i class="arrow flaticon-right"></i></span></button>
                                         </div>
                                     </form>

@@ -121,7 +121,7 @@ class MesDroitsController extends Controller
             {
                 return redirect()
                     ->back()
-                    ->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                    ->with('message','Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                         Votre indemnité de licenciement n’est pas due'
                     );
             }
@@ -136,7 +136,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                         ->back()
-                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                             Votre indemnite de licenciement est: '.$result.' FCFA.'
                         );
                 }
@@ -149,7 +149,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                         ->back()
-                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                                 Votre indemnite de licenciement est: '.$result.' FCFA.'
                             );
                 }
@@ -164,7 +164,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                         ->back()
-                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                             Votre indemnite de licenciement est: '.$result.' FCFA.'
                         );
                 }
@@ -185,7 +185,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                     Votre indemnité de départ à la retraite est: '.$result.' FCFA.'
                 );
             }
@@ -198,7 +198,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
                     );
             }
@@ -212,7 +212,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
                     );
             }
@@ -228,7 +228,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnite de départ à la retraite est: '.$result.' FCFA.'
                     );
             }
@@ -241,7 +241,7 @@ class MesDroitsController extends Controller
             {
                 return redirect()
                     ->back()
-                    ->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                    ->with('message','Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                         Votre indemnité de licenciement n’est pas due'
                     );
             }
@@ -255,7 +255,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnite de décès est: '.$result.' FCFA.'
                     );
                 }
@@ -268,7 +268,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                         ->back()
-                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                             Votre indemnite de décès est: '.$result.' FCFA.'
                         );
                 }
@@ -283,7 +283,7 @@ class MesDroitsController extends Controller
 
                     return redirect()
                         ->back()
-                        ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                             Votre indemnite de décès est: '.$result.' FCFA.'
                         );
                 }
@@ -300,7 +300,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 1 mois et '.$demiSalaire.' FCFA pendant 3 mois.'
                     );
             }
@@ -310,7 +310,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 1 mois et '.$demiSalaire.' FCFA pendant 4 mois.'
                     );
             }
@@ -320,7 +320,7 @@ class MesDroitsController extends Controller
 
                 return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnité de maladie du travail est: '.$result.' FCFA pendant 2 mois et '.$demiSalaire.' FCFA pendant 5 mois.'
                     );
             }
@@ -333,7 +333,7 @@ class MesDroitsController extends Controller
 
             return redirect()
             ->back()
-            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                 Votre allocation de congé est: '.$result.' FCFA.'
             );
         }
@@ -352,7 +352,7 @@ class MesDroitsController extends Controller
                     return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result0,2).' FCFA,
                                 Votre indemnité de licenciement n\'est pas due,
                                 Votre indemnité spéciale est: '.number_format($result1,2).' FCFA,
@@ -372,7 +372,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -393,7 +393,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -415,7 +415,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
@@ -449,7 +449,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -470,7 +470,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -492,7 +492,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
@@ -526,7 +526,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result4,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -546,7 +546,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result7,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result6,2).' FCFA,
@@ -567,7 +567,7 @@ class MesDroitsController extends Controller
                         return redirect()
                         ->back()
                         ->with('message',
-                                'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
+                                'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>,
                                 Votre indemnité compensatrice de préavis est: '.number_format($result6,2).' FCFA,
                                 Votre indemnité de licenciement est: '.number_format($result5,2).' FCFA,
                                 Votre indemnité spéciale est: '.number_format($result7,2).' FCFA,
@@ -579,7 +579,7 @@ class MesDroitsController extends Controller
                 }
             }
 
-            // return redirect()->back()->with('message','Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.');
+            // return redirect()->back()->with('message','Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, votre indemnité de licenciement pour motif économique est: '.$result.' FCFA.');
         }
 
         // Période d’essai (Article 23 de la CCNI)
@@ -603,7 +603,7 @@ class MesDroitsController extends Controller
             }
             return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                     '.$result
                 );
         }
@@ -629,7 +629,7 @@ class MesDroitsController extends Controller
             }
             return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         '.$result
                     );
         }
@@ -675,7 +675,7 @@ class MesDroitsController extends Controller
             }
             return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                             '.$result
                     );
         }
@@ -698,7 +698,7 @@ class MesDroitsController extends Controller
 
             return redirect()
             ->back()
-            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, '.$result.'.
+            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, '.$result.'.
                     Passer ce délai, l\'employer doit d\'office vous reclasser dans le nouvel emploi occupé.'
                 );
 
@@ -718,7 +718,7 @@ class MesDroitsController extends Controller
 
             return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre Indemnité d\'interim est de '.$result.' FCFA.'
                     );
         }
@@ -756,7 +756,7 @@ class MesDroitsController extends Controller
 
             return redirect()
                     ->back()
-                    ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                             Votre majoration des heures supplémentaires est egale: '.$result.' FCFA.'
                         );
         }
@@ -777,7 +777,7 @@ class MesDroitsController extends Controller
 
             return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre Prime de panier est egale a: '.$result.' FCFA.'
                     );
         }
@@ -790,7 +790,7 @@ class MesDroitsController extends Controller
 
             return redirect()
                 ->back()
-                ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                         Votre indemnité de fin de contrat à durée déterminée est: '.$result.' FCFA.'
                     );
         }
@@ -803,7 +803,7 @@ class MesDroitsController extends Controller
 
         return redirect()
             ->back()
-            ->with('message', 'Bonjour <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
                     Votre indemnité compensatrice de préavis est égale à: '.$result.' FCFA.'
                 );
 
