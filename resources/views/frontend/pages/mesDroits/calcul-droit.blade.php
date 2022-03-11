@@ -60,21 +60,24 @@
                             border-radius: 2px;"
                         >
                             <option value="" selected>-- Choisir --</option>
-                            <option value="C_M_I_C_P" >Calculer Mon Indemnité compensatrice de préavis (Article 75 de la CCNI)</option>
-                            <option value="C_M_I_L" >Calculer Mon Indemnité de licenciement (Article 80 de la CCNI)</option>
-                            <option value="C_M_I_D_R" >Calculer Mon Indemnité départ à la retraite (Article 84 de la CCNI)</option>
-                            <option value="C_M_I_D" >Calculer Mon Indemnité de décès (Article 83 de la CCNI)</option>
-                            <option value="C_M_I_M_T" >Calculer Mon Indemnité de maladie du travail (Article 87 de la CCNI)</option>
-                            <option value="C_M_A_C" >Calculer Mon Allocation de congé (Article 72 de la CCNI)</option>
+                            <option value="C_M_I_C_P" >Calculer Mon Indemnité compensatrice de préavis</option>
+                            <option value="C_M_I_L" >Calculer Mon Indemnité de licenciement</option>
+                            <option value="C_M_I_D_R" >Calculer Mon Indemnité départ à la retraite</option>
+                            <option value="C_M_I_D" >Calculer Mon Indemnité de décès</option>
+                            <option value="C_M_I_M_T" >Calculer Mon Indemnité de maladie du travail</option>
+                            <option value="C_M_A_C" >Calculer Mon Allocation de congé</option>
                             <option value="C_M_I_L_M_E" >Calculer Mon Indemnités de licenciement pour motif économique</option>
-                            <option value="C_M_P_E" >Calculer la Période d’essai (Article 23 de la CCNI)</option>
-                            <option value="C_M_D_I_T_R_P_E" >Calculer le Délai d’information du travailleur pour le renouvellement de la période d’essai (Article 23 de la CCNI)</option>
+                            <option value="C_M_P_E" >Calculer la Période d’essai</option>
+                            <option value="C_M_D_I_T_R_P_E" >Calculer le Délai d’information du travailleur pour le renouvellement de la période d’essai</option>
                             <option value="C_M_N_J_A_E_F" >Calculer Mon Nombre de jours d’absence pour les événements familiaux</option>
-                            <option value="C_L_D_M_I_E_R_C_S" >Calculer Ma Durée maximale de l’intérim dans un emploi relevant d’une catégorie supérieure (Article 35 de la CCNI)</option>
-                            <option value="C_M_I_I" >Calculer Mon Indemnité d’intérim (Article 35 de la CCNI)</option>
+                            <option value="C_L_D_M_I_E_R_C_S" >Calculer Ma Durée maximale de l’intérim dans un emploi relevant d’une catégorie supérieure</option>
+                            <option value="C_M_I_I" >Calculer Mon Indemnité d’intérim</option>
                             <option value="C_M_H_S" >Calculer la Majoration des heures supplémentaires</option>
-                            <option value="C_M_P_P" >Calculer Ma Prime de panier (Article 53 de la CCNI)</option>
+                            <option value="C_M_P_P" >Calculer Ma Prime de panier</option>
                             <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de fin de contrat à durée déterminée</option> 
+                            <option value="R_P_T">Rappel de la prime de transport</option>
+                            <option value="R_S">Rappel de salaire</option>
+                            <option value="P_A">Prime d’ancienneté</option>
                         </select>
                     </div>
 
@@ -142,7 +145,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="montant">
                         <label for="salaire" id="LABELS">Votre salaire actuel</label>
-                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 1 375 000"  
+                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 300 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -160,7 +163,7 @@
                     {{-- cumule de vos salaires sur les 12mois --}}
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="cumule_salaire">
                         <label for="cumuleS" id="CUMULESALAIRE">Cumule de vos salaires sur les 12 derniers mois</label>
-                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 1 275 000"  
+                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 20 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -206,7 +209,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_IN">
                         <label for="salaire_cat_in">Salaire categoriciel de l'interimaire</label>
-                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 1 275 000"  
+                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 275 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -223,7 +226,7 @@
 
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="RENUMERATION_DUE">
                         <label for="renumeration_due">Renumeration totale brute due pendant toute la duree du contrat</label>
-                        <input  type="number" id="renumeration_due" name="renumeration_due"  placeholder="Ex: 3 750 000"  
+                        <input  type="number" id="renumeration_due" name="renumeration_due"  placeholder="Ex: 750 000"  
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -257,7 +260,7 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_HOR">
-                        <label for="salaire_hor">Insérer le salaire horaire</label>
+                        <label for="salaire_hor" id="SALAIRE_HOR">Insérer le salaire horaire</label>
                         <input  type="number" id="salaire_hor" name="salaire_hor"  placeholder="Ex: 375"  
                             style="position: relative;
                             display: block;
@@ -384,7 +387,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -427,7 +430,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -471,7 +474,7 @@
 
                 //Label title
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -542,7 +545,7 @@
 
                 //Label title 
                 $('label[id*=CUMULESALAIRE]').empty();
-                $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen');
+                $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen des 12 derniers mois');
                 
                 // remove class
                 $('#montant').addClass('d-none');
@@ -582,14 +585,14 @@
                 $('#dateF').val('');
 
                 //required
-                document.getElementById('salaire').required = true;
                 document.getElementById('date_deb').required = true;
                 document.getElementById('date_fin').required = true;
                 document.getElementById('cumuleS').required = true;
+                document.getElementById('salaire').required = true;
 
                 //Label title 
                 $('label[id*=LABELS]').empty();
-                $('label[id*=LABELS]').text('Insérer votre salaire moyen');
+                $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
                 $('label[id*=DATEEMBAUCHE]').text('Insérer votre date d\'embauche');
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -828,7 +831,133 @@
                 $('#MAJORATION').addClass('d-none');
                 $('#PRIME_PANIER').addClass('d-none');
             }
+            //Rappel de la prime de transport
+            else if(responseID == 'R_P_T')
+            {
+                $('#montant').removeClass('d-none');
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Indiquer le montant versé au titre de la prime de transport');
+                $('#cumule_salaire').removeClass('d-none');
+                $('label[id*=CUMULESALAIRE]').empty();
+                $('label[id*=CUMULESALAIRE]').text('Indiquer le nombre de mois pendant lequel le montant a été payé');
+                
+                document.getElementById('cumuleS').required = true;
+                document.getElementById('salaire').required = true;
 
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+
+            }
+            //Rappel de salaire
+            else if(responseID == 'R_S')
+            {
+                $('#montant').removeClass('d-none');
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Indiquer le montant versé au titre du salaire catégoriel');
+                $('#cumule_salaire').removeClass('d-none');
+                $('label[id*=CUMULESALAIRE]').empty();
+                $('label[id*=CUMULESALAIRE]').text('Indiquer le nombre de mois pendant lequel le montant a été payé');
+                $('#SALAIRE_HOR').removeClass('d-none');
+                $('label[id*=SALAIRE_HOR]').empty();
+                $('label[id*=SALAIRE_HOR]').text('Indiquer le salaire catégoriel normalement dû');
+                
+                document.getElementById('cumuleS').required = true;
+                document.getElementById('salaire').required = true;
+                document.getElementById('salaire_hor').required = true;
+
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+
+            }
+            //Prime d’ancienneté
+            else if(responseID == 'P_A')
+            {
+                $('#montant').removeClass('d-none');
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer votre ancienneté (ans)');
+                $('#cumule_salaire').removeClass('d-none');
+                $('label[id*=CUMULESALAIRE]').empty();
+                $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire catégoriel');
+                $('#salaire').removeAttr("placeholder");
+                $('#cumuleS').removeAttr("placeholder");
+
+                document.getElementById('cumuleS').required = true;
+                document.getElementById('salaire').required = true;
+                document.getElementsByName('salaire')[0].placeholder='3';
+                document.getElementsByName('cumuleS')[0].placeholder='150 000';
+
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+
+            }
             else
             {
                 $('#C_M_I_C_P_types').addClass('d-none');

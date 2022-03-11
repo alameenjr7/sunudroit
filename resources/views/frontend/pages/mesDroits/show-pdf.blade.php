@@ -55,14 +55,13 @@
 	</head>
 
 	<body>
-				<div class="A4">
-					<h1 style="text-align:center">
-						{{$contrat->title}}
-					</h1>
-					<p>
-						{!! html_entity_decode($contrat->contenu) !!}
-					</p>
-
+		<div class="A4">
+			<h1 style="text-align:center">
+				{{$contrat->title}}
+			</h1>
+			<p>
+				{!! html_entity_decode($contrat->contenu) !!}
+			</p>
 		</div>
 
 	</body>
