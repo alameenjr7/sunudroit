@@ -840,9 +840,13 @@
                 $('#cumule_salaire').removeClass('d-none');
                 $('label[id*=CUMULESALAIRE]').empty();
                 $('label[id*=CUMULESALAIRE]').text('Indiquer le nombre de mois pendant lequel le montant a été payé');
-                
+                $('#salaire').removeAttr("placeholder");
+                $('#cumuleS').removeAttr("placeholder");
+
                 document.getElementById('cumuleS').required = true;
                 document.getElementById('salaire').required = true;
+                document.getElementsByName('salaire')[0].placeholder='Ex: 150 000';
+                document.getElementsByName('cumuleS')[0].placeholder='Ex: 5';
 
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -928,8 +932,8 @@
 
                 document.getElementById('cumuleS').required = true;
                 document.getElementById('salaire').required = true;
-                document.getElementsByName('salaire')[0].placeholder='3';
-                document.getElementsByName('cumuleS')[0].placeholder='150 000';
+                document.getElementsByName('salaire')[0].placeholder='Ex: 3';
+                document.getElementsByName('cumuleS')[0].placeholder='Ex: 150 000';
 
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
