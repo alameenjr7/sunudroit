@@ -7,7 +7,7 @@
         <!-- Sec Title -->
         <div class="sec-title centered">
             <h2> CALCULER MES DROITS </h2>
-            <div class="text">N'hésitez pas à nous contacter si vous avez besoin d'<strong>assistance</strong>.</div>
+            <div class="text">Besoin d'assistance?<strong>Contactez-nous au ....</strong>.</div>
         </div>
         <div class="row">
                 <div class="col-md-12 m-auto">
@@ -37,7 +37,7 @@
                 <div class="row clearfix">
 
                     <div class=" col-md-6 col-sm-12 form-group">
-                        <label for="full_name">Votre prenom</label>
+                        <label for="full_name">Votre prénom</label>
                         <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Ex: Baba Al Ameen JR" required>
                     </div>
 
@@ -91,16 +91,16 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="PRESENCE">
-                        <label for="presence">Choisir votre ancienete</label>
+                        <label for="presence">Choisir votre ancienneté</label>
                         <select name="presence" class="custom-select-box form-control">
-                            <option value="M_1_A_P" >Moins d'un an de presence</option>
-                            <option value="1_5_A_P" >1 a 5 ans de presence</option>
-                            <option value="P_5_A_P" >Plus de 5 ans de presence</option>
+                            <option value="M_1_A_P" >Moins d'un an de présence</option>
+                            <option value="1_5_A_P" >1 a 5 ans de présence</option>
+                            <option value="P_5_A_P" >Plus de 5 ans de présence</option>
                         </select>
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="ESSAI">
-                        <label for="essai">Choisir le type</label>
+                        <label for="essai">Choisir votre situation</label>
                         <select name="essai" class="custom-select-box form-control">
                             <option value="J_S_P_H_J" >Je suis payé à l’heure ou à la journée</option>
                             <option value="J_S_O_E_P_M" >Je suis ouvrier ou employé payé au mois</option>
@@ -110,7 +110,7 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="ABSENCE">
-                        <label for="absence">Choisir l'evenement familial</label>
+                        <label for="absence">Choisir l'événement familial</label>
                         <select name="absence" class="custom-select-box form-control">
                             <option value="M_M" >Mon mariage</option>
                             <option value="M_E_F_S" >Mariage d’un de mes enfants, d’un frère ou d’une sœur</option>
@@ -125,7 +125,7 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SPECIALITE">
-                        <label for="specialite">Choisir votre ...</label>
+                        <label for="specialite">Choisir votre situation</label>
                         <select name="specialite" class="custom-select-box form-control">
                             <option value="J_S_O_S" >Je suis ouvrier spécialisé</option>
                             <option value="J_S_PEATA" >Je suis ouvrier professionnel, employé, agent de maitrise, technicien ou assimilé</option>
@@ -134,7 +134,7 @@
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="TITULAIRE">
-                        <label for="titulaire">Choisir votre ...</label>
+                        <label for="titulaire">Choisir la cause de l'intérim</label>
                         <select name="titulaire" class="custom-select-box form-control">
                             <option value="L_T_P_M" >Le titulaire de poste est malade</option>
                             <option value="L_T_P_V_A" >Le titulaire de poste est victime d'accident</option>
@@ -179,7 +179,7 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="dateD">
-                        <label for="date_deb" id="DATEEMBAUCHE">Date debut contrat</label>
+                        <label for="date_deb" id="DATEEMBAUCHE">Date début contrat</label>
                         <input class="form-control" type="date" id="date_deb" name="date_deb" placeholder="Ex: 01/01/2020" >
                     </div>
 
@@ -191,7 +191,7 @@
                     
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_TP">
-                        <label for="salaire_cat_tp">Salaire categriciel du tutilaire de poste</label>
+                        <label for="salaire_cat_tp">Salaire catégoriciel du tutilaire de poste</label>
                         <input  type="number" id="salaire_cat_tp" name="salaire_cat_tp"  placeholder="Ex: 75 000"  
                             style="position: relative;
                             display: block;
@@ -208,7 +208,7 @@
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_IN">
-                        <label for="salaire_cat_in">Salaire categoriciel de l'interimaire</label>
+                        <label for="salaire_cat_in">Salaire catégoriciel de l'intérimaire</label>
                         <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 275 000"  
                             style="position: relative;
                             display: block;
@@ -225,7 +225,7 @@
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="RENUMERATION_DUE">
-                        <label for="renumeration_due">Renumeration totale brute due pendant toute la duree du contrat</label>
+                        <label for="renumeration_due">Rénumération totale brute versée pendant toute la durée du contrat</label>
                         <input  type="number" id="renumeration_due" name="renumeration_due"  placeholder="Ex: 750 000"  
                             style="position: relative;
                             display: block;
@@ -277,7 +277,7 @@
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="MAJORATION">
-                        <label for="majoration">Choisir votre ...</label>
+                        <label for="majoration">Période pendant laquelle les heures ont été effectuées</label>
                         <select name="majoration" class="custom-select-box form-control">
                             <option value="" >-- Choisir --</option>
                             <option value="H_S_E_N" >Heures supplémentaire effectuées de nuit</option>
@@ -289,7 +289,7 @@
 
                     {{-- PRIME DE PANIER --}}
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="PRIME_PANIER">
-                        <label for="prime_panier">Choisir votre ...</label>
+                        <label for="prime_panier">Choisir votre situation</label>
                         <select name="prime_panier" class="custom-select-box form-control">
                             <option value="J_E_M_6_HTN" >J’effectue au moins 6 heures de travail de nuit</option>
                             <option value="J_E_10_H_I" >J’ai effectué 10 heures ininterrompues</option>
@@ -501,8 +501,6 @@
             // Calcul indemnité de maladie du travail (Article 87 de la CCNI)
             else if(responseID == 'C_M_I_M_T')
             {
-                $('#dateF').removeClass('d-none');
-                $('#dateF').val('');
                 $('#PRESENCE').removeClass('d-none');
                 $('#PRESENCE').val('');
                 $('#montant').removeClass('d-none');
@@ -512,7 +510,7 @@
 
                 //required
                 document.getElementById('salaire').required = true;
-                document.getElementById('date_fin').required = true;
+                document.getElementById('date_fin').required = false;
 
                 //Label title
                 $('label[id*=DATELICENCIEMENT]').empty();
@@ -532,6 +530,7 @@
                 $('#TITULAIRE').addClass('d-none');
                 $('#RENUMERATION_DUE').addClass('d-none');
                 $('#montant').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
             }
 
             // Allocation de congé (Article 72 de la CCNI)
