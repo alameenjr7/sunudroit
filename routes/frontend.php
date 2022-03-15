@@ -21,6 +21,8 @@ Route::post('consultation-submit', [App\Http\Controllers\ConsultationController:
 
 Route::get('categorie-detail/{slug}/',[App\Http\Controllers\Frontend\IndexController::class, 'categorieDetail'])->name('categorie.detail');
 
+Route::get('info-detail/{slug}/',[App\Http\Controllers\Frontend\IndexController::class, 'infoDetail'])->name('info.detail');
+
 
 //Calcul droit
 Route::get('mes-droits', [App\Http\Controllers\Frontend\MesDroitsController::class, 'calcul'])->name('calcul.droit');

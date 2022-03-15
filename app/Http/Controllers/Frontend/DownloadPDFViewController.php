@@ -32,8 +32,9 @@ class DownloadPDFViewController extends Controller
     public function downloadPDF($id)
     {
         $contrat = DocumentPdf::find($id);
-        $pdf = PDF::loadView('frontend.pages.mesDroits.show-pdf',compact('contrat'));
-        return $pdf->download('contrat.pdf');
+        $file_name = $contrat->title.'.pdf';
+        $pdf = PDF::loadView('frontend.pages.mesDroits.download',compact('contrat'));
+        return $pdf->download($file_name);
     }
 
 }

@@ -76,87 +76,21 @@
 			</div>
 			<div class="inner-container">
 				<div class="clearfix">
-
 					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-car-1"></div>
-							<h5><a href="corporate_law.html">Car Accident</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-briefcase"></div>
-							<h5><a href="corporate_law.html">Business LAw</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-handcuffs-1"></div>
-							<h5><a href="corporate_law.html">Criminal Law</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-save-money"></div>
-							<h5><a href="corporate_law.html">Child Support</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-injury"></div>
-							<h5><a href="corporate_law.html">Personal Injury</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-law"></div>
-							<h5><a href="corporate_law.html">Education LAw</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-balance"></div>
-							<h5><a href="corporate_law.html">Divorce Law</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-notebook"></div>
-							<h5><a href="corporate_law.html">TAX LAW</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
-						</div>
-					</div>
-
+					@if (count($infos)>0)
+						@foreach ($infos as $info)
+							<div class="practice-block col-lg-3 col-md-6 col-sm-12">
+									<div class="inner-box">
+										<div class="icon {{$info->icons}}"></div>
+										<h5><a href="#">{{$info->title}}</a></h5>
+										<div class="text">
+											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,20)) !!}</p>
+										</div>
+										<a class="arrow flaticon-right-arrow-3" href="{{route('info.detail',$info->slug)}}"></a>
+									</div>
+							</div>
+						@endforeach
+					@endif
 				</div>
 			</div>
 		</div>

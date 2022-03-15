@@ -133,5 +133,109 @@ class SettingsSeederTable extends Seeder
                 'updated_at' => Carbon::now(),
             ]
         ]);
+
+        DB::table('info_pratiques')->insert([
+            [
+                'title' => 'Car Accident',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'car-accident',
+                'icons' => 'flaticon-car-1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Business Law',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'business-law',
+                'icons' => 'flaticon-briefcase',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Criminal Law',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'criminal-law',
+                'icons' => 'flaticon-handcuffs-1',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Child Support',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=> 'child-support',
+                'icons' => 'flaticon-save-money',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Personal Injury',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'personal-injury',
+                'icons' => 'flaticon-injury',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Education LAw',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'education-law',
+                'icons' => 'flaticon-law',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'Divorce Law',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'slug'=>'divorce-law',
+                'icons' => 'flaticon-balance',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'TAX LAW',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+                'status' => 'active',
+                'icons' => 'flaticon-notebook',
+                'slug'=>'tax-law',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        ]);
+
+        DB::table('document_pdfs')->insert([
+            [
+                'title' => 'Contrat de location',
+                'contenu' => '<p>ENTRE :
+                La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
+                ET : 
+                Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
+                'status' => 'activer',
+                'prix'=>null,
+                'conditions'=>'gratuit',
+                'slug'=>'contrat-de-location',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'title' => 'CONTRAT DE CONCEPTION DE SITE WEB',
+                'contenu' => '<p>ENTRE :
+                La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
+                ET : 
+                Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
+                'status' => 'activer',
+                'slug'=>'contrat-de-conception-de-site-web',
+                'prix'=> 1000,
+                'conditions'=>'payant',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]
+        ]);
     }
 }

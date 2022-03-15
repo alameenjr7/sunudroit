@@ -57,4 +57,9 @@ Route::group(['prefix'=>'admin/','middleware'=>'auth'],function(){
     //Contrat
     Route::resource('contrats',App\Http\Controllers\ContratController::class);
     Route::post('contrat_status',[App\Http\Controllers\ContratController::class, 'contratStatus'])->name('contrats.status');
+
+    //Infos section
+    Route::resource('/info_pratique',App\Http\Controllers\InfoPratiqueController::class);
+    Route::post('info_pratique_status',[App\Http\Controllers\InfoPratiqueController::class, 'infoPratiqueStatus'])->name('info.pratique.status');
+    
 });

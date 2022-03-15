@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\Mailing;
 use App\Models\Categorie;
 use App\Models\Consultation;
+use App\Models\InfoPratique;
 use App\Models\Message;
 use App\Models\Publication;
 use App\Models\PublicationReview;
@@ -29,6 +30,11 @@ class IndexController extends Controller
         ->limit(4)
         ->get();
 
+        $infos = InfoPratique::where('status','active')
+        ->orderBy('id','desc')
+        ->limit(4)
+        ->get();
+
         $equipePro = EquipePro::where('status','active')
         ->orderBy('id','desc')
         ->limit(4)
@@ -39,7 +45,7 @@ class IndexController extends Controller
         ->limit(3)
         ->get();
 
-        return view('frontend.index',compact('banners','categories','equipePro','consultations'));
+        return view('frontend.index',compact('banners','categories','equipePro','consultations','infos'));
     }
 
     public function about()
@@ -49,11 +55,11 @@ class IndexController extends Controller
 
     public function service()
     {
-        $categories=Categorie::where('status','active')
+        $infos = InfoPratique::where('status','active')
         ->orderBy('id','desc')
         ->get();
 
-        return view('frontend.pages.services',compact('categories'));
+        return view('frontend.pages.services',compact('infos'));
     }
 
     public function contact()
@@ -158,6 +164,19 @@ class IndexController extends Controller
 
         if($publication) {
             return view('frontend.pages.publication-detail',compact('publication','count_review'));
+        }
+        else {
+            return view('errors.404');
+        }
+    }
+
+    public function infoDetail($slug)
+    {
+        $info_details = InfoPratique::where('slug',$slug)->first();
+        
+
+        if($info_details) {
+            return view('frontend.pages.info-details',compact(['info_details']));
         }
         else {
             return view('errors.404');

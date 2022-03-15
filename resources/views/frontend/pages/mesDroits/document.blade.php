@@ -29,7 +29,8 @@
                                         <img src="{{asset('frontend/assets/images/_pdf.webp')}}" alt="" style="height: 150px" />
                                     </div>
                                     <div class="lower-content">
-                                        <h4>{{ucfirst($data->title)}}</h4>
+                                        <h5>{{ucfirst($data->title)}}</h5>
+                                        <hr>
                                         <a href="{{route('voir.pdf',$data->slug)}}" class="theme-btn btn-style-three"><span class="txt">Voir <i class="fa fa-eye "></i></span></a>
                                         <a href="{{route('download.pdf',$data->id)}}" class="theme-btn btn-style-two"><span class="txt">Telecharger <i class="fa fa-download"></i></span></a>
                                     </div>

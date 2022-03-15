@@ -241,86 +241,20 @@
 			</div>
 			<div class="inner-container">
 				<div class="clearfix">
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-car-1"></div>
-							<h5><a href="{{route('corporate')}}">Accident de voiture</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-briefcase"></div>
-							<h5><a href="{{route('corporate')}}">Droit des Affaires</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-handcuffs-1"></div>
-							<h5><a href="{{route('corporate')}}">Litige Civil</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-save-money"></div>
-							<h5><a href="{{route('corporate')}}">Assurance Défense</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-injury"></div>
-							<h5><a href="{{route('corporate')}}">Droit du Travail</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-law"></div>
-							<h5><a href="{{route('corporate')}}">Contentieux des Affaires</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-balance"></div>
-							<h5><a href="{{route('corporate')}}">Droit des Travailleurs</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
-
-					<!-- Practice Block -->
-					<div class="practice-block col-lg-3 col-md-6 col-sm-12">
-						<div class="inner-box">
-							<div class="icon flaticon-notebook"></div>
-							<h5><a href="{{route('corporate')}}">Droit de la Famille</a></h5>
-							<div class="text">Quis autem velo eum iure suam nihil molestiae</div>
-							<a class="arrow flaticon-right-arrow-3" href="{{route('corporate')}}"></a>
-						</div>
-					</div>
+					@if (count($infos)>0)
+						@foreach ($infos as $info)
+							<div class="practice-block col-lg-3 col-md-6 col-sm-12">
+									<div class="inner-box">
+										<div class="icon {{$info->icons}}"></div>
+										<h5><a href="#">{{$info->title}}</a></h5>
+										<div class="text">
+											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,20)) !!}</p>
+										</div>
+										<a class="arrow flaticon-right-arrow-3" href="{{route('info.detail',$info->slug)}}"></a>
+									</div>
+							</div>
+						@endforeach
+					@endif
 
 				</div>
 			</div>
