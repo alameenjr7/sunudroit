@@ -14,7 +14,7 @@
                         <div class="blog-detail">
                                 <div class="inner-box">
                                     <div class="image" style="max-width: 769.980px; max-height: 460.918px;">
-                                        <img src="{{$publication->photo}}" alt="{{$publication->title}}" />
+                                        <img src="{{asset($publication->photo)}}" alt="{{$publication->title}}" />
                                         <div class="category">Admin</div>
                                         <ul class="post-meta">
                                             <li><span class="icon flaticon-timetable"></span>{{$publication->getCreatedAt()}}</li>
