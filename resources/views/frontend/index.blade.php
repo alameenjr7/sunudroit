@@ -119,7 +119,10 @@
 								<img src="{{asset('frontend/assets/images/resource/video-img.jpg')}}" alt="" />
 							</div>
 							<div class="case-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-								15<sup>+</sup>
+								@php
+									$nombreContrat = App\Models\DocumentPdf::where('status','activer')->count();
+								@endphp
+								{{$nombreContrat}}<sup>+</sup>
 								<span>Contrat <br> Disponible</span>
 							</div>
 						</div>
@@ -264,7 +267,7 @@
 
 	<!-- Fluid Section One -->
 
-    <section class="fluid-section-one">
+    <section class="fluid-section-one" id="section-question">
 		<div class="side-icon"><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_329X288.png')}}" alt="" /></div>
     	<div class="outer-container clearfix">
         	<!-- Image Column -->
@@ -456,5 +459,9 @@
 		</section>
 	@endif --}}
 	<!-- End Clients Section -->
+@endsection
+
+@section('scripts')
+
 @endsection
 

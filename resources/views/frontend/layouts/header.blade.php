@@ -9,7 +9,7 @@
                 </ul>
             </div>
             <div class="top-right pull-right clearfix">
-                <div class="request-btn"><i class="flaticon-right-arrow-3"></i><a href="#">Posez Vos Questions!</a></div>
+                <div class="request-btn"><i class="flaticon-right-arrow-3"></i><a href="#section-question">Posez Vos Questions!</a></div>
                 <div class="search-box-outer">
                     <form action="{{route('search')}}" method="GET" class="search-btn">
                         <button type="submit" class="search-toggler"><i class="flaticon-search"></i>Rechercher</button>
