@@ -142,7 +142,7 @@ class MesDroitsController extends Controller
                         );
                 }
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                    $result0 = ($salaire * 25)/100 * 5;
+                    $result0 = ($salaire * 30)/100 * 5;
                     $result1 = ($salaire * 30)/100 * $nombreAnnee_6_10;
                     // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                     $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
@@ -191,7 +191,7 @@ class MesDroitsController extends Controller
                 );
             }
             elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                $result0 = ($salaire * 25)/100 * 5;
+                $result0 = ($salaire * 30)/100 * 5;
                 $result1 = ($salaire * 30)/100 * $nombreAnnee_6_10;
                 // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                 $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
@@ -259,7 +259,7 @@ class MesDroitsController extends Controller
                     );
                 }
                 elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                    $result0 = ($salaire * 25)/100 * 5;
+                    $result0 = ($salaire * 30)/100 * 5;
                     $result1 = ($salaire * 30)/100 * $nombreAnnee_6_10;
                     // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                     $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
@@ -378,7 +378,7 @@ class MesDroitsController extends Controller
 
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                        $result0 = ($salaire * 25)/100 * 5;
+                        $result0 = ($salaire * 30)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $nombreAnnee_6_10;
                         // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                         $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
@@ -455,7 +455,7 @@ class MesDroitsController extends Controller
 
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                        $result0 = ($salaire * 25)/100 * 5;
+                        $result0 = ($salaire * 30)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
                         $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                         $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
@@ -531,7 +531,7 @@ class MesDroitsController extends Controller
                             );
                     }
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
-                        $result0 = ($salaire * 25)/100 * 5;
+                        $result0 = ($salaire * 30)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
                         $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                         $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
