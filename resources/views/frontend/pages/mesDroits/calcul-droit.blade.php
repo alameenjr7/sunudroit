@@ -60,24 +60,24 @@
                             border-radius: 2px;"
                         >
                             <option value="" selected>-- Choisir --</option>
-                            <option value="C_M_I_C_P" >Calculer Mon Indemnité compensatrice de préavis</option>
-                            <option value="C_M_I_L" >Calculer Mon Indemnité de licenciement</option>
-                            <option value="C_M_I_D_R" >Calculer Mon Indemnité départ à la retraite</option>
-                            <option value="C_M_I_D" >Calculer Mon Indemnité de décès</option>
-                            <option value="C_M_I_M_T" >Calculer Mon Indemnité de maladie du travail</option>
-                            <option value="C_M_A_C" >Calculer Mon Allocation de congé</option>
-                            <option value="C_M_I_L_M_E" >Calculer Mon Indemnités de licenciement pour motif économique</option>
-                            <option value="C_M_P_E" >Calculer la Période d’essai</option>
-                            <option value="C_M_D_I_T_R_P_E" >Calculer le Délai d’information du travailleur pour le renouvellement de la période d’essai</option>
-                            <option value="C_M_N_J_A_E_F" >Calculer Mon Nombre de jours d’absence pour les événements familiaux</option>
-                            <option value="C_L_D_M_I_E_R_C_S" >Calculer Ma Durée maximale de l’intérim dans un emploi relevant d’une catégorie supérieure</option>
-                            <option value="C_M_I_I" >Calculer Mon Indemnité d’intérim</option>
-                            <option value="C_M_H_S" >Calculer la Majoration des heures supplémentaires</option>
-                            <option value="C_M_P_P" >Calculer Ma Prime de panier</option>
-                            <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de fin de contrat à durée déterminée</option> 
-                            <option value="R_P_T">Calculer Mon Rappel de la prime de transport</option>
-                            <option value="R_S">Calculer Mon Rappel de salaire</option>
-                            <option value="P_A">Calculer Ma Prime d’ancienneté</option>
+                            <option value="C_M_I_C_P" >Calculer Mon Indemnité Compensatrice de Préavis</option>
+                            <option value="C_M_I_L" >Calculer Mon Indemnité de Licenciement</option>
+                            <option value="C_M_I_D_R" >Calculer Mon Indemnité Départ à la Retraite</option>
+                            <option value="C_M_I_D" >Calculer Mon Indemnité de Décès</option>
+                            <option value="C_M_I_M_T" >Calculer Mon Indemnité de Maladie du Travail</option>
+                            <option value="C_M_A_C" >Calculer Mon Allocation de Congé</option>
+                            <option value="C_M_I_L_M_E" >Calculer Mon Indemnités de Licenciement pour Motif Économique</option>
+                            <option value="C_M_P_E" >Calculer La Période d’Essai</option>
+                            <option value="C_M_D_I_T_R_P_E" >Calculer Le Délai d’Information du Travailleur pour le Renouvellement de la Période d’Essai</option>
+                            <option value="C_M_N_J_A_E_F" >Calculer Mon Nombre de Jours d’Absence pour les Événements Familiaux</option>
+                            <option value="C_L_D_M_I_E_R_C_S" >Calculer Ma Durée Maximale de l’Intérim dans un Emploi Relevant d’une Catégorie Supérieure</option>
+                            <option value="C_M_I_I" >Calculer Mon Indemnité d’Intérim</option>
+                            <option value="C_M_H_S" >Calculer La Majoration des Heures Supplémentaires</option>
+                            <option value="C_M_P_P" >Calculer Ma Prime de Panier</option>
+                            <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de Fin de Contrat à Durée Déterminée</option> 
+                            <option value="R_P_T">Calculer Mon Rappel de la Prime de Transport</option>
+                            <option value="R_S">Calculer Mon Rappel de Salaire</option>
+                            <option value="P_A">Calculer Ma Prime d’Ancienneté</option>
                         </select>
                     </div>
 
