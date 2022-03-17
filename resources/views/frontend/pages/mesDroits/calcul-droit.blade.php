@@ -75,9 +75,9 @@
                             <option value="C_M_H_S" >Calculer la Majoration des heures supplémentaires</option>
                             <option value="C_M_P_P" >Calculer Ma Prime de panier</option>
                             <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de fin de contrat à durée déterminée</option> 
-                            <option value="R_P_T">Rappel de la prime de transport</option>
-                            <option value="R_S">Rappel de salaire</option>
-                            <option value="P_A">Prime d’ancienneté</option>
+                            <option value="R_P_T">Calculer Mon Rappel de la prime de transport</option>
+                            <option value="R_S">Calculer Mon Rappel de salaire</option>
+                            <option value="P_A">Calculer Ma Prime d’ancienneté</option>
                         </select>
                     </div>
 

@@ -49,6 +49,7 @@ class MesDroitsController extends Controller
             // On sait que 1 heure = 60 secondes * 60 minutes et que 1 jour = 24 heures donc :
         $joursRestant = $nbJoursTimestamp/86400;
         $NbrJrRestant_par365 = (float) number_format($joursRestant / 365,2);
+        // dd($NbrJrRestant_par365);
         //FIN JOURS RESTANT DE L'AN
 
         //MOIS RESTANT DE L'AN
@@ -61,9 +62,9 @@ class MesDroitsController extends Controller
         $dateDe  =   strtotime($dateD);
         $dateFi    =   strtotime($dateF);
         $NombreSecondes = $dateFi - $dateDe;
-        $NombreJours = $NombreSecondes / (3600*24);
+        $NombreJours = $NombreSecondes / 86400;
         $NbrJours_par365 = (float) number_format($NombreJours / 365,2);
-        // dd($NbrJours_par365);
+       
         //END NOMBRE DE JOUR / 365
 
         //NOMBRE DE MOIS / 12
@@ -131,7 +132,7 @@ class MesDroitsController extends Controller
                 if($dateDiff_f <= 5){
                     $result0 = ($salaire * 25)/100 * $dateDiff_f;
                     // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                    $result2 = ($salaire * 25)/100 * $NbrJours_par365;
+                    $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
                     $result = number_format($result0 + $result2,2);
                     // dd($result);
 
@@ -161,7 +162,7 @@ class MesDroitsController extends Controller
                     $result2 = ($salaire * 40)/100 * $yearAfter10;
                     // $result3 = ($salaire * 40)/100 * $NbrMoisRestant_par12;
                     $result4 = ($salaire * 40)/100 * $NbrJrRestant_par365;
-                    $result = number_format(($result0 + $result1 + $result2 + $result4),2);
+                    $result = $result0 + $result1 + $result2 + $result4;
 
                     return redirect()
                         ->back()
@@ -181,7 +182,7 @@ class MesDroitsController extends Controller
             if($dateDiff_f <= 5){
                 $result0 = ($salaire * 25)/100 * $dateDiff_f;
                 // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                $result2 = ($salaire * 25)/100 * $NbrJours_par365;
+                $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
                 $result = number_format($result0 + $result2,2);
 
                 return redirect()
@@ -249,7 +250,7 @@ class MesDroitsController extends Controller
                 if($dateDiff_f <= 5){
                     $result0 = ($salaire * 25)/100 * $dateDiff_f;
                     // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                    $result2 = ($salaire * 25)/100 * $NbrJours_par365;
+                    $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
                     $result = number_format(($result0 + $result2),2);
 
                     return redirect()
@@ -361,7 +362,7 @@ class MesDroitsController extends Controller
                     if($dateDiff_f <= 5){
                         $result0 = ($salaire * 25)/100 * $dateDiff_f;
                         // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                        $result2 = ($salaire * 25)/100 * $NbrJours_par365;
+                        $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
                         $result4 = $result0 + $result2;
                         $result5 = $salaire * 1;
                         $result6 = $salaire * 1;
@@ -436,9 +437,9 @@ class MesDroitsController extends Controller
                 {
                     if($dateDiff_f <= 5){
                         $result0 = ($salaire * 25)/100 * $dateDiff_f;
-                        $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                        $result2 = ($salaire * 25)/100 * $NbrJours_par365;
-                        $result4 = $result0 + $result1 + $result2;
+                        // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
+                        $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
+                        $result4 = $result0  + $result2;
                         $result5 = $salaire * 2;
                         $result6 = $salaire * 1;
                         $result = number_format($result4 + $result5 + $result6,2);
@@ -457,11 +458,11 @@ class MesDroitsController extends Controller
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 30)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                        $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
+                        // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                         $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
                         $result5 = $salaire * 2;
                         $result6 = $salaire * 1;
-                        $result7 = $result0 + $result1 + $result2 + $result3;
+                        $result7 = $result0 + $result1 + $result3;
                         $result = number_format($result5 + $result6 + $result7,2);
 
                         return redirect()
@@ -479,9 +480,9 @@ class MesDroitsController extends Controller
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * 5;
                         $result2 = ($salaire * 40)/100 * $yearAfter10;
-                        $result3 = ($salaire * 40)/100 * $NbrMoisRestant_par12;
+                        // $result3 = ($salaire * 40)/100 * $NbrMoisRestant_par12;
                         $result4 = ($salaire * 40)/100 * $NbrJrRestant_par365;
-                        $result5 = $result0 + $result1 + $result2 + $result3 + $result4;
+                        $result5 = $result0 + $result1 + $result2 + $result4;
                         $result6 = $salaire * 2;
                         $result7 = $salaire * 1;
                         $result = number_format($result5 + $result6 + $result7,2);
@@ -513,9 +514,9 @@ class MesDroitsController extends Controller
                 {
                     if($dateDiff_f <= 5){
                         $result0 = ($salaire * 25)/100 * $dateDiff_f;
-                        $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
-                        $result2 = ($salaire * 25)/100 * $NbrJours_par365;
-                        $result4 = $result0 + $result1 + $result2;
+                        // $result1 = ($salaire * 25)/100 * $nbrMois_Par12;
+                        $result2 = ($salaire * 25)/100 * $NbrJrRestant_par365;
+                        $result4 = $result0 + $result2;
                         $result5 = $salaire * 3;
                         $result6 = $salaire * 1;
                         $result = number_format($result4 + $result5 + $result6,2);
@@ -533,11 +534,11 @@ class MesDroitsController extends Controller
                     elseif($dateDiff_f >= 6 && $dateDiff_f <= 10){
                         $result0 = ($salaire * 30)/100 * 5;
                         $result1 = ($salaire * 30)/100 * $dateDiff_f;
-                        $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
+                        // $result2 = ($salaire * 30)/100 * $NbrMoisRestant_par12;
                         $result3 = ($salaire * 30)/100 * $NbrJrRestant_par365;
                         $result5 = $salaire * 3;
                         $result6 = $salaire * 1;
-                        $result7 = $result0 + $result1 + $result2 + $result3;
+                        $result7 = $result0 + $result1 + $result3;
                         $result = number_format($result5 + $result6 + $result7,2);
 
                         return redirect()
@@ -554,9 +555,9 @@ class MesDroitsController extends Controller
                         $result0 = ($salaire * 25)/100 * 5;
                         $result1 = ($salaire * 30)/100 * 5;
                         $result2 = ($salaire * 40)/100 * $yearAfter10;
-                        $result3 = ($salaire * 40)/100 * $NbrMoisRestant_par12;
+                        // $result3 = ($salaire * 40)/100 * $NbrMoisRestant_par12;
                         $result4 = ($salaire * 40)/100 * $NbrJrRestant_par365;
-                        $result5 = $result0 + $result1 + $result2 + $result3 + $result4;
+                        $result5 = $result0 + $result1 + $result2 + $result4;
                         $result6 = $salaire * 3;
                         $result7 = $salaire * 1;
                         $result = number_format($result5 + $result6 + $result7,2);
@@ -841,8 +842,7 @@ class MesDroitsController extends Controller
 
         else
         {
-            $result0 = 0 ;
-            $result =  number_format($result0,2);
+            return back()->with('error','Veuiller saisir des données correctes!');
         }
 
         return redirect()
