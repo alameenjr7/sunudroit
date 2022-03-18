@@ -125,7 +125,7 @@
     </div>
     <div class="footer-bottom">
         <div class="auto-container">
-            <div class="copyright">{{get_setting('meta_description')}}</div>
+            <div class="copyright">Copyright® 2022 | {{get_setting('meta_description')}} | Réalisé par <a href="https://ameenaltech.com/">AmeenTech</a></div>
         </div>
     </div>
 </footer>
