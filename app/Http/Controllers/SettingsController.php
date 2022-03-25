@@ -49,10 +49,10 @@ class SettingsController extends Controller
         Url($request->map_url);
         $status=$setting->fill($request->all());
         if($status){
-            return back()->with('success','Les paramettres ont ete modifie avec succes');
+            return back()->with('success','Les paramètres ont ete modifie avec succes');
         }
         else{
-            return back()->with('error','Something went wrong');
+            return back()->with('error','Quelque chose s\'est mal passé!');
         }
     }
 }

@@ -55,7 +55,7 @@
 
                             <div class="col-md-6 form-group mb-3">
                                 <label class="checkbox checkbox-primary"> Categorie Parent
-                                    <input id="is_parent" type="checkbox" name="is_parent" value="1" checked /><span>(default OUI)</span><span class="checkmark"></span>
+                                    <input  type="checkbox" id="is_parent" name="is_parent" value="1" checked /><span>(default OUI)</span><span class="checkmark"></span>
                                 </label>
                             </div>
 

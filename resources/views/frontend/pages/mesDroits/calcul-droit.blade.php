@@ -78,6 +78,13 @@
                             <option value="R_P_T">Calculer Mon Rappel de la Prime de Transport</option>
                             <option value="R_S">Calculer Mon Rappel de Salaire</option>
                             <option value="P_A">Calculer Ma Prime d’Ancienneté</option>
+                            <option value="C_D_P_S_C_T_M">Calculer la durée de la période de suspensions de mon contrat de travail pour maladie</option>
+                            <option value="C_I_D_H_LHT">Calculer mon indemnité de déplacement hors de mon lieu habituel de travail</option>
+                            <option value="C_NJC">Calculer mon nombre de jours de congés</option>
+                            <option value="C_DELFE">Calculer le Délai pour évacuer le logement fourni par l’employeur</option>
+                            <option value="C_DMP">Calculer la durée de mon préavis</option>
+
+                            
                         </select>
                     </div>
 
@@ -140,6 +147,15 @@
                             <option value="L_T_P_V_A" >Le titulaire de poste est victime d'accident</option>
                             <option value="L_T_P_C" >Le titulaire de poste est en conge</option>
                             <option value="AUTRES" >AUTRES</option>
+                        </select>
+                    </div>
+
+                    <div class=" col-md-12 col-sm-12 form-group d-none" id="LOGEMENT_F">
+                        <label for="logement_f">Choisir le motif de l’évacuation du logement</label>
+                        <select name="logement_f" class="custom-select-box form-control">
+                            <option value="DLNPDR" >Démission ou licenciement avec notification d’un préavis dans les délais requis</option>
+                            <option value="DSRP" >Démission sans respect d’un préavis</option>
+                            <option value="LSRP" >Licenciement sans respect d’un préavis</option>
                         </select>
                     </div>
 
@@ -349,6 +365,7 @@
                 $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#montant').addClass('col-md-6');
                 $('#dateF').addClass('d-none');
@@ -393,6 +410,7 @@
                 $('label[id*=DATELICENCIEMENT]').empty();
                 $('label[id*=DATELICENCIEMENT]').text('Insérer la date du licenciement');
                 // remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#montant').addClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
@@ -429,6 +447,7 @@
                 document.getElementById('date_fin').required = true;
 
                 //Label title
+                $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
@@ -473,6 +492,7 @@
                 document.getElementById('date_fin').required = true;
 
                 //Label title
+                $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
@@ -519,6 +539,7 @@
                 $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#dateD').addClass('d-none');
                 $('#cumule_salaire').addClass('d-none');
@@ -547,6 +568,7 @@
                 $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen des 12 derniers mois');
                 
                 // remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -590,6 +612,7 @@
                 document.getElementById('salaire').required = true;
 
                 //Label title 
+                $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
@@ -623,6 +646,7 @@
                 $('#ESSAI').val('');
                
                 // Remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -648,6 +672,7 @@
                 $('#ESSAI').val('');
                
                 // Remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -673,6 +698,7 @@
                 $('#ABSENCE').val('');
                
                 // Remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -698,6 +724,7 @@
                 $('#SPECIALITE').val('');
 
                 // Remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -731,6 +758,7 @@
                 document.getElementById('salaire_cat_tp').required = true;
 
                 //Remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -761,6 +789,7 @@
                 document.getElementById('salaire_hor').required = true;
 
                 //remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -784,6 +813,7 @@
                 $('#PRIME_PANIER').val('');
 
                 //remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -813,6 +843,7 @@
                 document.getElementById('renumeration_due').required = true;
 
                 //remove class
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
@@ -847,6 +878,7 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 150 000';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 5';
 
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#dateF').addClass('d-none');
@@ -891,6 +923,7 @@
                 document.getElementById('salaire').required = true;
                 document.getElementById('salaire_hor').required = true;
 
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#dateF').addClass('d-none');
@@ -934,6 +967,7 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 3';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 150 000';
 
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#dateF').addClass('d-none');
@@ -961,8 +995,204 @@
                 document.getElementById('salaire_cat_tp').required = false;
 
             }
+            else if(responseID == 'C_D_P_S_C_T_M')
+            {
+                $('#montant').removeClass('d-none');
+                $('#montant').val('');
+                
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer votre ancienneté (ans)');
+                
+                document.getElementsByName('salaire')[0].placeholder='Ex: 13';
+
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
+            }
+            else if(responseID == 'C_I_D_H_LHT')
+            {
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#montant').addClass('d-none');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
+            }
+            else if(responseID == 'C_NJC')
+            {
+                
+                $('#montant').removeClass('d-none');
+                $('#montant').val('');
+                
+                $('label[id*=LABELS]').empty();
+                $('label[id*=LABELS]').text('Insérer votre ancienneté (ans)');
+                
+                document.getElementsByName('salaire')[0].placeholder='Ex: 7';
+
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+                // $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
+            }
+            else if(responseID == 'C_DELFE')
+            {
+                $('#LOGEMENT_F').removeClass('d-none');
+                $('#LOGEMENT_F').val('');
+
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#montant').addClass('d-none');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SPECIALITE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
+            }
+            else if(responseID == 'C_DMP')
+            {
+                
+                $('#SPECIALITE').removeClass('d-none');
+                $('#SPECIALITE').val('');
+
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('d-none');
+                $('#C_M_I_C_P_types').addClass('col-md-6');
+                $('#montant').addClass('d-none');
+                $('#dateF').addClass('d-none');
+                $('#dateD').addClass('d-none');
+                $('#PRESENCE').addClass('d-none');
+                $('#cumule_salaire').addClass('d-none');
+                $('#ESSAI').addClass('d-none');
+                $('#ABSENCE').addClass('d-none');
+                $('#SALAIRE_CAT_IN').addClass('d-none');
+                $('#SALAIRE_CAT_TP').addClass('d-none');
+                $('#TITULAIRE').addClass('d-none');
+                $('#RENUMERATION_DUE').addClass('d-none');
+                $('#montant').addClass('col-md-6');
+                $('#HEURE_SUPP').addClass('d-none');
+                $('#SALAIRE_HOR').addClass('d-none');
+                $('#MAJORATION').addClass('d-none');
+                $('#PRIME_PANIER').addClass('d-none');
+                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+
+                //required
+                document.getElementById('renumeration_due').required = false;
+                document.getElementById('salaire').required = false;
+                document.getElementById('date_deb').required = false;
+                document.getElementById('date_fin').required = false;
+                document.getElementById('heure_supp').required = false;
+                document.getElementById('salaire_hor').required = false;
+                document.getElementById('salaire_cat_in').required = false;
+                document.getElementById('salaire_cat_tp').required = false;
+                document.getElementById('cumuleS').required = false;
+            }
             else
             {
+                $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#montant').addClass('d-none');

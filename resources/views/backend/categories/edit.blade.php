@@ -60,7 +60,7 @@
 
                             <div class="col-md-6 form-group mb-3">
                                 <label class="checkbox checkbox-primary"> Is Parent
-                                    <input id="is_parent" type="checkbox" name="is_parent" value="{{$categorie->is_parent}}" {{$categorie->is_parent==1 ? 'checked' : ''}} /><span>OUI</span><span class="checkmark"></span>
+                                    <input  type="checkbox" id="is_parent" name="is_parent" value="{{$categorie->is_parent}}" {{$categorie->is_parent==1 ? 'checked' : ''}} /><span>OUI</span><span class="checkmark"></span>
                                 </label>
                             </div>
 

@@ -16,6 +16,7 @@ class MesDroitsController extends Controller
         $last_name = $request->input('last_name');
         $typeDroit = $request->input('types-droit');
         $types = $request->input('types');
+        $mLogement = $request->input('logement_f');
         $presences = $request->input('presence');
         $essai = $request->input('essai');
         $specialite = $request->input('specialite');
@@ -48,7 +49,7 @@ class MesDroitsController extends Controller
             // ** Pour convertir le timestamp (exprimé en secondes) en jours **
             // On sait que 1 heure = 60 secondes * 60 minutes et que 1 jour = 24 heures donc :
         $joursRestant = $nbJoursTimestamp/86400;
-        $NbrJrRestant_par365 = (float) number_format($joursRestant / 365,2);
+        $NbrJrRestant_par365 = ($joursRestant/365);
         // dd($NbrJrRestant_par365);
         //FIN JOURS RESTANT DE L'AN
 
@@ -839,7 +840,124 @@ class MesDroitsController extends Controller
                     );
             }
         }
+        //Calculer la durée de la période de suspensions de mon contrat de travail pour maladie
+        elseif($typeDroit == 'C_D_P_S_C_T_M')
+        {
+            if($salaire < 7)
+            {
+                $result = "6 mois";
+            }
+            elseif($salaire >= 7 && $salaire <= 15)
+            {
+                $result = "8 mois";
+            }
+            elseif($salaire > 15)
+            {
+                $result = "10 mois";
+            }
 
+            return redirect()
+            ->back()
+            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                La durée de la période de suspensions du contrat de travail pour maladie est égale à <strong>'.$result.'</strong>.'
+                );
+        }
+        //Calculer mon indemnité de déplacement hors de mon lieu habituel de travail
+        elseif($typeDroit == 'C_I_D_H_LHT')
+        {
+
+        }
+        //Calculer mon nombre de jours de congés
+        elseif($typeDroit == 'C_NJC')
+        {
+            if($salaire < 1)
+            {
+                $result = "Vous n’avez pas encore droit aux congés";
+
+                return redirect()
+                ->back()
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        <strong>'.$result.'</strong>.'
+                    );
+            }
+            elseif($salaire > 1 && $salaire <= 10)
+            {
+                $result = "2 jours ouvrables par mois effectifs";
+            }
+
+            elseif($salaire > 10 && $salaire <= 15)
+            {
+                $result = "2 jours ouvrables par mois effectifs + 1 jour ouvrable";
+            }
+            elseif($salaire > 15 && $salaire <= 20)
+            {
+                $result = "2 jours ouvrables par mois effectifs + 2 jours ouvrables";
+            }
+            elseif($salaire > 20 && $salaire <= 25)
+            {
+                $result = "2 jours ouvrables par mois effectifs + 3 jours ouvrables";
+            }
+            else
+            {
+                $result = "2 jours ouvrables par mois effectifs + 7 jours ouvrables";
+            }
+
+            return redirect()
+                ->back()
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre nombre de jours de congés est égale à <strong>'.$result.'</strong>.'
+                    );
+        }
+
+        //Calculer le Délai pour évacuer le logement fourni par l’employeur
+        elseif($typeDroit == 'C_DELFE')
+        {
+            // Démission ou licenciement avec notification d’un préavis dans les délais requis
+            if( $mLogement == 'DLNPDR'){
+                $result = "la durée du préavis";
+            }
+            // Démission sans respect d’un préavis
+            elseif($mLogement == 'DSRP')
+            {
+                $result = "8 jours";
+            }
+            // Licenciement sans respect d’un préavis
+            else
+            {
+                $result = "1 mois";
+            }
+
+            return redirect()
+                ->back()
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Le délai pour évacuer le logement est égale à <strong>'.$result.'</strong>.'
+                    );
+        }
+
+        //Calculer la durée de mon préavis
+        elseif($typeDroit == 'C_DMP')
+        {
+            // Je suis ouvrier ou employé
+            if( $types == 'J_S_O_E'){
+                $result = "1 mois";
+            }
+            // Je suis agent de maitrise ou assimilé
+            elseif($types == 'J_S_A_M_A')
+            {
+                $result = "2 mois";
+            }
+            // Je suis cadre ou assimilé
+            else
+            {
+                $result = "3 mois";
+            }
+
+            return redirect()
+                ->back()
+                ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                        Votre durée de préavis est égale à <strong>'.$result.'</strong>.'
+                    );
+        }
         else
         {
             return back()->with('error','Veuiller saisir des données correctes!');

@@ -72,6 +72,7 @@ class PublicationController extends Controller
         $data['slug'] = $slug;
 
         $status = Publication::create($data);
+        
         if($status){
             return redirect()->route('publication.index')->with('success','Publication creer avec succes');
         }
