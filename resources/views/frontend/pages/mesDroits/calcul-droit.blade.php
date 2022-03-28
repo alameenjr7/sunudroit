@@ -88,6 +88,68 @@
                         </select>
                     </div>
 
+                    
+                    <div class=" col-md-6 col-sm-12 form-group d-none" id="MDCMOT">
+                        <label for="mdcmot" id="MDCMOT">Mon déplacement a pour cause une mission occasionnelle et temporaire</label>
+                            <div>
+                                <input  type="radio" id="mdcmot1" name="mdcmot"  value="OUI">
+                                <label for="mdcmot1"> OUI</label>
+                            </div>
+                            <div>
+                                <input  type="radio" id="mdcmot2" name="mdcmot"  value="NON">
+                                <label for="mdcmot2"> NON </label>
+                            </div>
+                    </div>
+                    <div class=" col-md-6 col-sm-12 form-group  d-none" id="LDDIES">
+                        <label for="" id="LDDIES">La durée du déplacement est inférieure ou égale à six mois</label>
+                        <div>
+                            <input  type="radio" id="mdcmot1" name="lddies"  value="OUI">
+                            <label for="mdcmot1"> OUI</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="mdcmot2" name="lddies"  value="NON">
+                            <label for="mdcmot2"> NON</label>
+                        </div>
+                    </div>
+                    <div class=" col-md-6 col-sm-12 form-group  d-none" id="MDOFS">
+                        <label for="" id="MDOFS">Mon déplacement occasionne des frais supplémentaires</label>
+                        <div>
+                            <input  type="radio" id="mdofs1" name="mdofs"  value="OUI">
+                            <label for="mdofs1"> OUI</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="mdofs2" name="mdofs"  value="NON">
+                            <label for="mdofs2"> NON</label>
+                        </div>
+                    </div>
+                    <div class=" col-md-6 col-sm-12 form-group  d-none" id="MEFNPDNLG">
+                        <label for="" id="MEFNPDNLG">Mon employeur me fournit en nature les prestations décentes de nourriture, de
+                            logement et de voyage</label>
+                        <div>
+                            <input  type="radio" id="mefnpdnlg1" name="mefnpdnlg"  value="OUI">
+                            <label for="mefnpdnlg1"> OUI</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="mefnpdnlg2" name="mefnpdnlg"  value="NON">
+                            <label for="mefnpdnlg2"> NON</label>
+                        </div>
+                    </div>
+                    <div class=" col-md-6 col-sm-12 form-group  d-none" id="MDOP">
+                        <label for="" id="MDOP">Mon déplacement occasionne la prise (Chois unique)</label>
+                        <div>
+                            <input  type="radio" id="mdof1" name="mdof"  value="RP">
+                            <label for="mdof1"> D’un repas principal</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="mdof2" name="mdof"  value="DRP">
+                            <label for="mdof2"> De deux repas principaux</label>
+                        </div>
+                        <div>
+                            <input  type="radio" id="mdof3" name="mdof"  value="DRPC">
+                            <label for="mdof3"> De deux repas principaux et le couchage</label>
+                        </div>
+                    </div>
+
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="C_M_I_C_P_types">
                         <label for="types">Type de fonction</label>
                         <select name="types" class="custom-select-box form-control">
@@ -365,6 +427,11 @@
                 $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#montant').addClass('col-md-6');
@@ -410,6 +477,11 @@
                 $('label[id*=DATELICENCIEMENT]').empty();
                 $('label[id*=DATELICENCIEMENT]').text('Insérer la date du licenciement');
                 // remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#montant').addClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -447,7 +519,6 @@
                 document.getElementById('date_fin').required = true;
 
                 //Label title
-                $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
                 $('label[id*=DATEEMBAUCHE]').empty();
@@ -456,6 +527,12 @@
                 $('label[id*=DATELICENCIEMENT]').text('Insérer la date de départ à la retraite');
 
                 // add class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#LOGEMENT_F').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#montant').removeClass('col-md-12');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
@@ -492,6 +569,11 @@
                 document.getElementById('date_fin').required = true;
 
                 //Label title
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
@@ -539,6 +621,11 @@
                 $('label[id*=LABELS]').text('Insérer votre salaire actuel');
 
                 // remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#dateD').addClass('d-none');
@@ -568,6 +655,11 @@
                 $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen des 12 derniers mois');
                 
                 // remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#montant').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -612,6 +704,11 @@
                 document.getElementById('salaire').required = true;
 
                 //Label title 
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre salaire moyen des 12 derniers mois');
@@ -646,6 +743,10 @@
                 $('#ESSAI').val('');
                
                 // Remove class
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -672,6 +773,11 @@
                 $('#ESSAI').val('');
                
                 // Remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -698,6 +804,11 @@
                 $('#ABSENCE').val('');
                
                 // Remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -724,6 +835,11 @@
                 $('#SPECIALITE').val('');
 
                 // Remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -758,6 +874,11 @@
                 document.getElementById('salaire_cat_tp').required = true;
 
                 //Remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -789,6 +910,11 @@
                 document.getElementById('salaire_hor').required = true;
 
                 //remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -813,6 +939,11 @@
                 $('#PRIME_PANIER').val('');
 
                 //remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -843,6 +974,11 @@
                 document.getElementById('renumeration_due').required = true;
 
                 //remove class
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#montant').addClass('d-none');
@@ -878,6 +1014,12 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 150 000';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 5';
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -923,6 +1065,12 @@
                 document.getElementById('salaire').required = true;
                 document.getElementById('salaire_hor').required = true;
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -967,6 +1115,12 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 3';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 150 000';
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -995,6 +1149,7 @@
                 document.getElementById('salaire_cat_tp').required = false;
 
             }
+            // Calculer la durée de la période de suspensions de mon contrat de travail pour maladie
             else if(responseID == 'C_D_P_S_C_T_M')
             {
                 $('#montant').removeClass('d-none');
@@ -1005,6 +1160,12 @@
                 
                 document.getElementsByName('salaire')[0].placeholder='Ex: 13';
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -1036,12 +1197,30 @@
                 document.getElementById('salaire_cat_tp').required = false;
                 document.getElementById('cumuleS').required = false;
             }
+            //Calculer mon indemnité de déplacement hors de mon lieu habituel de travail
             else if(responseID == 'C_I_D_H_LHT')
             {
+                
+                $('#MDCMOT').removeClass('d-none');
+                $('#MDCMOT').val('');
+                $('#LDDIES').removeClass('d-none');
+                $('#LDDIES').val('');
+                $('#MDOFS').removeClass('d-none');
+                $('#MDOFS').val('');
+                $('#MEFNPDNLG').removeClass('d-none');
+                $('#MEFNPDNLG').val('');
+                $('#MDOP').removeClass('d-none');
+                $('#MDOP').val('');
+                $('#montant').removeClass('d-none');
+                $('#montant').val('');
+                $('#C_M_I_C_P_types').removeClass('d-none');
+                $('#C_M_I_C_P_types').val('');
+
+                
+                document.getElementById('salaire').required = true;
+
                 $('#LOGEMENT_F').addClass('d-none');
-                $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
-                $('#montant').addClass('d-none');
                 $('#dateF').addClass('d-none');
                 $('#dateD').addClass('d-none');
                 $('#PRESENCE').addClass('d-none');
@@ -1058,11 +1237,10 @@
                 $('#SALAIRE_HOR').addClass('d-none');
                 $('#MAJORATION').addClass('d-none');
                 $('#PRIME_PANIER').addClass('d-none');
-                $('label[id*=LABELS]').text('Insérer votre salaire actuel');
+                $('label[id*=LABELS]').text('Insérer votre salaire horaire de base');
 
                 //required
                 document.getElementById('renumeration_due').required = false;
-                document.getElementById('salaire').required = false;
                 document.getElementById('date_deb').required = false;
                 document.getElementById('date_fin').required = false;
                 document.getElementById('heure_supp').required = false;
@@ -1071,6 +1249,7 @@
                 document.getElementById('salaire_cat_tp').required = false;
                 document.getElementById('cumuleS').required = false;
             }
+            //Calculer mon nombre de jours de congés
             else if(responseID == 'C_NJC')
             {
                 
@@ -1082,6 +1261,12 @@
                 
                 document.getElementsByName('salaire')[0].placeholder='Ex: 7';
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
@@ -1115,11 +1300,18 @@
                 document.getElementById('salaire_cat_tp').required = false;
                 document.getElementById('cumuleS').required = false;
             }
+            //Délai pour évacuer le logement fourni par l’employeur
             else if(responseID == 'C_DELFE')
             {
                 $('#LOGEMENT_F').removeClass('d-none');
                 $('#LOGEMENT_F').val('');
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
                 $('#montant').addClass('d-none');
@@ -1152,12 +1344,19 @@
                 document.getElementById('salaire_cat_tp').required = false;
                 document.getElementById('cumuleS').required = false;
             }
+            //Calculer la durée de mon préavis
             else if(responseID == 'C_DMP')
             {
                 
                 $('#SPECIALITE').removeClass('d-none');
                 $('#SPECIALITE').val('');
 
+                
+                $('#MEFNPDNLG').addClass('d-none');
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');
@@ -1192,6 +1391,12 @@
             }
             else
             {
+                $('#MDCMOT').addClass('d-none');
+                $('#LDDIES').addClass('d-none');
+                $('#MDOFS').addClass('d-none');
+                $('#MDOP').addClass('d-none');
+                $('#MEFNPDNLG').addClass('d-none');
+
                 $('#LOGEMENT_F').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('d-none');
                 $('#C_M_I_C_P_types').addClass('col-md-6');

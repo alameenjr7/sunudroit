@@ -16,6 +16,11 @@ class MesDroitsController extends Controller
         $last_name = $request->input('last_name');
         $typeDroit = $request->input('types-droit');
         $types = $request->input('types');
+        $radio1 = $request->input('mdcmot');
+        $radio2 = $request->input('lddies');
+        $radio3 = $request->input('mdofs');
+        $radio4 = $request->input('mefnpdnlg');
+        $radio5 = $request->input('mdof');
         $mLogement = $request->input('logement_f');
         $presences = $request->input('presence');
         $essai = $request->input('essai');
@@ -115,6 +120,12 @@ class MesDroitsController extends Controller
             {
                 $result = number_format($salaire * 3);
             }
+
+            return redirect()
+            ->back()
+            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                    Votre indemnité compensatrice de préavis est égale à: '.$result.' FCFA.'
+                );
         }
 
         // Calcul Indemnité de licenciement (Article 80 de la CCNI)
@@ -865,7 +876,166 @@ class MesDroitsController extends Controller
         //Calculer mon indemnité de déplacement hors de mon lieu habituel de travail
         elseif($typeDroit == 'C_I_D_H_LHT')
         {
+            // Je suis ouvrier ou employé
+            if( $types == 'J_S_O_E')
+            {
+                if(($radio1 == 'OUI' && $radio2 == 'OUI' && $radio3 == 'NON') || 
+                ($radio1 == 'OUI' && $radio2 == 'NON' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'OUI' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'NON') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'OUI'))
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                elseif($radio4 == 'OUI')
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                else
+                {
+                    if($radio5 == 'RP')
+                    {
+                        $result = $salaire * 6;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour un repas principal est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                    } 
+                    elseif($radio5 == 'DRP')
+                    {
+                        $result = $salaire * 8;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour deux repas principaux est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                        }
+                    else
+                    {
+                        $result = $salaire * 10;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour deux repas principaux et le couchage est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                    }
+                }
+            }
+            // Je suis agent de maitrise ou assimilé
+            elseif($types == 'J_S_A_M_A')
+            {
+                if(($radio1 == 'OUI' && $radio2 == 'OUI' && $radio3 == 'NON') || 
+                ($radio1 == 'OUI' && $radio2 == 'NON' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'OUI' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'NON') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'OUI'))
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                elseif($radio4 == 'OUI')
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                else
+                {
+                    if($radio5 == 'RP')
+                    {
+                        $result = $salaire * 5;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour un repas principal est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                    } 
+                    elseif($radio5 == 'DRP')
+                    {
+                        $result = $salaire * 8;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour deux repas principaux est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                        }
+                    else
+                    {
+                        $result = $salaire * 10;
+                        
+                        return redirect()
+                        ->back()
+                        ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                                Votre indemnité pour deux repas principaux et le couchage est égale à: <strong>'.$result.'</strong> FCFA.'
+                            );
+                    }
+                }
+            }
+            // Je suis cadre ou assimilé
+            else
+            {
+                if(($radio1 == 'OUI' && $radio2 == 'OUI' && $radio3 == 'NON') || 
+                ($radio1 == 'OUI' && $radio2 == 'NON' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'OUI' && $radio3 == 'OUI') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'NON') ||
+                ($radio1 == 'NON' && $radio2 == 'NON' && $radio3 == 'OUI'))
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                elseif($radio4 == 'OUI')
+                {
+                    $result = "L’indemnité de déplacement n’est pas due.";
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            <strong>'.$result.'</strong>.'
+                        );
+                }
+                else
+                {
+                    $result = "- Soit sur présentation d’un état de frais accompagné de factures et de toutes pièces
+                    justificatives";
+                    $result1 = "- Soit sur une base forfaitaire d’accord parties et en rapport avec l’importance de vos
+                    fonctions";
 
+                    return redirect()
+                    ->back()
+                    ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
+                            Vos frais de voyage et de séjour engagés pour les besoins du services sont remboursés par
+                            l’employeur:
+                            '.$result.', 
+                            '.$result1
+                        );
+                }
+            }
         }
         //Calculer mon nombre de jours de congés
         elseif($typeDroit == 'C_NJC')
@@ -962,12 +1132,6 @@ class MesDroitsController extends Controller
         {
             return back()->with('error','Veuiller saisir des données correctes!');
         }
-
-        return redirect()
-            ->back()
-            ->with('message', 'Salut <strong>'.ucfirst($full_name).' '.ucfirst($last_name).'</strong>, 
-                    Votre indemnité compensatrice de préavis est égale à: '.$result.' FCFA.'
-                );
 
     }
 
