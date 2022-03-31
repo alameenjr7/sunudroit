@@ -76,7 +76,7 @@
 							</div>
 
 							<!-- Tags Widget -->
-							<div class="sidebar-widget popular-tags">
+							{{-- <div class="sidebar-widget popular-tags">
 								<div class="widget-content">
 									<div class="sidebar-title">
 										<h5>Tags</h5>
@@ -86,7 +86,7 @@
 									<a href="#">Hosting</a>
 									<a href="#">Business</a>
 								</div>
-							</div>
+							</div> --}}
 
 						</div>
 					</aside>

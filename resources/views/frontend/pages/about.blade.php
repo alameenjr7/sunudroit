@@ -35,11 +35,15 @@
                         <!-- Sec Title -->
                         <div class="sec-title">
                             <h2>Qu'est-ce que le portail <br> sunudroit.tech</h2>
-                            <div class="text">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et volutate repudiandae sint et molestiae non recusandae earum  rerum hic tenetur a sapiente delectus ut aut reiciendis  voluptatibus maiores alias consequatur aut nerfereni doloribus asperiores repellat.</div>
+                            <div class="text">Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec
+                                des informaticiens. <br>
+                                Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels
+                                du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
+                                fourniture d’outils et d’informations juridiques simples et accessibles à tous.</div>
                         </div>
                         <div class="text-box">
-                            Nam libero tempore, cum soluta nobis est eligenioptio cumque nihil impedit quo minus id quod maxplaceat facere possimus, omnis voluptas.
-                            <a href="corporate_law.html" class="arrow flaticon-right"></a>
+                            Sunudroit.Tech, le droit à votre portée !
+                            <a href="#" class="arrow flaticon-right"></a>
                         </div>
                     </div>
                 </div>
@@ -63,9 +67,9 @@
             <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="icon flaticon-auction"></div>
-                    <h5><a href="corporate_law.html">Legal Services</a></h5>
+                    <h5><a href="#">Legal Services</a></h5>
                     <div class="text">Quis autem velo eum iure rerehen derit rui inea votasuam nihil molestia conseuatur vel illum</div>
-                    <a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
+                    <a class="arrow flaticon-right-arrow-3" href="#"></a>
                 </div>
             </div>
 
@@ -73,9 +77,9 @@
             <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="icon flaticon-law"></div>
-                    <h5><a href="corporate_law.html">Great Results</a></h5>
+                    <h5><a href="#">Great Results</a></h5>
                     <div class="text">Quis autem velo eum iure rerehen derit rui inea votasuam nihil molestia conseuatur vel illum</div>
-                    <a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
+                    <a class="arrow flaticon-right-arrow-3" href="#"></a>
                 </div>
             </div>
 
@@ -83,9 +87,9 @@
             <div class="services-block-two col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="icon flaticon-marketing"></div>
-                    <h5><a href="corporate_law.html">Passionate People</a></h5>
+                    <h5><a href="#">Passionate People</a></h5>
                     <div class="text">Quis autem velo eum iure rerehen derit rui inea votasuam nihil molestia conseuatur vel illum</div>
-                    <a class="arrow flaticon-right-arrow-3" href="corporate_law.html"></a>
+                    <a class="arrow flaticon-right-arrow-3" href="#"></a>
                 </div>
             </div>
 
@@ -105,7 +109,8 @@
                 <!-- Sec Title -->
                 <div class="sec-title light">
                     <h2>POURQUOI NOUS CHOISIR</h2>
-                    <div class="text">Tonam rem aperiam, eaque ipsa quae ab illo inventoe veritatis et quasi architecto beatae vitae dicta sunt explicabo exercitationem ullam corporis.</div>
+                    <div class="text">Sunudroit.Tech met à la disposition de ses usagers une équipe compétente et dévouée pour
+                        faire de l’accès au droit une réalité.</div>
                 </div>
                 <!-- Counter Boxed -->
                 <div class="counter-boxed">

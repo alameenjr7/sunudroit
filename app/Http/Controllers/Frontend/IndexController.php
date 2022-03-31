@@ -57,7 +57,7 @@ class IndexController extends Controller
     {
         $infos = InfoPratique::where('status','active')
         ->orderBy('id','desc')
-        ->get();
+        ->paginate(8);
 
         return view('frontend.pages.services',compact('infos'));
     }

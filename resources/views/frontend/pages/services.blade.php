@@ -35,28 +35,30 @@
 							<!-- Sec Title -->
 							<div class="sec-title">
 								<h2>CE QUE NOUS <br> VOUS OFFRONS</h2>
-								<div class="text">Duis aute irure dolor in reprehenderit in volutate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+								<div class="text">Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels
+									du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
+									fourniture d’outils et d’informations juridiques simples et accessibles à tous.</div>
 							</div>
 							<div class="row clearfix">
 								<div class="column col-lg-6 col-md-6 col-sm-6">
 									<ul class="list-style-one">
-										<li>Velit esse quam nihilumi</li>
-										<li>Qui dolorem eum fugiat</li>
-										<li>Aspernatur aut odit aut</li>
-										<li>Ratione voluptatem sea</li>
+										<li>Délégation de puissance paternelle</li>
+										<li>Jugement d’hérédité</li>
+										<li>Rectificatif d’acte d’état civil</li>
+										<li>Administration légale</li>
 									</ul>
 								</div>
 								<div class="column col-lg-6 col-md-6 col-sm-6">
 									<ul class="list-style-one">
-										<li>Nostrum exercitationem</li>
-										<li>Reprehenderit qui nulla</li>
-										<li>Tempora incidunt utao</li>
-										<li>Nihil molestiae conseua</li>
+										<li>Homologation de partage</li>
+										<li>Divorce contentieux</li>
+										<li>Divorce amiable</li>
+										<li>Annulation d’acte d’état civil etc.</li>
 									</ul>
 								</div>
 							</div>
 							<div class="btns-box">
-								<a href="{{route('home')}}" class="theme-btn btn-style-two"><span class="txt">Free Consultation <i class="arrow flaticon-right"></i></span></a>
+								<a href="{{route('home','#section-question')}}" class="theme-btn btn-style-two"><span class="txt">Consultation <i class="arrow flaticon-right"></i></span></a>
 							</div>
 						</div>
 					</div>
@@ -82,9 +84,9 @@
 							<div class="practice-block col-lg-3 col-md-6 col-sm-12">
 									<div class="inner-box">
 										<div class="icon {{$info->icons}}"></div>
-										<h5><a href="#">{{$info->title}}</a></h5>
+										<h5 style="font-weight: 500;font-size: 16px;"><a href="{{route('info.detail',$info->slug)}}">{{$info->title}}</a></h5>
 										<div class="text">
-											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,20)) !!}</p>
+											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,2)) !!}</p>
 										</div>
 										<a class="arrow flaticon-right-arrow-3" href="{{route('info.detail',$info->slug)}}"></a>
 									</div>
@@ -94,6 +96,7 @@
 				</div>
 			</div>
 		</div>
+		{{ $infos->appends($_GET)->links('vendor.pagination.custom') }}
 	</section>
 	<!-- End Practice Section -->
 
