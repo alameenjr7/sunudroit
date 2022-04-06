@@ -55,7 +55,7 @@
 <!-- End Welcome Section -->
 
 <!-- Services Section Two -->
-<section class="services-section-two style-two">
+{{-- <section class="services-section-two style-two">
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
@@ -95,7 +95,7 @@
 
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End Services Section Two -->
 
 <!-- Fluid Section Two -->
@@ -214,12 +214,12 @@
 
 				</div>
 			</div>
-		</section>		
+		</section>
 	@endif --}}
 	<!-- End Team Section -->
 
 	<!-- Clients Section -->
-	{{-- @if (count($brandCompany)>0)		
+	{{-- @if (count($brandCompany)>0)
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -232,7 +232,7 @@
 						<!--Sponsors Carousel-->
 						<ul class="sponsors-carousel owl-carousel owl-theme">
 							@foreach ($brandCompany as $brand)
-								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>								
+								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>
 							@endforeach
 						</ul>
 					</div>

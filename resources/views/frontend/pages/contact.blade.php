@@ -36,7 +36,7 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>ENVOIE-NOUS UN MESSAGE</h2>
+            <h2>ENVOYEZ-NOUS UN MESSAGE</h2>
         </div>
         <!-- Contact Form -->
         <div class="contact-form">
@@ -64,7 +64,7 @@
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group text-center">
                         <button class="theme-btn btn-style-two" type="submit">
-                            <span class="txt">Envoyer 
+                            <span class="txt">Envoyer
                                 <i class="arrow flaticon-right"></i>
                             </span>
                         </button>

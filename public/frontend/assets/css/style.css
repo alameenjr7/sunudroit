@@ -87,7 +87,7 @@ a{
 
 div.spacer
 {
-    font-size: 0; 
+    font-size: 0;
     height: 35px;
     line-height: 0;
 	background-color: transparent;
@@ -2980,7 +2980,8 @@ img{
 
 .main-footer .widgets-section{
 	position:relative;
-	padding: 260px 0px 30px;
+	/* padding: 260px 0px 30px; */
+    padding: 50px 0px 30px;
 }
 
 .main-footer .footer-column{

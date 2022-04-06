@@ -24,14 +24,14 @@ class SettingsSeederTable extends Seeder
             'logo2' => 'frontend/assets/images/sunudroit-logo/png/Logo_240X60.png',
             'favicon' => 'frontend/assets/images/sunudroit-logo/Couleur/Logo_Couleur-180X55.png',
             'favicon2' => 'frontend/assets/images/sunudroit-logo/Couleur/Logo_Couleur-230X60.png',
-            'email_1' => 'management@sunudroit.tech',
+            'email_1' => 'sunudroit@sunudroit.tech',
             'email_2' => 'info@sunudroit.com',
-            'telephone1' => '221 77 655 14 84',
+            'telephone1' => '221 78 107 53 53',
             'telephone2' => '221 33 848 79 88',
             'fax' => '221-0456-8756-0456',
-            'adresse' => 'Cité Keur Gougui',
-            'lot' => ' Lot N°R85',
-            'appartement' => ' Imm. Neptune Optique',
+            'adresse' => '113',
+            'lot' => ' Rond-point',
+            'appartement' => ' Cité Keur Gorgui',
             'footer' => 'Quis autem vel eum iure reprehenderit aui ea voluptate velit esse molestiae consequatur, vel illum qui dolorem.',
             'text_abonnement' => 'Quis autem vel eum iure reprehenderit aui ea voluptate.',
             'image_footer' => 'frontend/assets/images/resource/hammer.png',
@@ -265,7 +265,7 @@ class SettingsSeederTable extends Seeder
                 'title' => 'Contrat de location',
                 'contenu' => '<p>ENTRE :
                 La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
-                ET : 
+                ET :
                 Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
                 'status' => 'activer',
                 'prix'=>null,
@@ -278,7 +278,7 @@ class SettingsSeederTable extends Seeder
                 'title' => 'CONTRAT DE CONCEPTION DE SITE WEB',
                 'contenu' => '<p>ENTRE :
                 La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
-                ET : 
+                ET :
                 Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
                 'status' => 'activer',
                 'slug'=>'contrat-de-conception-de-site-web',

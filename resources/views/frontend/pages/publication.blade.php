@@ -67,10 +67,10 @@
 								<!--End Blog Category Widget-->
 
 								<div class="sidebar-page-container"></div>
-								
+
 								<!-- Popular Post Widget -->
 								<div class="sidebar-widget popular-posts">
-									@if (count($lastPublication)>0)	
+									@if (count($lastPublication)>0)
 										<div class="widget-content">
 											<div class="sidebar-title">
 												<h5>Derniere Publication</h5>
@@ -104,7 +104,7 @@
 	</div>
 
 	<!-- Facts Section three -->
-    <section class="facts-section-three" style="background-image: url("{{asset('frontend/assets/images/background/1.jpg')}});">
+    {{-- <section class="facts-section-three" style="background-image: url("{{asset('frontend/assets/images/background/1.jpg')}});">
 
         <div class="auto-container">
             <div class="fact-counter-style-three">
@@ -157,10 +157,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 	<!-- Clients Section -->
-	{{-- @if (count($brandCompany)>0)		
+	{{-- @if (count($brandCompany)>0)
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -173,7 +173,7 @@
 						<!--Sponsors Carousel-->
 						<ul class="sponsors-carousel owl-carousel owl-theme">
 							@foreach ($brandCompany as $brand)
-								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>								
+								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>
 							@endforeach
 						</ul>
 					</div>
