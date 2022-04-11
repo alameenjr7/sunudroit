@@ -49,10 +49,10 @@
                                         <!-- Social Nav -->
                                         <ul class="social-nav">
                                             <li><a href="{{App\Models\Setting::value('facebook_url')}}"><span class="fa fa-facebook-f"></span></a></li>
-                                            <li><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li>
+                                            {{-- <li><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li> --}}
                                             <li><a href="{{App\Models\Setting::value('linkedin_url')}}"><span class="fa fa-linkedin"></span></a></li>
                                             <li><a href="{{App\Models\Setting::value('instagram_url')}}"><span class="fa fa-instagram"></span></a></li>
-                                            <li><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li>
+                                            {{-- <li><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li> --}}
                                         </ul>
                                     </div>
                                 </div>

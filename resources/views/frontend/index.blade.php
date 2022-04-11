@@ -2,7 +2,7 @@
 
 @section('content')
 	<!-- Banner Section -->
-	@if (count($banners)>0)	
+	@if (count($banners)>0)
     <!-- Banner Section 11111111111111111-->
 		{{-- <section class="banner-section">
 			<!-- Social Nav -->
@@ -43,10 +43,10 @@
 			<!-- Social Nav -->
 			<ul class="social-nav">
 				<li class="facebook"><a href="{{App\Models\Setting::value('facebook_url')}}"><span class="fa fa-facebook-f"></span></a></li>
-				<li class="twitter"><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li>
+				{{-- <li class="twitter"><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li> --}}
 				<li class="linkedin"><a href="{{App\Models\Setting::value('linkedin_url')}}"><span class="fa fa-linkedin"></span></a></li>
 				<li class="instagram"><a href="{{App\Models\Setting::value('instagram_url')}}"><span class="fa fa-instagram"></span></a></li>
-				<li class="youtube"><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li>
+				{{-- <li class="youtube"><a href="{{App\Models\Setting::value('youtube_url')}}"><span class="fa fa-youtube"></span></a></li> --}}
 			</ul>
 			<div class="banner-carousel owl-theme owl-carousel owl-dots-none">
 				@foreach ($banners as $banner)
@@ -68,7 +68,7 @@
 										</div>
 									</div>
 								</div>
-							</div> 
+							</div>
 						</div>
 					</div>
 				@endforeach
@@ -380,7 +380,7 @@
 
 				</div>
 			</div>
-		</section>		
+		</section>
 	@endif --}}
 	<!-- End Team Section -->
 
@@ -437,7 +437,7 @@
 	<!-- End Testimonail Section -->
 
 	<!-- Clients Section -->
-	{{-- @if (count($categories)>0)		
+	{{-- @if (count($categories)>0)
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -450,7 +450,7 @@
 						<!--Sponsors Carousel-->
 						<ul class="sponsors-carousel owl-carousel owl-theme">
 							@foreach ($brandCompany as $brand)
-								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>								
+								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>
 							@endforeach
 						</ul>
 					</div>
