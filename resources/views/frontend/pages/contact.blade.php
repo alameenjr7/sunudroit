@@ -23,7 +23,7 @@
                 <!-- Map Outer -->
                 <div class="map-outer">
                     {{-- <iframe src="{{get_setting('map_url')}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
-                    {!! html_entuty_decode(get_setting('map_url')) !!}
+                    {!! html_entity_decode(get_setting('map_url')) !!}
                 </div>
             </div>
         </div>
