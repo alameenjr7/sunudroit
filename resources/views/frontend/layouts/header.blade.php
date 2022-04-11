@@ -1,6 +1,6 @@
-
+{{--
     <div class="auto-container clearfix">
-        <!--  Header Top -->    	
+        <!--  Header Top -->
         <div class="header-top clearfix">
             <div class="top-left pull-left clearfix">
                 <ul class="info-box clearfix">
@@ -17,32 +17,32 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div> --}}
+
     <!--Header-Upper-->
     <div class="header-upper">
         <div class="auto-container clearfix">
-            
+
             <div class="pull-left logo-box">
                 <div class="logo"><a href="{{route('home')}}"><img src="{{asset(get_setting('logo'))}}" alt="" title="" style="width: 230px; height: 60px;"></a></div>
             </div>
-            
+
             <div class="nav-outer clearfix">
                 <!-- Mobile Navigation Toggler -->
                 <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
                 <!-- Main Menu -->
                 <nav class="main-menu navbar-expand-md">
                     <div class="navbar-header">
-                        <!-- Toggle Button -->      
+                        <!-- Toggle Button -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                    
+
                     <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
-                        
+
                         <ul class="navigation clearfix">
                             <li class="current ">
                                 <a href="{{route('home')}}">Accueil</a>
@@ -68,22 +68,22 @@
                         </ul>
                     </div>
                 </nav>
-                
+
                 <!-- Main Menu End-->
                 {{-- <div class="outer-box clearfix">
-                    
+
                     <!-- Btn Box -->
                     <div class="btn-box">
                         <a href="{{route('contact')}}" class="theme-btn btn-style-one"><span class="txt">Nous Contacter</span></a>
                     </div>
-                    
+
                 </div> --}}
             </div>
-            
+
         </div>
     </div>
     <!--End Header Upper-->
-    
+
     <!-- Sticky Header  -->
     <div class="sticky-header">
         <div class="auto-container clearfix">
@@ -97,10 +97,10 @@
                 <nav class="main-menu">
                     <!--Keep This Empty / Menu will come through Javascript-->
                 </nav><!-- Main Menu End-->
-                
+
                 <!-- Main Menu End-->
                 {{--   --}}
-                
+
             </div>
         </div>
     </div><!-- End Sticky Menu -->
@@ -109,7 +109,7 @@
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
         <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
-        
+
         <nav class="menu-box">
             <div class="nav-logo"><a href="{{route('home')}}"><img src="{{asset(get_setting('logo2'))}}" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
