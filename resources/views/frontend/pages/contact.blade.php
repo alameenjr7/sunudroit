@@ -103,7 +103,9 @@
                     <h5>Telephone</h5>
                     <ul class="info-list">
                         <li><a href="tel:+{{get_setting('telephone1')}}">+{{App\Models\Setting::value('telephone1')}}</a></li>
-                        <li><a href="tel:+{{get_setting('telephone2')}}">{{App\Models\Setting::value('telephone2')}}</a></li>
+                        @if (get_setting('telephone2'))
+                            <li><a href="tel:+{{get_setting('telephone2')}}">+{{App\Models\Setting::value('telephone2')}}</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
