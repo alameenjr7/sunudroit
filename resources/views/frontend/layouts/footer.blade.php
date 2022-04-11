@@ -66,7 +66,7 @@
                                             <li><a href="{{route('about')}}">Qui sommes nous?</a></li>
                                             <li><a href="{{route('service')}}">Infos Pratiques</a></li>
                                             <li><a href="{{route('publication')}}">Publications</a></li>
-                                            <li><a href="{{route('contact')}}">Contact</a></li>
+                                            <li><a href="{{route('calcul.droit')}}">Calculer mes droits</a></li>
                                         </ul>
                                     </div>
                                 </div>
