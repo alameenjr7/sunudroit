@@ -23,7 +23,7 @@
                 <!-- Map Outer -->
                 <div class="map-outer">
                     {{-- <iframe src="{{get_setting('map_url')}}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> --}}
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d30871.422163572603!2d-17.476441308672943!3d14.716675585242383!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40w%2C%20Cabinet%20d&#39;Avocats!5e0!3m2!1sfr!2ssn!4v1644925974084!5m2!1sfr!2ssn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    {!! html_entuty_decode(get_setting('map_url')) !!}
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                     <h5>Telephone</h5>
                     <ul class="info-list">
                         <li><a href="tel:+{{get_setting('telephone1')}}">+{{App\Models\Setting::value('telephone1')}}</a></li>
-                        <li><a href="tel:+{{get_setting('telephone2')}}">+{{App\Models\Setting::value('telephone2')}}</a></li>
+                        {{-- <li><a href="tel:+{{get_setting('telephone2')}}">+{{App\Models\Setting::value('telephone2')}}</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                     <h5>Email</h5>
                     <ul class="info-list">
                         <li><a href="mailto:{{get_setting('email_1')}}">{{App\Models\Setting::value('email_1')}}</a></li>
-                        <li><a href="mailto:{{get_setting('email_2')}}">{{App\Models\Setting::value('email_2')}}</a></li>
+                        {{-- <li><a href="mailto:{{get_setting('email_2')}}">{{App\Models\Setting::value('email_2')}}</a></li> --}}
                     </ul>
                 </div>
             </div>
