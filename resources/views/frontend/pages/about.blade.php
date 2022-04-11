@@ -39,7 +39,9 @@
                                 des informaticiens. <br>
                                 Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels
                                 du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
-                                fourniture d’outils et d’informations juridiques simples et accessibles à tous.</div>
+                                fourniture d’outils et d’informations juridiques simples et accessibles à tous.
+                                Sunudroit.Tech met à la disposition de ses usagers une équipe compétente et dévouée pour
+                                faire de l’accès au droit une réalité.</div>
                         </div>
                         <div class="text-box">
                             Sunudroit.Tech, le droit à votre portée !
@@ -99,7 +101,7 @@
 <!-- End Services Section Two -->
 
 <!-- Fluid Section Two -->
-<section class="fluid-section-two">
+{{-- <section class="fluid-section-two">
     <div class="side-icon"><img src="{{('frontend/assets/images/icons/fluid-icon-1.png')}}" alt="" /></div>
     <div class="outer-container clearfix">
 
@@ -118,7 +120,7 @@
                         <div class="row clearfix">
 
                             <!-- Column -->
-                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-briefcase"></div>
@@ -128,10 +130,10 @@
                                         <h6 class="counter-title">Business Partners</h6>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <!-- Column -->
-                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-balance"></div>
@@ -141,10 +143,10 @@
                                         <h6 class="counter-title">Cases Done</h6>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <!-- Column -->
-                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-marketing"></div>
@@ -154,10 +156,10 @@
                                         <h6 class="counter-title">Happy Clients</h6>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
                             <!-- Column -->
-                            {{-- <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                            <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
                                 <div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                                     <div class="content">
                                         <div class="icon flaticon-trophy-2"></div>
@@ -167,7 +169,7 @@
                                         <h6 class="counter-title">Awards Win</h6>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
 
                         </div>
                     </div>
@@ -183,7 +185,7 @@
         </div>
 
     </div>
-</section>
+</section> --}}
 <!-- End Fluid Section Two -->
 
 	<!-- Team Section -->
