@@ -45,7 +45,7 @@
                         </div>
                         <div class="text-box">
                             Sunudroit.Tech, le droit à votre portée !
-                            <a href="#" class="arrow flaticon-right"></a>
+                            <a href="{{route('calcul.droit')}}" class="arrow flaticon-right"></a>
                         </div>
                     </div>
                 </div>
