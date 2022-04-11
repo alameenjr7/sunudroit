@@ -7,7 +7,7 @@
     <div class="auto-container">
         <h1>Qui sommes-nous?</h1>
         <ul class="page-breadcrumb">
-            <li><a href="index.html">Accueil</a></li>
+            <li><a href="{{route('home')}}">Accueil</a></li>
             <li>A propos de nous</li>
         </ul>
     </div>
