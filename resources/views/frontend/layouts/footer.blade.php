@@ -79,10 +79,12 @@
                                                 <span class="icon flaticon-call-1"></span>
                                                 <a href="tel:+{{get_setting('telephone1')}}">+{{get_setting('telephone1')}}</a>
                                             </li>
-                                            <li>
-                                                <span class="icon flaticon-call-1"></span>
-                                                <a href="tel:+{{get_setting('telephone2')}}">{{get_setting('telephone2')}}</a>
-                                            </li>
+                                            @if (get_setting('telephone2'))
+                                                <li>
+                                                    <span class="icon flaticon-call-1"></span>
+                                                    <a href="tel:+{{get_setting('telephone2')}}">+{{get_setting('telephone2')}}</a>
+                                                </li>
+                                            @endif
                                             <li>
                                                 <span class="icon flaticon-email-2"></span>
                                                 <a href="mailto:{{get_setting('email_1')}}">{{get_setting('email_1')}}</a>
