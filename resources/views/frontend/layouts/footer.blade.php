@@ -81,7 +81,7 @@
                                             </li>
                                             <li>
                                                 <span class="icon flaticon-call-1"></span>
-                                                <a href="tel:+{{get_setting('telephone2')}}">+{{get_setting('telephone2')}}</a>
+                                                <a href="tel:+{{get_setting('telephone2')}}">{{get_setting('telephone2')}}</a>
                                             </li>
                                             <li>
                                                 <span class="icon flaticon-email-2"></span>
