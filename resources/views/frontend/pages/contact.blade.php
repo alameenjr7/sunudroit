@@ -15,6 +15,7 @@
 <!-- End Page Title -->
 
 <!-- Map Section -->
+@if (get_setting('map_url'))
 <section class="map-section">
     <div class="auto-container">
         <div class="inner-container">
@@ -29,6 +30,7 @@
         </div>
     </div>
 </section>
+@endif
 <!-- End Map Section -->
 
 <!-- Contact Form Section -->
