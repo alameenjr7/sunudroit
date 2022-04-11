@@ -156,7 +156,7 @@
 	<!-- End Welcome Section -->
 
 	<!-- Counter Section -->
-	<section class="counter-section">
+	{{-- <section class="counter-section">
 		<div class="image-layer" style="background-image: url({{asset('frontend/assets/images/background/1.jpg)')}})"></div>
 		<div class="auto-container">
 			<!-- Sec Title -->
@@ -169,7 +169,7 @@
 				<div class="row clearfix">
 
 					<!-- Column -->
-					{{-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
 						<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="content">
 								<div class="icon flaticon-briefcase"></div>
@@ -179,10 +179,10 @@
 								<h6 class="counter-title">Partenaires d'Affaires</h6>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 					<!-- Column -->
-					{{-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
 						<div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="content">
 								<div class="icon flaticon-balance"></div>
@@ -192,10 +192,10 @@
 								<h6 class="counter-title">Cas Réglés</h6>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 					<!-- Column -->
-					{{-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
 						<div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="content">
 								<div class="icon flaticon-marketing"></div>
@@ -205,10 +205,10 @@
 								<h6 class="counter-title">Clients Heureux</h6>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 					<!-- Column -->
-					{{-- <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+					<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
 						<div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
 							<div class="content">
 								<div class="icon flaticon-trophy-2"></div>
@@ -218,7 +218,7 @@
 								<h6 class="counter-title">Gagner des Récompenses</h6>
 							</div>
 						</div>
-					</div> --}}
+					</div>
 
 				</div>
 			</div>
@@ -232,7 +232,7 @@
 			</div>
 
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Counter Section -->
 
 	<!-- Practice Section -->
