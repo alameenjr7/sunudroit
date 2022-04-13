@@ -107,32 +107,32 @@ class SettingsSeederTable extends Seeder
             ]
         ]);
 
-        DB::table('publications')->insert([
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
-                'title' => 'Droit de la famille',
-                'subtitle' => 'Famille',
-                'slug'=>'droit-de-la-famille',
-                'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'cat_id' => 1,
-                'conditions' => 'publier',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
-                'title' => 'Droit des affaires',
-                'slug'=>'droit-des-affaires',
-                'subtitle' => 'Affaires',
-                'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'cat_id' => 2,
-                'conditions' => 'publier',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]
-        ]);
+        // DB::table('publications')->insert([
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
+        //         'title' => 'Droit de la famille',
+        //         'subtitle' => 'Famille',
+        //         'slug'=>'droit-de-la-famille',
+        //         'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'cat_id' => 1,
+        //         'conditions' => 'publier',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ],
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
+        //         'title' => 'Droit des affaires',
+        //         'slug'=>'droit-des-affaires',
+        //         'subtitle' => 'Affaires',
+        //         'contenu' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'cat_id' => 2,
+        //         'conditions' => 'publier',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]
+        // ]);
 
         DB::table('info_pratiques')->insert([
             [
