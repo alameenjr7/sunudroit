@@ -42,7 +42,7 @@ class SettingsSeederTable extends Seeder
             'linkedin_url' => '',
             'instagram_url' => '',
             'youtube_url' => '',
-            'map_url' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.028235227538!2d-17.469440185846533!3d14.710995378307327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b4b3874b63%3A0xbf6bd7d773ce2ddd!2sLPS%20L%40W%2C%20SCP%20d&#39;Avocats!5e0!3m2!1sen!2sus!4v1643800014744!5m2!1sen!2sus',
+            'map_url' => '',
         ]);
 
         DB::table('banners')->insert([
