@@ -101,7 +101,7 @@
 	<!-- End Practice Section -->
 
 	<!-- Facts Section three -->
-    <section class="facts-section-three" style="background-image: url({{asset('frontend/assets/images/background/1.jpg')}});">
+    <section class="facts-section-three" style="background-image: url({{asset('frontend/assets/img/just.jpg')}});">
 
         <div class="auto-container">
             <div class="fact-counter-style-three">
@@ -159,7 +159,7 @@
 
 
 	<!-- Clients Section -->
-	{{-- @if (count($brandCompany)>0)		
+	{{-- @if (count($brandCompany)>0)
 		<section class="clients-section">
 			<div class="auto-container">
 				<!-- Sec Title -->
@@ -172,7 +172,7 @@
 						<!--Sponsors Carousel-->
 						<ul class="sponsors-carousel owl-carousel owl-theme">
 							@foreach ($brandCompany as $brand)
-								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>								
+								<li class="slide-item"><figure class="image-box"><a href="#"><img src="{{asset($brand->photo)}}" alt="{{$brand->title}}"></a></figure></li>
 							@endforeach
 						</ul>
 					</div>
