@@ -35,7 +35,7 @@ class SettingsSeederTable extends Seeder
             'footer' => 'Quis autem vel eum iure reprehenderit aui ea voluptate velit esse molestiae consequatur, vel illum qui dolorem.',
             'text_abonnement' => 'Quis autem vel eum iure reprehenderit aui ea voluptate.',
             'image_footer' => 'frontend/assets/images/resource/hammer.png',
-            'background_footer' => 'frontend/assets/images/resource/cta.jpg',
+            'background_footer' => 'frontend/assets/img/just.jpg',
             'background_header' => 'frontend/assets/img/balance.jpg',
             'facebook_url' => '',
             'twitter_url' => '',
