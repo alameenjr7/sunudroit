@@ -88,7 +88,6 @@
 										{{-- <div class="text">
 											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,2)) !!}</p>
 										</div> --}}
-
 										<a class="arrow flaticon-right-arrow-3" href="{{route('info.detail',$info->slug)}}"></a>
 									</div>
 							</div>
