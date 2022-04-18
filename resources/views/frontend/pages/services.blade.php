@@ -74,7 +74,7 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<h2>NOS DOMAINES DE PRATIQUE JURIDIQUE</h2>
+				{{-- <h2>NOS DOMAINES DE PRATIQUE JURIDIQUE</h2> --}}
 			</div>
 			<div class="inner-container">
 				<div class="clearfix">
