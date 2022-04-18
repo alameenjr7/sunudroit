@@ -24,7 +24,7 @@
 					<div class="image-column col-lg-6 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<div class="image">
-								<img src="{{asset('frontend/assets/images/resource/service-3.jpg')}}" alt="" />
+								<img src="{{asset('frontend/assets/img/droit1.jpeg')}}" alt="" />
 							</div>
 						</div>
 					</div>
@@ -70,7 +70,7 @@
 	<!-- End Welcome Section -->
 
 	<!-- Practice Section -->
-	<section class="practice-section" style="background-image: url({{asset('frontend/assets/images/background/pattern-2.png')}})">
+	<section class="practice-section" style="background-image: url({{asset('frontend/assets/imd/background/pattern-2.png')}})">
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
