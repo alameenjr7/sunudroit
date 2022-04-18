@@ -42,12 +42,14 @@
                                 <!--Footer Column-->
                                 <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                                     <div class="footer-widget logo-widget">
-                                        <div class="logo">
-                                            <a href="{{route('home')}}"><img src="{{asset(get_setting('favicon'))}}" alt="" style="width: 240px; height: 60px;"/></a>
+                                        <div class="logo" style="top: -50px">
+                                            <a href="{{route('home')}}"><img src="{{asset(get_setting('favicon'))}}" alt="" /></a>
                                         </div>
-                                        <div class="text">{{get_setting('footer')}}</div>
+                                        @if (get_setting('logo2'))
+                                            <div class="text">{{get_setting('footer')}}</div>
+                                        @endif
                                         <!-- Social Nav -->
-                                        <ul class="social-nav">
+                                        <ul class="social-nav" style="top: -100px">
                                             <li><a href="{{App\Models\Setting::value('facebook_url')}}"><span class="fa fa-facebook-f"></span></a></li>
                                             {{-- <li><a href="{{App\Models\Setting::value('twitter_url')}}"><span class="fa fa-twitter"></span></a></li> --}}
                                             <li><a href="{{App\Models\Setting::value('linkedin_url')}}"><span class="fa fa-linkedin"></span></a></li>

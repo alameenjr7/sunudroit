@@ -34,17 +34,23 @@
                     <div class="inner-column">
                         <!-- Sec Title -->
                         <div class="sec-title">
-                            <h2>Qu'est-ce que le portail <br> sunudroit.tech</h2>
-                            <div class="text">Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec
-                                des informaticiens. <br>
+                            {{-- <h2>Qu'est-ce que le portail <br> sunudroit.tech</h2> --}}
+                            <div class="text" style="top: -100px;">Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec;
+                                des informaticiens.
+                                <br>
+                                <br>
                                 Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels
                                 du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
                                 fourniture d’outils et d’informations juridiques simples et accessibles à tous.
+                                <br>
+                                <br>
                                 Sunudroit.Tech met à la disposition de ses usagers une équipe compétente et dévouée pour
-                                faire de l’accès au droit une réalité.</div>
+                                faire de l’accès au droit une réalité.
+                            </div>
+
                         </div>
-                        <div class="text-box">
-                            Sunudroit.Tech, le droit à votre portée !
+                        <div class="text-box" style="top: -100px;">
+                            <h4>Sunudroit.Tech, le droit à votre portée !</h4>
                             <a href="{{route('calcul.droit')}}" class="arrow flaticon-right" title="Calculer mes droits"></a>
                         </div>
                     </div>

@@ -36,11 +36,11 @@ class CreateSettingsTable extends Migration
             $table->string('background_header');
             $table->string('text_abonnement')->nullable();
             $table->string('facebook_url')->nullable();
-            $table->string('twitter_url')->nullable();
             $table->string('linkedin_url')->nullable();
             $table->string('instagram_url')->nullable();
-            $table->string('youtube_url')->nullable();
             $table->text('map_url')->nullable();
+            $table->longText('info_pratique')->nullable();
+            $table->longText('about')->nullable();
             $table->timestamps();
         });
     }

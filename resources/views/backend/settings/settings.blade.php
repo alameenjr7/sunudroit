@@ -110,7 +110,7 @@
                                 <label for="phone">Telephone portable</label>
                                 <input class="form-control" id="phone" name="telephone1" value="{{$setting->telephone1}}" placeholder="Entrer votre telephone" />
                             </div>
-                            
+
                             <div class="col-md-6 form-group mb-3">
                                 <label for="phone">Telephone fixe</label>
                                 <input class="form-control" id="phone" name="telephone2" value="{{$setting->telephone2}}" placeholder="Entrer votre Fixe" />
@@ -136,10 +136,6 @@
                                 <input class="form-control" id="picker2" placeholder="Votre lien ...." name="facebook_url" value="{{$setting->facebook_url}}"/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
-                                <label for="picker2">Lien Twitter</label>
-                                <input class="form-control" id="picker2" placeholder="Votre lien ...." name="twitter_url" value="{{$setting->twitter_url}}"/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
                                 <label for="picker2">Lien Linkedin</label>
                                 <input class="form-control" id="picker2" placeholder="Votre lien ...." name="linkedin_url" value="{{$setting->linkedin_url}}"/>
                             </div>
@@ -148,12 +144,16 @@
                                 <input class="form-control" id="picker2" placeholder="Votre lien ...." name="instagram_url" value="{{$setting->instagram_url}}"/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
-                                <label for="picker2">Lien Youtube</label>
-                                <input class="form-control" id="picker2" placeholder="Votre lien ...." name="youtube_url" value="{{$setting->youtube_url}}"/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
                                 <label for="picker2">Lien Maps</label>
                                 <input class="form-control" id="picker2" placeholder="Votre lien ...." name="map_url" value="{{$setting->map_url}}"/>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="picker2">info Pratique</label>
+                                <input class="form-control" id="picker2" placeholder="Votre lien ...." name="info_pratique" value="{{$setting->info_pratique}}"/>
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="picker2">About</label>
+                                <input class="form-control" id="picker2" placeholder="Votre lien ...." name="about" value="{{$setting->about}}"/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
                                 <label for="picker2">Text Footer</label>

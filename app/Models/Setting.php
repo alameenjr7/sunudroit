@@ -31,10 +31,10 @@ class Setting extends Model
         'background_header',
         'text_abonnement',
         'facebook_url',
-        'twitter_url',
         'linkedin_url',
         'instagram_url',
-        'youtube_url',
 		'map_url',
+        'info_pratique',
+        'about',
     ];
 }

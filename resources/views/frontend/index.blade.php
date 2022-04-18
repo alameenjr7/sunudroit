@@ -107,7 +107,7 @@
 	<!-- End Services Section -->
 
 	<!-- Welcome Section -->
-	<section class="welcome-section" style="background-image: url({{asset('frontend/assets/images/background/pattern-2.png)')}})">
+	{{-- <section class="welcome-section" style="background-image: url({{asset('frontend/assets/images/background/pattern-2.png)')}})">
 		<div class="auto-container">
 			<div class="inner-container">
 				<div class="clearfix">
@@ -152,7 +152,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Welcome Section -->
 
 	<!-- Counter Section -->
@@ -236,7 +236,7 @@
 	<!-- End Counter Section -->
 
 	<!-- Practice Section -->
-	<section class="practice-section" style="background-image: url({{asset('frontend/assets/images/background/pattern-2.png')}})">
+	{{-- <section class="practice-section" style="background-image: url({{asset('frontend/assets/images/background/pattern-2.png')}})">
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
@@ -262,22 +262,23 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Practice Section -->
 
 	<!-- Fluid Section One -->
 
     <section class="fluid-section-one" id="section-question">
-		<div class="side-icon"><img src="{{asset('frontend/assets/images/sunudroit-logo/png/Logo_329X288.png')}}" alt="" /></div>
+		<div class="side-icon"><img src="{{asset(get_setting('logo2'))}}" alt="" /></div>
     	<div class="outer-container clearfix">
         	<!-- Image Column -->
-            <div class="image-column clearfix" style="background-image:url({{asset('frontend/assets/images/resource/image-1.jpg')}})">
+            <div class="image-column clearfix" style="height:50%;background-image:url({{asset('frontend/assets/images/resource/image-1.jpg')}})">
+
             	<div class="inner-column">
 					<div class="sec-title light">
-						<h2>Questions fréquemment <br> posées</h2>
-						<div class="text">Tonam rem aperiam, eaque ipsa quae ab illo inventoe veritatis et quasi architecto beatae vitae dicta sunt explicabo exercitationem ullam corporis.</div>
+						<h2>Qui Sommes Nous?</h2>
+						<div class="text">{!! html_entity_decode(get_setting('about')) !!}</div>
 					</div>
-					@if (count($consultations)>0)
+					{{-- @if (count($consultations)>0)
 						@foreach ($consultations as $consultation)
 							<!-- Accordian Box -->
 							<ul class="accordion-box">
@@ -294,7 +295,8 @@
 							</ul>
 							<!-- Accordian Box -->
 						@endforeach
-					@endif
+					@endif --}}
+                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('about')}}"></a>
 				</div>
             </div>
 
@@ -302,12 +304,13 @@
             <div class="content-column">
             	<div class="inner-column">
 					<div class="sec-title">
-						<h2>Obtenez une Consultation <br> Gratuite</h2>
+						<h2>Infos Pratiques</h2>
+                        <div class="text">{!! html_entity_decode(get_setting('info_pratique')) !!}</div>
 					</div>
 
 					<!-- Default Form -->
-					<div class="default-form">
-						{{-- @include('components.errors') --}}
+					{{-- <div class="default-form">
+						@include('components.errors')
 						<form method="post" action="{{route('consultation.submit')}}">
 							@csrf
 							<div class="row clearfix">
@@ -343,9 +346,9 @@
 
 							</div>
 						</form>
-					</div>
+					</div> --}}
 					<!-- End Default Form -->
-
+                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('service')}}"></a>
 				</div>
 			</div>
 		</div>

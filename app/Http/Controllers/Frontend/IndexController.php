@@ -22,7 +22,7 @@ class IndexController extends Controller
     {
         $banners = Banner::where('status','active')
         ->orderBy('id','desc')
-        ->limit(5)
+        // ->limit(6)
         ->get();
 
         $categories = Categorie::where(['status'=>'active','is_parent'=>1])
@@ -78,7 +78,7 @@ class IndexController extends Controller
         ]);
 
         $data = $request->all();
-        
+
         $status = Message::create($data);
 
         if($status){
@@ -122,7 +122,7 @@ class IndexController extends Controller
         $publication = Publication::where('title','LIKE','%'.$query.'%')->orderBy('id','DESC')->paginate(5);
         $categories = Categorie::where(['status'=>'active','is_parent'=>1])->with('publications')->orderBy('title','ASC')->get();
         $lastPublication = Publication::where('status','active')->orderBy('id','DESC')->limit(3)->get();
-       
+
         return view('frontend.pages.publication',compact('publication','categories','lastPublication'));
     }
 
@@ -147,7 +147,7 @@ class IndexController extends Controller
     public function categorieDetail($slug)
     {
         $cat_details = Categorie::where('slug',$slug)->first();
-        
+
 
         if($cat_details) {
             return view('frontend.pages.cat-details',compact(['cat_details']));
@@ -173,7 +173,7 @@ class IndexController extends Controller
     public function infoDetail($slug)
     {
         $info_details = InfoPratique::where('slug',$slug)->first();
-        
+
 
         if($info_details) {
             return view('frontend.pages.info-details',compact(['info_details']));

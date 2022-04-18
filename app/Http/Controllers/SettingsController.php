@@ -39,13 +39,13 @@ class SettingsController extends Controller
             'background_header'=>$request->background_header,
             'fax'=>$request->fax,
             'facebook_url'=>$request->facebook_url,
-            'twitter_url'=>$request->twitter_url,
+            'info_pratique'=>$request->info_pratique,
             'linkedin_url'=>$request->linkedin_url,
             'instagram_url'=>$request->instagram_url,
-            'youtube_url'=>$request->youtube_url,
+            'about'=>$request->about,
             'map_url' =>$request->map_url,
         ]);
-        
+
         Url($request->map_url);
         $status=$setting->fill($request->all());
         if($status){

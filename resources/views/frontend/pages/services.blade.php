@@ -83,11 +83,11 @@
 						@foreach ($infos as $info)
 							<div class="practice-block col-lg-3 col-md-6 col-sm-12">
 									<div class="inner-box">
-										<div class="icon {{$info->icons}}"></div>
-										<h5 style="font-weight: 500;font-size: 16px;"><a href="{{route('info.detail',$info->slug)}}">{{$info->title}}</a></h5>
-										<div class="text">
+										{{-- <div class="icon {{$info->icons}}"></div> --}}
+										<h5 style="font-size: 16px;"><a href="{{route('info.detail',$info->slug)}}">{{$info->title}}</a></h5>
+										{{-- <div class="text">
 											<p>{!! html_entity_decode(\Illuminate\Support\Str::words($info->description,2)) !!}</p>
-										</div>
+										</div> --}}
 										<a class="arrow flaticon-right-arrow-3" href="{{route('info.detail',$info->slug)}}"></a>
 									</div>
 							</div>
@@ -96,8 +96,11 @@
 				</div>
 			</div>
 		</div>
-		{{ $infos->appends($_GET)->links('vendor.pagination.custom') }}
+
 	</section>
+    <div style="top: 50px">
+        {{ $infos->appends($_GET)->links('vendor.pagination.custom') }}
+    </div>
 	<!-- End Practice Section -->
 
 	<!-- Facts Section three -->
