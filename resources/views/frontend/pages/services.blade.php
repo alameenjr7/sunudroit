@@ -6,10 +6,10 @@
     <section class="page-title" style="background-image:url({{asset(get_setting('background_header'))}})">
     	<div class="auto-container">
 			<h1>Informations pratiques</h1>
-			<ul class="page-breadcrumb">
+			{{-- <ul class="page-breadcrumb">
 				<li><a href="{{route('home')}}">home</a></li>
 				<li>Services</li>
-			</ul>
+			</ul> --}}
         </div>
     </section>
     <!-- End Page Title -->
@@ -33,12 +33,12 @@
 					<div class="content-column col-lg-6 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<!-- Sec Title -->
-							<div class="sec-title">
+							{{-- <div class="sec-title">
 								<h2>CE QUE NOUS <br> VOUS OFFRONS</h2>
 								<div class="text">Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels
 									du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
 									fourniture d’outils et d’informations juridiques simples et accessibles à tous.</div>
-							</div>
+							</div> --}}
 							<div class="row clearfix">
 								<div class="column col-lg-6 col-md-6 col-sm-6">
 									<ul class="list-style-one">
@@ -58,7 +58,7 @@
 								</div>
 							</div>
 							<div class="btns-box">
-								<a href="{{route('home','#section-question')}}" class="theme-btn btn-style-two"><span class="txt">Consultation <i class="arrow flaticon-right"></i></span></a>
+								<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-two"><span class="txt">Calculer vos droits <i class="arrow flaticon-right"></i></span></a>
 							</div>
 						</div>
 					</div>

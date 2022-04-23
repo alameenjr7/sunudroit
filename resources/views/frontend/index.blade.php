@@ -77,7 +77,7 @@
 		<!-- End banner-section 22222222222222-->
 	@endif
 	<!-- End Banner Section -->
-
+    <div class="spacer"></div>
 	<!-- Services Section -->
 	@if (count($categories)>0)
 	<section class="services-section">
@@ -275,7 +275,7 @@
 
             	<div class="inner-column">
 					<div class="sec-title light">
-						<h2>Qui Sommes Nous?</h2>
+						<h2>Qui Sommes-Nous?</h2>
 						<div class="text">{!! html_entity_decode(get_setting('about')) !!}</div>
 					</div>
 					{{-- @if (count($consultations)>0)
@@ -296,7 +296,7 @@
 							<!-- Accordian Box -->
 						@endforeach
 					@endif --}}
-                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('about')}}"></a>
+                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('about')}}" title="Voir Plus"></a>
 				</div>
             </div>
 
@@ -305,7 +305,16 @@
             	<div class="inner-column">
 					<div class="sec-title">
 						<h2>Infos Pratiques</h2>
-                        <div class="text">{!! html_entity_decode(get_setting('info_pratique')) !!}</div>
+                        <div class="text">
+                            {{-- <div class="column col-lg-6 col-md-6 col-sm-6"> --}}
+                                <ul class="list-style-one">
+                                    <li>Délégation de puissance paternelle</li>
+                                    <li>Jugement d’hérédité</li>
+                                    <li>Rectificatif d’acte d’état civil</li>
+                                    <li>Administration légale</li>
+                                </ul>
+                            {{-- </div> --}}
+                        </div>
 					</div>
 
 					<!-- Default Form -->
@@ -348,7 +357,7 @@
 						</form>
 					</div> --}}
 					<!-- End Default Form -->
-                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('service')}}"></a>
+                    <a class="arrow flaticon-right-arrow-3 float-right" href="{{route('service')}}" title="Voir Plus"></a>
 				</div>
 			</div>
 		</div>

@@ -6,10 +6,10 @@
 <section class="page-title" style="background-image:url({{asset(get_setting('background_header'))}})">
     <div class="auto-container">
         <h1>Qui sommes-nous?</h1>
-        <ul class="page-breadcrumb">
+        {{-- <ul class="page-breadcrumb">
             <li><a href="{{route('home')}}">Accueil</a></li>
             <li>A propos de nous</li>
-        </ul>
+        </ul> --}}
     </div>
 </section>
 <!-- End Page Title -->
@@ -35,7 +35,7 @@
                         <!-- Sec Title -->
                         <div class="sec-title">
                             {{-- <h2>Qu'est-ce que le portail <br> sunudroit.tech</h2> --}}
-                            <div class="text" style="top: -100px;">Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec;
+                            <div class="text" style="top: -70px;">Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec
                                 des informaticiens.
                                 <br>
                                 <br>

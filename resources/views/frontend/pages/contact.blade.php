@@ -6,10 +6,10 @@
 <section class="page-title" style="background-image:url({{asset(get_setting('background_header'))}})">
     <div class="auto-container">
         <h1>Nous contacter</h1>
-        <ul class="page-breadcrumb">
+        {{-- <ul class="page-breadcrumb">
             <li><a href="{{route('home')}}">Accueil</a></li>
             <li>Nous contacter</li>
-        </ul>
+        </ul> --}}
     </div>
 </section>
 <!-- End Page Title -->
@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-12 col-sm-12 form-group">
-                        <input type="text" id="telephone" name="telephone" value="{{old('telephone')}}" placeholder="Telephone" required>
+                        <input type="text" id="telephone" name="telephone" value="{{old('telephone')}}" placeholder="Téléphone" required>
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 form-group">
@@ -94,7 +94,7 @@
                 <div class="inner-box">
                     <div class="icon flaticon-location-pin"></div>
                     <h5>Adresse</h5>
-                    <div class="text"> {{get_setting('adresse')}}, {{get_setting('lot')}}, <br> {{get_setting('appartement')}}</div>
+                    <div class="text"> {{get_setting('adresse')}}, {{get_setting('lot')}}, {{get_setting('appartement')}}</div>
                 </div>
             </div>
 
@@ -102,11 +102,11 @@
             <div class="info-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon flaticon-smartphone"></div>
-                    <h5>Telephone</h5>
+                    <h5>Téléphone</h5>
                     <ul class="info-list">
                         <li><a href="tel:+{{get_setting('telephone1')}}">+{{App\Models\Setting::value('telephone1')}}</a></li>
                         @if (get_setting('telephone2'))
-                            <li><a href="tel:+{{get_setting('telephone2')}}">+{{App\Models\Setting::value('telephone2')}}</a></li>
+                            <li><a href="tel:+{{get_setting('telephone2')}}">{{App\Models\Setting::value('telephone2')}}</a></li>
                         @endif
                     </ul>
                 </div>

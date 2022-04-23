@@ -48,7 +48,7 @@
                                 <a href="{{route('home')}}">Accueil</a>
                             </li>
                             <li class="">
-                                <a href="{{route('about')}}">Qui sommes nous?</a>
+                                <a href="{{route('about')}}">Qui sommes-nous?</a>
                             </li>
                             <li class="dropdown"><a href="#">Mes droits</a>
                                 <ul>
@@ -60,10 +60,10 @@
                                 <a href="{{route('service')}}">Infos Pratiques</a>
                             </li>
                             <li class="">
-                                <a href="{{route('publication')}}">Publication</a>
+                                <a href="{{route('publication')}}">Publications</a>
                             </li>
                             <li>
-                                <a href="{{route('contact')}}">Contact</a>
+                                <a href="{{route('contact')}}">Contacts</a>
                             </li>
                         </ul>
                     </div>

@@ -41,23 +41,23 @@ class SettingsSeederTable extends Seeder
             'info_pratique' => 'Consciente de la complexité du droit et de la difficultés à accéder à certains professionnels du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la fourniture d’outils et d’informations juridiques simples et accessibles à tous.',
             'linkedin_url' => '',
             'instagram_url' => '',
-            'about' => 'Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec; des informaticiens.',
+            'about' => 'Sunudroit.Tech est une legaltech fondée par des professionnels droit en collaboration avec des informaticiens.',
             'map_url' => '',
         ]);
 
         DB::table('banners')->insert([
             [
-                'photo' => 'frontend/assets/img/droit1.jpeg',
+                'photo' => 'frontend/assets/img/banner1.jpg',
                 'title' => 'Droit de la famille',
-                'subtitle' => 'Famille',
+                'subtitle' => 'La Famille',
                 'status' => 'active',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
             [
                 'photo' => 'frontend/assets/img/droit2.jpeg',
-                'title' => 'Droit des affaires',
-                'subtitle' => 'Affaires',
+                'title' => 'Droit du travail',
+                'subtitle' => 'Les travailleurs',
                 'status' => 'active',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -70,58 +70,58 @@ class SettingsSeederTable extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],
-            [
-                'photo' => 'frontend/assets/img/droit2.jpeg',
-                'title' => 'Droit de la femme',
-                'subtitle' => 'Femme',
-                'status' => 'active',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]
+            // [
+            //     'photo' => 'frontend/assets/img/droit2.jpeg',
+            //     'title' => 'Droit de la femme',
+            //     'subtitle' => 'Femme',
+            //     'status' => 'active',
+            //     'created_at' => Carbon::now(),
+            //     'updated_at' => Carbon::now(),
+            // ]
         ]);
 
-        DB::table('categories')->insert([
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
-                'title' => 'Droit de la famille',
-                'is_parent' => 1,
-                'slug'=>'droit-de-la-famille',
-                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
-                'title' => 'Droit des affaires',
-                'is_parent' => 1,
-                'slug'=>'droit-des-affaires',
-                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
-                'title' => 'Droit de la famille',
-                'slug'=>'droit-d-la-famille',
-                'is_parent' => 1,
-                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
-                'title' => 'Droit des affaires',
-                'is_parent' => 1,
-                'slug'=>'droit-des-affaire',
-                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
-                'status' => 'active',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]
-        ]);
+        // DB::table('categories')->insert([
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
+        //         'title' => 'Droit de la famille',
+        //         'is_parent' => 1,
+        //         'slug'=>'droit-de-la-famille',
+        //         'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ],
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
+        //         'title' => 'Droit des affaires',
+        //         'is_parent' => 1,
+        //         'slug'=>'droit-des-affaires',
+        //         'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ],
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-7.jpg',
+        //         'title' => 'Droit de la famille',
+        //         'slug'=>'droit-d-la-famille',
+        //         'is_parent' => 1,
+        //         'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ],
+        //     [
+        //         'photo' => 'frontend/assets/images/main-slider/banner-9.jpg',
+        //         'title' => 'Droit des affaires',
+        //         'is_parent' => 1,
+        //         'slug'=>'droit-des-affaire',
+        //         'description' => 'Nemo enim ipsam voluptatem quia voluptas sit asperaut odit aut fugit, quia voluptas sit asperaut sed quia consequuntur magni dolor eos qui ratione voluptatem sequi nesciunt aorro quisuest, rui dolorem ipsum nuia dolor.',
+        //         'status' => 'active',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]
+        // ]);
 
         // DB::table('publications')->insert([
         //     [

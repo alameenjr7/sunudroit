@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Contact;
 use App\Models\Banner;
 use App\Models\EquipePro;
 use App\Models\MailingList;
@@ -82,7 +83,7 @@ class IndexController extends Controller
         $status = Message::create($data);
 
         if($status){
-            // Mail::to('babangom673@gmail.com')->send(new Contact($data));
+            // Mail::to('sunudroit@sunudroit.tech')->send(new Contact($data));
 
             return back()->with('success','Message envoyer avec succes');
         }

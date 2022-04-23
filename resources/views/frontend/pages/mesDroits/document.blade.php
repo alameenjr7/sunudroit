@@ -7,18 +7,18 @@
     	<div class="auto-container">
 			<h1>Mes documents juridiques</h1>
 			<ul class="page-breadcrumb">
-				<li><a href="{{route('home')}}">Accueil</a></li>
-				<li>PDF</li>
+				{{-- <li></li> --}}
+				<li>DISPONIBLE BIENTOT</li>
 			</ul>
         </div>
     </section>
     <!-- End Page Title -->
 	<!-- Case Study Section -->
-	<section class="case-study-section">
+	{{-- <section class="case-study-section">
 		<div class="auto-container">
 			<div class="inner-container">
 				<div class="row clearfix">
-					
+
 					<!-- Case Block -->
 					@if (count($documentPDF)>0)
                         @foreach ($documentPDF as $data)
@@ -38,12 +38,12 @@
                             </div>
                         @endforeach
                     @endif
-				
-					
+
+
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> --}}
 	<!-- End Case Study Section -->
 
 @endsection
