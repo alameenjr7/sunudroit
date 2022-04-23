@@ -8,7 +8,7 @@
 			<h1>Mes documents juridiques</h1>
 			<ul class="page-breadcrumb">
 				{{-- <li></li> --}}
-				<li>DISPONIBLE BIENTOT</li>
+				<li>DISPONIBLE BIENTôT</li>
 			</ul>
         </div>
     </section>
