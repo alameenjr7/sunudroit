@@ -18,20 +18,21 @@
 	<section class="welcome-section style-two">
 		<div class="auto-container">
 			<div class="inner-container">
-				<div class="clearfix">
+				<div class="clearfix" style="max-width: 100%;">
+
 
 					<!-- Image Column -->
-					<div class="image-column col-lg-6 col-md-12 col-sm-12">
+					<div class="image-column col-lg-12 col-md-12 col-sm-12">
 						<div class="inner-column">
 							<div class="image">
-								<img src="{{asset('frontend/assets/img/droit1.jpeg')}}" alt="" />
+								<img style="height:80%" src="{{asset('frontend/assets/img/infop.jpeg')}}" alt="" />
 							</div>
 						</div>
 					</div>
 
 					<!-- Content Column -->
-					<div class="content-column col-lg-6 col-md-12 col-sm-12">
-						<div class="inner-column">
+					{{-- <div class="content-column col-lg-6 col-md-12 col-sm-12">
+						<div class="inner-column"> --}}
 							<!-- Sec Title -->
 							{{-- <div class="sec-title">
 								<h2>CE QUE NOUS <br> VOUS OFFRONS</h2>
@@ -39,7 +40,7 @@
 									du droit, Sunudroit.Tech s’est donnée pour mission de faciliter l’accès au droit par la
 									fourniture d’outils et d’informations juridiques simples et accessibles à tous.</div>
 							</div> --}}
-							<div class="row clearfix">
+							{{-- <div class="row clearfix">
 								<div class="column col-lg-6 col-md-6 col-sm-6">
 									<ul class="list-style-one">
 										<li>Délégation de puissance paternelle</li>
@@ -59,9 +60,9 @@
 							</div>
 							<div class="btns-box">
 								<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-two"><span class="txt">Calculer vos droits <i class="arrow flaticon-right"></i></span></a>
-							</div>
-						</div>
-					</div>
+							</div> --}}
+						{{-- </div>
+					</div> --}}
 
 				</div>
 			</div>

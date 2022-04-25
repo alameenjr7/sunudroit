@@ -85,7 +85,7 @@
     <div class="auto-container">
         <!-- Sec Title -->
         <div class="sec-title centered">
-            <h2>Nos Infromations</h2>
+            <h2>Nos Informations</h2>
         </div>
         <div class="row clearfix">
 

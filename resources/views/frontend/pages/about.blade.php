@@ -24,7 +24,7 @@
                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="image wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{asset('frontend/assets/img/sing.jpg')}}" alt="" />
+                            <img src="{{asset('frontend/assets/img/banner1.jpg')}}" alt="" />
                         </div>
                     </div>
                 </div>

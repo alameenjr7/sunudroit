@@ -47,7 +47,7 @@ class SettingsSeederTable extends Seeder
 
         DB::table('banners')->insert([
             [
-                'photo' => 'frontend/assets/img/banner1.jpg',
+                'photo' => 'frontend/assets/img/droit1.jpg',
                 'title' => 'Droit de la famille',
                 'subtitle' => 'La Famille',
                 'status' => 'active',
