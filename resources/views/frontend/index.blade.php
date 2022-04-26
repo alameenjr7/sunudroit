@@ -271,7 +271,7 @@
 		<div class="side-icon"><img src="{{asset(get_setting('logo2'))}}" alt="" /></div>
     	<div class="outer-container clearfix">
         	<!-- Image Column -->
-            <div class="image-column clearfix" style="height:50%;background-image:url({{asset('frontend/assets/images/resource/image-1.jpg')}})">
+            <div class="image-column clearfix" style="height:50%;background-image:url({{asset('frontend/assets/img/banner1.jpg')}})">
 
             	<div class="inner-column">
 					<div class="sec-title light">
