@@ -64,7 +64,7 @@
 										<h1>{{$banner->subtitle}} <br> </h1>
 										<div class="text"><p>{!! html_entity_decode(\Illuminate\Support\Str::words($banner->description,20)) !!}</p></div>
 										<div class="btns-box">
-											<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-one"><span class="txt">Calculer Vos Droits <i class="arrow flaticon-right"></i></span></a>
+											<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-one"><span class="txt" style="font-size: 150%;">Calculer Vos Droits <i class="arrow flaticon-right"></i></span></a>
 										</div>
 									</div>
 								</div>
