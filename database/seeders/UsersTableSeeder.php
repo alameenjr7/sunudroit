@@ -17,11 +17,11 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'prenom'=>'Baba',
-                'nom'=>'NGOM',
+                'prenom'=>'SunuDroit',
+                'nom'=>'ADMIN',
                 'email'=>'admin@gmail.com',
-                'telephone'=>'00221772050626',
-                'adresse'=>'Liberté 6',
+                'telephone'=>'00221 78 107 53 53',
+                'adresse'=>'Cite keur goorgui',
                 'role'=>'admin',
                 'password'=>Hash::make('ALAMEENjr@7'),
             ]

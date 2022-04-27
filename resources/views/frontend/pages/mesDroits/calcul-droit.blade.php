@@ -7,7 +7,7 @@
         <!-- Sec Title -->
         <div class="sec-title centered">
             <h2> CALCULER MES DROITS </h2>
-            <div class="text">Besoin d'assistance ?<strong> Contactez-nous au ....</strong>.</div>
+            <div class="text">Besoin d'assistance ?<strong> Contactez-nous au (+221) 78 107 53 53</strong>.</div>
         </div>
         <div class="row">
                 <div class="col-md-12 m-auto">
@@ -29,7 +29,7 @@
             </div>
         <!-- Contact Form -->
         <div class="contact-form">
-            
+
             @include('components.errors')
             <!--Contact Form-->
             <form action="{{route('calcul.submit')}}" method="POST">
@@ -74,7 +74,7 @@
                             <option value="C_M_I_I" >Calculer Mon Indemnité d’Intérim</option>
                             <option value="C_M_H_S" >Calculer La Majoration des Heures Supplémentaires</option>
                             <option value="C_M_P_P" >Calculer Ma Prime de Panier</option>
-                            <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de Fin de Contrat à Durée Déterminée</option> 
+                            <option value="C_M_I_F_C_D_D" >Calculer Mon Indemnité de Fin de Contrat à Durée Déterminée</option>
                             <option value="R_P_T">Calculer Mon Rappel de la Prime de Transport</option>
                             <option value="R_S">Calculer Mon Rappel de Salaire</option>
                             <option value="P_A">Calculer Ma Prime d’Ancienneté</option>
@@ -84,11 +84,11 @@
                             <option value="C_DELFE">Calculer le Délai pour évacuer le logement fourni par l’employeur</option>
                             <option value="C_DMP">Calculer la durée de mon préavis</option>
 
-                            
+
                         </select>
                     </div>
 
-                    
+
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="MDCMOT">
                         <label for="mdcmot" id="MDCMOT">Mon déplacement a pour cause une mission occasionnelle et temporaire</label>
                             <div>
@@ -223,7 +223,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="montant">
                         <label for="salaire" id="LABELS">Votre salaire actuel</label>
-                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 300 000"  
+                        <input  type="number" id="salaire" name="salaire"  placeholder="Ex: 300 000"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -241,7 +241,7 @@
                     {{-- cumule de vos salaires sur les 12mois --}}
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="cumule_salaire">
                         <label for="cumuleS" id="CUMULESALAIRE">Cumule de vos salaires sur les 12 derniers mois</label>
-                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 20 000"  
+                        <input  type="number" id="cumuleS" name="cumuleS"  placeholder="Ex: 20 000"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -266,11 +266,11 @@
                         <input class="form-control" type="date" name="date_fin" id="date_fin"  placeholder="Ex: 12/05/2022" >
                     </div>
 
-                    
+
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_TP">
                         <label for="salaire_cat_tp">Salaire catégoriciel du tutilaire de poste</label>
-                        <input  type="number" id="salaire_cat_tp" name="salaire_cat_tp"  placeholder="Ex: 75 000"  
+                        <input  type="number" id="salaire_cat_tp" name="salaire_cat_tp"  placeholder="Ex: 75 000"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -287,7 +287,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_CAT_IN">
                         <label for="salaire_cat_in">Salaire catégoriciel de l'intérimaire</label>
-                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 275 000"  
+                        <input  type="number" id="salaire_cat_in" name="salaire_cat_in"  placeholder="Ex: 275 000"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -304,7 +304,7 @@
 
                     <div class=" col-md-12 col-sm-12 form-group d-none" id="RENUMERATION_DUE">
                         <label for="renumeration_due">Rénumération totale brute versée pendant toute la durée du contrat</label>
-                        <input  type="number" id="renumeration_due" name="renumeration_due"  placeholder="Ex: 750 000"  
+                        <input  type="number" id="renumeration_due" name="renumeration_due"  placeholder="Ex: 750 000"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -322,7 +322,7 @@
                     {{-- Majoration --}}
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="HEURE_SUPP">
                         <label for="heure_supp">Insérer le nombre d’heures supplémentaires</label>
-                        <input  type="number" id="heure_supp" name="heure_supp"  placeholder="Ex: 8"  
+                        <input  type="number" id="heure_supp" name="heure_supp"  placeholder="Ex: 8"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -339,7 +339,7 @@
 
                     <div class=" col-md-6 col-sm-12 form-group d-none" id="SALAIRE_HOR">
                         <label for="salaire_hor" id="SALAIRE_HOR">Insérer le salaire horaire</label>
-                        <input  type="number" id="salaire_hor" name="salaire_hor"  placeholder="Ex: 375"  
+                        <input  type="number" id="salaire_hor" name="salaire_hor"  placeholder="Ex: 375"
                             style="position: relative;
                             display: block;
                             width: 100%;
@@ -381,7 +381,7 @@
 
                     <div class=" col-md-12 col-sm-12 form-group text-center">
                         <button class="theme-btn btn-style-two" type="submit">
-                            <span class="txt">Calculer 
+                            <span class="txt">Calculer
                                 <i class="arrow flaticon-right"></i>
                             </span>
                         </button>
@@ -450,8 +450,8 @@
                 $('#SALAIRE_HOR').addClass('d-none');
                 $('#MAJORATION').addClass('d-none');
                 $('#PRIME_PANIER').addClass('d-none');
-            }      
-             
+            }
+
             // Calcul Indemnité de licenciement (Article 80 de la CCNI)
             else if(responseID == "C_M_I_L")
             {
@@ -650,10 +650,10 @@
                 //required
                 document.getElementById('cumuleS').required = true;
 
-                //Label title 
+                //Label title
                 $('label[id*=CUMULESALAIRE]').empty();
                 $('label[id*=CUMULESALAIRE]').text('Insérer votre salaire moyen des 12 derniers mois');
-                
+
                 // remove class
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
@@ -679,7 +679,7 @@
                 $('#PRIME_PANIER').addClass('d-none');
             }
 
-            // Indemnités de licenciement pour motif économique 
+            // Indemnités de licenciement pour motif économique
             else if(responseID == 'C_M_I_L_M_E')
             {
                 $('#C_M_I_C_P_types').removeClass('d-none');
@@ -703,7 +703,7 @@
                 document.getElementById('cumuleS').required = true;
                 document.getElementById('salaire').required = true;
 
-                //Label title 
+                //Label title
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -741,7 +741,7 @@
             {
                 $('#ESSAI').removeClass('d-none');
                 $('#ESSAI').val('');
-               
+
                 // Remove class
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -771,7 +771,7 @@
             {
                 $('#ESSAI').removeClass('d-none');
                 $('#ESSAI').val('');
-               
+
                 // Remove class
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
@@ -802,7 +802,7 @@
             {
                 $('#ABSENCE').removeClass('d-none');
                 $('#ABSENCE').val('');
-               
+
                 // Remove class
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
@@ -1014,7 +1014,7 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 150 000';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 5';
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1060,12 +1060,12 @@
                 $('#SALAIRE_HOR').removeClass('d-none');
                 $('label[id*=SALAIRE_HOR]').empty();
                 $('label[id*=SALAIRE_HOR]').text('Indiquer le salaire catégoriel normalement dû');
-                
+
                 document.getElementById('cumuleS').required = true;
                 document.getElementById('salaire').required = true;
                 document.getElementById('salaire_hor').required = true;
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1115,7 +1115,7 @@
                 document.getElementsByName('salaire')[0].placeholder='Ex: 3';
                 document.getElementsByName('cumuleS')[0].placeholder='Ex: 150 000';
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1154,13 +1154,13 @@
             {
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
-                
+
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre ancienneté (ans)');
-                
+
                 document.getElementsByName('salaire')[0].placeholder='Ex: 13';
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1200,7 +1200,7 @@
             //Calculer mon indemnité de déplacement hors de mon lieu habituel de travail
             else if(responseID == 'C_I_D_H_LHT')
             {
-                
+
                 $('#MDCMOT').removeClass('d-none');
                 $('#MDCMOT').val('');
                 $('#LDDIES').removeClass('d-none');
@@ -1216,7 +1216,7 @@
                 $('#C_M_I_C_P_types').removeClass('d-none');
                 $('#C_M_I_C_P_types').val('');
 
-                
+
                 document.getElementById('salaire').required = true;
 
                 $('#LOGEMENT_F').addClass('d-none');
@@ -1252,16 +1252,16 @@
             //Calculer mon nombre de jours de congés
             else if(responseID == 'C_NJC')
             {
-                
+
                 $('#montant').removeClass('d-none');
                 $('#montant').val('');
-                
+
                 $('label[id*=LABELS]').empty();
                 $('label[id*=LABELS]').text('Insérer votre ancienneté (ans)');
-                
+
                 document.getElementsByName('salaire')[0].placeholder='Ex: 7';
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1306,7 +1306,7 @@
                 $('#LOGEMENT_F').removeClass('d-none');
                 $('#LOGEMENT_F').val('');
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
@@ -1347,11 +1347,11 @@
             //Calculer la durée de mon préavis
             else if(responseID == 'C_DMP')
             {
-                
+
                 $('#SPECIALITE').removeClass('d-none');
                 $('#SPECIALITE').val('');
 
-                
+
                 $('#MEFNPDNLG').addClass('d-none');
                 $('#MDCMOT').addClass('d-none');
                 $('#LDDIES').addClass('d-none');
