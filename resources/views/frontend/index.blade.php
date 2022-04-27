@@ -61,7 +61,7 @@
 								<div class="col-lg-10 col-md-12 col-sm-12 offset-lg-2 content-column">
 									<div class="inner-column">
 										<div class="title">{{$banner->title}}</div>
-										<h1>{{$banner->subtitle}} <br> ------</h1>
+										<h1>{{$banner->subtitle}} <br> </h1>
 										<div class="text"><p>{!! html_entity_decode(\Illuminate\Support\Str::words($banner->description,20)) !!}</p></div>
 										<div class="btns-box">
 											<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-one"><span class="txt">Calculer Vos Droits <i class="arrow flaticon-right"></i></span></a>
