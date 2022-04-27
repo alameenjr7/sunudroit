@@ -38,12 +38,12 @@
 
                     <div class=" col-md-6 col-sm-12 form-group">
                         <label for="full_name">Votre prénom</label>
-                        <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Ex: Baba Al Ameen JR" required>
+                        <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Ex: John" required>
                     </div>
 
                     <div class=" col-md-6 col-sm-12 form-group">
                         <label for="email">Votre nom</label>
-                        <input class="form-control" type="text" name="last_name" id="last_name"  placeholder="Ex: NGOM">
+                        <input class="form-control" type="text" name="last_name" id="last_name"  placeholder="Ex: Doe">
                     </div>
 
                     <div class=" col-md-12 col-sm-12 form-group">
