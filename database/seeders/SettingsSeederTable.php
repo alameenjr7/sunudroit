@@ -33,7 +33,7 @@ class SettingsSeederTable extends Seeder
             'lot' => ' Rond-point',
             'appartement' => ' Cité Keur Gorgui',
             'footer' => '',
-            'text_abonnement' => 'Quis autem vel eum iure reprehenderit aui ea voluptate.',
+            'text_abonnement' => '',
             'image_footer' => 'frontend/assets/img/just.jpg',
             'background_footer' => 'frontend/assets/img/jst&bal.jpg',
             'background_header' => 'frontend/assets/img/bal.jpg',
@@ -276,33 +276,33 @@ class SettingsSeederTable extends Seeder
             ]
         ]);
 
-        DB::table('document_pdfs')->insert([
-            [
-                'title' => 'Contrat de location',
-                'contenu' => '<p>ENTRE :
-                La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
-                ET :
-                Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
-                'status' => 'activer',
-                'prix'=>null,
-                'conditions'=>'gratuit',
-                'slug'=>'contrat-de-location',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ],
-            [
-                'title' => 'CONTRAT DE CONCEPTION DE SITE WEB',
-                'contenu' => '<p>ENTRE :
-                La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
-                ET :
-                Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
-                'status' => 'activer',
-                'slug'=>'contrat-de-conception-de-site-web',
-                'prix'=> 1000,
-                'conditions'=>'payant',
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]
-        ]);
+        // DB::table('document_pdfs')->insert([
+        //     [
+        //         'title' => 'Contrat de location',
+        //         'contenu' => '<p>ENTRE :
+        //         La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
+        //         ET :
+        //         Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
+        //         'status' => 'activer',
+        //         'prix'=>null,
+        //         'conditions'=>'gratuit',
+        //         'slug'=>'contrat-de-location',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ],
+        //     [
+        //         'title' => 'CONTRAT DE CONCEPTION DE SITE WEB',
+        //         'contenu' => '<p>ENTRE :
+        //         La SARL Sunudroit.Tech agissant par son Gérant, en ses bureaux sis à 12 Boulevard Djily Mbaye, Immeuble Azur 15, 2 ème étage à Dakar ; (ci-après appelé(e) « le Client »)
+        //         ET :
+        //         Monsieur Baba NGOM, Informaticien demeurant à Ouest Foire, téléphone 772050626;</p>',
+        //         'status' => 'activer',
+        //         'slug'=>'contrat-de-conception-de-site-web',
+        //         'prix'=> 1000,
+        //         'conditions'=>'payant',
+        //         'created_at' => Carbon::now(),
+        //         'updated_at' => Carbon::now(),
+        //     ]
+        // ]);
     }
 }
