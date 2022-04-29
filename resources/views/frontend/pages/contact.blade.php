@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Contactez un asistant en droit - SunuDroit</title>
+@endsection
+
 @section('content')
 
 <!-- Page Title -->

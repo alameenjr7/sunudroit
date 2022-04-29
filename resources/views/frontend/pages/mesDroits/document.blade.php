@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Téléchargement des contrats - SunuDroit</title>
+@endsection
+
 @section('content')
 
 	<!-- Page Title -->

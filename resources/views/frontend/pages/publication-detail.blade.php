@@ -1,12 +1,16 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Actualités sur le droit en général - SunuDroit</title>
+@endsection
+
 @section('content')
-	
+
 	<!-- Sidebar Page Container -->
     <div class="sidebar-page-container">
     	<div class="auto-container">
         	<div class="row clearfix">
-				
+
 				<!-- Content Side -->
                 <div class="content-side col-lg-8 col-md-12 col-sm-12">
                 	<!-- Block Detail -->
@@ -25,7 +29,7 @@
                                         </ul>
                                     </div>
                                     <div class="lower-content">
-                                        <h3>{{ucfirst($publication->title )}} 
+                                        <h3>{{ucfirst($publication->title )}}
                                             @for ($i=0; $i<5; $i++)
                                                 @if (round($publication->reviews->avg('rate'))>$i)
                                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -41,9 +45,9 @@
                                             <div class="quote-text"></div>
                                         </blockquote>
                                     </div>
-                                    
+
                                 </div>
-                            
+
                             <div class="comments-area">
                                 <div class="group-title">
                                     <h5>Commentaires ({{App\Models\PublicationReview::where('publication_id',$publication->id)->count()}})</h5>
@@ -73,15 +77,15 @@
                                         @endforeach
                                     </div>
                                 @endif
-                                
+
                             </div>
-                            
-                            
+
+
                             <!-- Comment Form -->
                             <div class="comment-form">
-                                
+
                                 <div class="group-title"><h5>LAISSEZ UN COMMENTAIRE</h5></div>
-                                
+
                                 <!--Comment Form-->
                                 <form method="post" action="{{route('publication.review',$publication->slug)}}">
                                     @csrf
@@ -110,34 +114,34 @@
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <input type="text" name="full_name" id="full_name" value="{{old('full_name')}}" placeholder="Nom complet" required>
                                         </div>
-                                        
+
                                         <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                             <input type="email" id="email" name="email" value="{{old('email')}}" placeholder="Email" required="">
                                         </div>
-                                        
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                             <textarea class="" name="review" placeholder="Votre Message">{{old('review')}}</textarea>
                                         </div>
-                                        
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 form-group">
                                             <button class="theme-btn btn-style-three" type="submit" name="submit-form"><span class="txt">Envoyer</span></button>
                                         </div>
-                                        
+
                                     </div>
                                 </form>
-                                    
+
                             </div>
-                            
-                            
+
+
                         </div>
                     {{-- @endif --}}
 				</div>
-				
+
 				<!-- Sidebar Side -->
                 <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
                 	<aside class="sidebar sticky-top">
 						<div class="sidebar-inner">
-						
+
 							<!-- Search -->
 							<div class="sidebar-widget search-box">
 								<form method="GET" action="{{route('search')}}">
@@ -147,15 +151,15 @@
 									</div>
 								</form>
 							</div>
-							
+
 							<!--Blog Category Widget-->
-                            
+
                                 @include('frontend.layouts._categorieFilter')
-                            
+
                             <!--End Blog Category Widget-->
-							
+
                             <div class="sidebar-page-container"></div>
-                            
+
 							<!-- Popular Post Widget -->
 							<div class="sidebar-widget popular-posts">
 								{{-- @if (count($lastPublication)>0)	 --}}
@@ -169,7 +173,7 @@
 									</div>
 								{{-- @endif --}}
 							</div>
-							
+
 							<!-- Tags Widget -->
 							<div class="sidebar-widget popular-tags">
 								{{-- <div class="widget-content">
@@ -182,17 +186,17 @@
 									<a href="#">Business</a>
 								</div> --}}
 							</div>
-							
+
 						</div>
 					</aside>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Facts Section three -->
     {{-- <section class="facts-section-three" style="background-image: url(images/background/1.jpg);">
-        
+
         <div class="auto-container">
             <div class="fact-counter-style-three">
                 <div class="row">
@@ -207,7 +211,7 @@
                                     </div>
                                     <h4>Business Partners </h4>
                                     <div class="text">Indignation & dislike mens who <br> beguiled demoralized.</div>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -222,7 +226,7 @@
                                     </div>
                                     <h4>Cases Done</h4>
                                     <div class="text">Desire that they cannot foresee <br> the pain and trouble.</div>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -237,7 +241,7 @@
                                     </div>
                                     <h4>Awards Win</h4>
                                     <div class="text">These cases are perfect simple <br> & easy to distinguish.</div>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
                     </div>

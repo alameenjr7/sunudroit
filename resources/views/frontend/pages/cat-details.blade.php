@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Actualités sur le droit en général - SunuDroit</title>
+@endsection
+
 @section('content')
 
 	<!-- Page Title -->
@@ -25,7 +29,7 @@
 					<h2>{{$cat_details->title}}</h2>
 					<p>{!! html_entity_decode($cat_details->description) !!}</p>
 					<div class="row clearfix">
-						
+
 					</div>
 					<div class="btn-box">
 						<a href="{{route('calcul.droit')}}" class="theme-btn btn-style-two"><span class="txt">Calculer vos droits <i class="arrow flaticon-right"></i></span></a>

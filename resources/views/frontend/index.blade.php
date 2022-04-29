@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>SunuDroit - Calculer vos droits</title>
+@endsection
+
 @section('content')
 	<!-- Banner Section -->
 	@if (count($banners)>0)

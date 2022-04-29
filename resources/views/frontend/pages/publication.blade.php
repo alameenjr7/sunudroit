@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Actualités sur le droit en général - SunuDroit</title>
+@endsection
+
 @section('content')
 
 	<!-- Page Title -->

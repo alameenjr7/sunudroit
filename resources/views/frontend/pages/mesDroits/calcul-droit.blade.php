@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Connaitre son droit ou calculer son droit - SunuDroit</title>
+@endsection
+
 @section('content')
 
 <section class="contact-form-section">

@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Savoir tout sur le droit des travailleurs - SunuDroit</title>
+@endsection
+
 @section('content')
 
 	<!-- Page Title -->

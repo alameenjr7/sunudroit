@@ -1,5 +1,9 @@
 @extends('frontend.layouts.master')
 
+@section('title')
+    <title>Aide à l’accès au droit - SunuDroit</title>
+@endsection
+
 @section('content')
 
 <!-- Page Title -->
