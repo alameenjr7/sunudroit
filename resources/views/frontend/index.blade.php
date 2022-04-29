@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    <title>SunuDroit - Calculer vos droits</title>
+    <title>SunuDroit - Legal Tech - Calculer vos droits</title>
 @endsection
 
 @section('content')

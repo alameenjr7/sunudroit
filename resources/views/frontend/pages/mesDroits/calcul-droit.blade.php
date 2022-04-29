@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('title')
-    <title>Connaitre son droit ou calculer son droit - SunuDroit</title>
+    <title>Connaitre mes droits ou calculer mes droits - SunuDroit</title>
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         <!-- Sec Title -->
         <div class="sec-title centered">
             <h2> CALCULER MES DROITS </h2>
-            <div class="text">Besoin d'assistance ?<strong> Contactez-nous au (+221) 78 107 53 53</strong>.</div>
+            <div class="text">Besoin d'assistance ?<strong> Contactez-nous au (+221) 78 107 73 73</strong>.</div>
         </div>
         <div class="row">
                 <div class="col-md-12 m-auto">
