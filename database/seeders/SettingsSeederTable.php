@@ -26,7 +26,7 @@ class SettingsSeederTable extends Seeder
             'favicon2' => 'frontend/assets/Sunudroit-logo/background/Favicon/5.ico',
             'email_1' => 'sunudroit@sunudroit.tech',
             'email_2' => '',
-            'telephone1' => '221 78 107 53 53',
+            'telephone1' => '221 78 107 73 73',
             'telephone2' => '',
             'fax' => '221-0456-8756-0456',
             'adresse' => '113',
@@ -48,8 +48,8 @@ class SettingsSeederTable extends Seeder
         DB::table('banners')->insert([
             [
                 'photo' => 'frontend/assets/img/droit1.jpeg',
-                'title' => 'Droit de la famille',
-                'subtitle' => 'La Famille',
+                'title' => 'Droit du travail',
+                'subtitle' => 'Les travailleurs',
                 'status' => 'active',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -64,8 +64,8 @@ class SettingsSeederTable extends Seeder
             ],
             [
                 'photo' => 'frontend/assets/img/droit3.jpg',
-                'title' => 'Droit',
-                'subtitle' => 'Droit',
+                'title' => 'Droit du travail',
+                'subtitle' => 'Les travailleurs',
                 'status' => 'active',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
