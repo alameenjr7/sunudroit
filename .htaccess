@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+</IfModule>
+RewriteCond %{HTTP_HOST} ^sunudroit\.tech$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sunudroit\.tech$
+RewriteRule ^/?$ "https\:\/\/sunudroit\.tech\/" [R=301,L]
+
